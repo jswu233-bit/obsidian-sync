@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字转吴语 - 吴语拼音转换器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎭 文字转吴语</h1>
+            <p class="subtitle">输入文字，获取吴语拼音，聆听江南雅音</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <label for="inputText">输入文字：</label>
+                <textarea 
+                    id="inputText" 
+                    placeholder="请输入要转换的中文文字，例如：你好，欢迎来到上海..."
+                    rows="4"
+                ></textarea>
+                <div class="options">
+                    <label for="dialectSelect">选择方言：</label>
+                    <select id="dialectSelect">
+                        <option value="shanghai">上海话</option>
+                        <option value="suzhou">苏州话</option>
+                        <option value="shaoxing">绍兴话</option>
+                    </select>
+                </div>
+                <button id="convertBtn" class="btn-primary">
+                    <span>🔄</span> 转换为吴语拼音
+                </button>
+            </div>
+
+            <div class="output-section" id="outputSection" style="display: none;">
+                <label>吴语拼音：</label>
+                <div id="pinyinOutput" class="pinyin-display"></div>
+                
+                <div class="audio-controls">
+                    <button id="playBtn" class="btn-secondary">
+                        <span>🔊</span> 播放发音
+                    </button>
+                    <select id="voiceSelect">
+                        <option value="female">晓晓 - 女声（活泼）</option>
+                        <option value="female2">晓伊 - 女声（温柔）</option>
+                        <option value="male">云健 - 男声</option>
+                        <option value="male2">云希 - 男声（年轻）</option>
+                    </select>
+                </div>
+                <p class="tts-note">🎙️ 使用微软 Edge-TTS 语音合成</p>
+            </div>
+
+            <div class="info-section">
+                <h3>📖 关于吴语</h3>
+                <p>吴语，又称江东话、江南话、江浙话，是汉语七大方言之一。主要分布于上海、江苏南部、浙江大部分地区及安徽南部。</p>
+                <div class="features">
+                    <div class="feature">
+                        <h4>上海话</h4>
+                        <p>声母27个，韵母41个，声调5-6个</p>
+                    </div>
+                    <div class="feature">
+                        <h4>苏州话</h4>
+                        <p>声母27个，韵母46个，声调7-8个</p>
+                    </div>
+                    <div class="feature">
+                        <h4>绍兴话</h4>
+                        <p>声母29个，韵母56个，声调8个</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>数据来源：吴语协会拼音方案 | 吴语学堂</p>
+        </footer>
+    </div>
+
+    <script src="pinyin-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

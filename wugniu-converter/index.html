@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字转吴语 - 吴语拼音转换器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header h1 span {
+            color: #667eea;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .dialect-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .dialect-btn {
+            padding: 10px 25px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .dialect-btn:hover,
+        .dialect-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .input-section {
+            margin-bottom: 25px;
+        }
+
+        .input-label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1.1em;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .convert-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 25px;
+        }
+
+        .convert-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .result-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .result-title {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .speak-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #ff6b9d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .speak-btn:hover {
+            background: #ff527b;
+            transform: scale(1.05);
+        }
+
+        .speak-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .speak-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .result-content {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 100px;
+        }
+
+        .pinyin-item {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 5px 8px;
+            padding: 8px 12px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+
+        .pinyin-char {
+            font-size: 1.4em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .pinyin-romanization {
+            font-size: 0.9em;
+            color: #667eea;
+            margin-top: 4px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #999;
+            padding: 40px;
+        }
+
+        .empty-state svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        .info-section {
+            background: #fff3e0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .info-title {
+            font-weight: 600;
+            color: #e65100;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-content {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .dialect-btn {
+                padding: 8px 18px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>文字转<span>吴语</span></h1>
+            <p>输入文字，获取吴语拼音，听吴语发音</p>
+        </div>
+
+        <div class="dialect-selector">
+            <button class="dialect-btn active" data-dialect="shanghai">上海话</button>
+            <button class="dialect-btn" data-dialect="suzhou">苏州话</button>
+            <button class="dialect-btn" data-dialect="shaoxing">绍兴话</button>
+        </div>
+
+        <div class="input-section">
+            <label class="input-label">输入文字：</label>
+            <textarea id="inputText" placeholder="请输入要转换的文字，例如：你好，上海"></textarea>
+        </div>
+
+        <button class="convert-btn" onclick="convertText()">
+            🔤 转换为吴语拼音
+        </button>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>正在转换...</p>
+        </div>
+
+        <div class="result-section" id="resultSection" style="display: none;">
+            <div class="result-header">
+                <span class="result-title">吴语拼音：</span>
+                <button class="speak-btn" id="speakBtn" onclick="speakText()">
+                    <svg class="speak-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    </svg>
+                    <span>女声朗读</span>
+                </button>
+            </div>
+            <div class="result-content" id="resultContent">
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+                关于吴语拼音
+            </div>
+            <div class="info-content">
+                吴语是汉语方言之一，主要分布于上海、江苏南部、浙江等地。本工具使用<a href="https://www.wugniu.com/" target="_blank">吴语学堂</a>的拼音方案，
+                支持上海话、苏州话、绍兴话等方言的罗马字标注。由于吴语TTS技术限制，目前朗读使用普通话语音，后续将接入方言语音合成服务。
+            </div>
+        </div>
+    </div>
+
+    <script src="wugniu_dict.js"></script>
+    <script>
+        let currentDialect = 'shanghai';
+        let currentText = '';
+        let currentPinyin = [];
+
+        // 方言切换
+        document.querySelectorAll('.dialect-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.dialect-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentDialect = this.dataset.dialect;
+            });
+        });
+
+        // 文本转换
+        function convertText() {
+            const input = document.getElementById('inputText').value.trim();
+            if (!input) {
+                alert('请输入要转换的文字');
+                return;
+            }
+
+            currentText = input;
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('resultSection').style.display = 'none';
+
+            // 模拟异步处理
+            setTimeout(() => {
+                const result = convertToWugniu(input, currentDialect);
+                displayResult(result);
+                document.getElementById('loading').classList.remove('active');
+                document.getElementById('resultSection').style.display = 'block';
+            }, 500);
+        }
+
+        // 转换为吴语拼音
+        function convertToWugniu(text, dialect) {
+            const result = [];
+            const dict = wugniuDict[dialect] || wugniuDict['shanghai'];
+
+            for (let char of text) {
+                if (dict[char]) {
+                    result.push({
+                        char: char,
+                        pinyin: dict[char]
+                    });
+                } else {
+                    // 如果字典中没有，尝试使用普通话拼音作为fallback
+                    result.push({
+                        char: char,
+                        pinyin: getPinyinFallback(char)
+                    });
+                }
+            }
+
+            return result;
+        }
+
+        // 获取拼音fallback
+        function getPinyinFallback(char) {
+            // 简单的常见字映射
+            const commonMap = {
+                '的': 'gek', '是': 'zy', '了': 'leq', '在': 'ze', '有': 'yeu',
+                '我': 'ngu', '他': 'tha', '这': 'geq', '来': 'le', '上': 'zaon',
+                '下': 'gho', '中': 'tson', '大': 'du', '小': 'siau', '多': 'tu',
+                '少': 'sau', '好': 'hau', '人': 'gnin', '国': 'koq', '年': 'gni'
+            };
+            return commonMap[char] || char;
+        }
+
+        // 显示结果
+        function displayResult(result) {
+            currentPinyin = result;
+            const container = document.getElementById('resultContent');
+            
+            if (result.length === 0) {
+                container.innerHTML = '<div class="empty-state">无法转换这些文字</div>';
+                return;
+            }
+
+            let html = '';
+            result.forEach(item => {
+                html += `
+                    <div class="pinyin-item">
+                        <span class="pinyin-char">${item.char}</span>
+                        <span class="pinyin-romanization">${item.pinyin}</span>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // 朗读文本
+        function speakText() {
+            if (!currentText) return;
+
+            const btn = document.getElementById('speakBtn');
+            btn.disabled = true;
+
+            // 使用 Web Speech API
+            if ('speechSynthesis' in window) {
+                // 取消之前的朗读
+                window.speechSynthesis.cancel();
+
+                const utterance = new SpeechSynthesisUtterance(currentText);
+                utterance.lang = 'zh-CN';
+                utterance.rate = 0.9;
+                utterance.pitch = 1.1;
+
+                // 尝试选择女声
+                const voices = window.speechSynthesis.getVoices();
+                const femaleVoice = voices.find(v => 
+                    v.name.includes('Female') || 
+                    v.name.includes('Ting-Ting') ||
+                    v.name.includes('Xiaoxiao') ||
+                    v.name.includes('Xiaoyi')
+                );
+                if (femaleVoice) {
+                    utterance.voice = femaleVoice;
+                }
+
+                utterance.onend = () => {
+                    btn.disabled = false;
+                };
+
+                utterance.onerror = () => {
+                    btn.disabled = false;
+                    alert('朗读失败，请重试');
+                };
+
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('您的浏览器不支持语音朗读功能');
+                btn.disabled = false;
+            }
+        }
+
+        // 加载语音列表
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.getVoices();
+            window.speechSynthesis.onvoiceschanged = () => {
+                window.speechSynthesis.getVoices();
+            };
+        }
+
+        // 回车键转换
+        document.getElementById('inputText').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                convertText();
+            }
+        });
+    </script>
+</body>
+</html>

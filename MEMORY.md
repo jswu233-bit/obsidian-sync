@@ -49,10 +49,16 @@
 
 ## 活跃配置
 - **主模型**: `hajimi/claude-sonnet-4-5`
-- **Subagent模型**: `moonshot/kimi-k2.5`
-- **AI每日推送**: 每天12:00飞书推送三位博主动态
-- **日报推送**: 每天21:00 Discord #日报 频道
+- **Subagent模型**: `kimicode/kimi-k2.5`
+- **AI每日资讯**: 每天12:00 Discord #日报 频道 + 自动上传Git
+  - 内容：AI新闻 + X博主 + YouTube + 微信公众号
+- **日报推送**: 每天21:00 Discord #日报 频道 + 自动上传Git
+  - 内容：AI新闻 + 基金/金融市场 + 国际政治影响 + 常州天气
 - **上下文修剪**: 1小时TTL
+
+## 已取消配置
+- ❌ 飞书12:00 AI博主推送
+- ❌ WhatsApp日报
 
 ## 关注AI博主
 1. @op7418 (歸藏) - AIGC周刊，guizang.ai
@@ -64,6 +70,31 @@
 - **tavily-search**: AI优化搜索
 - **duckduckgo-search**: 隐私搜索
 - **lobster-browser-tool**: 浏览器自动化（首选搜索工具）
+
+## Git 同步指令（全局有效）
+当用户说以下任一指令时，自动执行 Git 同步：
+- "同步到git" / "同步到 git"
+- "上传到git" / "上传到 git"
+- "push到git" / "push 到 git"
+- "提交到git" / "提交到 git"
+- "git同步" / "git 同步"
+- "git上传" / "git 上传"
+
+**执行动作**：
+```bash
+cd /root/.openclaw/workspace/obsidian-sync
+git add .
+git commit -m "Sync: $(date '+%Y-%m-%d %H:%M')"
+git push origin main
+```
+
+**同步仓库**: https://github.com/jswu233-bit/obsidian-sync
+**本地路径**: `/root/.openclaw/workspace/obsidian-sync`
+**文件夹结构**:
+- `inbox/` - Zoe 发送的信息
+- `outbox/` - 需要 Jamie 确认的信息
+- `knowledge/` - 知识库
+- `daily/` - 每日日志
 
 ## 旅行计划
 - **印尼科莫多**: 2026年2月19-22日

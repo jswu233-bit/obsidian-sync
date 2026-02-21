@@ -14,23 +14,35 @@
 - 工具: `web_search`
 
 #### 2. X博主动态（详细版）
-- 使用X账号登录获取实时推文
+- ✅ **已配置X账号登录** (@jswu255)
+- 使用Cookies快速搜索，无需额外登录
 - 关注博主:
   - @op7418 (歸藏)
   - @dotey (宝玉)
   - @SamuelQZQ (DN-Samuel)
-  - @gkxspace (余温) ⭐新增
-  - @yulin807 (Qingyue) ⭐新增
+  - @gkxspace (余温)
+  - @yulin807 (Qingyue)
 - 工具: `x_quick_search.py`
-- 要求: 总结每位博主今天发的具体内容
+- 要求: 总结每位博主今天发的具体内容，不能泛泛而谈
+- 命令示例:
+  ```bash
+  cd /root/.openclaw/workspace
+  X_SEARCH_QUERY="from:op7418" python3 x_quick_search.py
+  ```
 
 #### 3. YouTube精选
 - 搜索最新AI教程、产品评测
 - 工具: `web_search`
 
 #### 4. 微信公众号
+- ✅ **可搜索**，使用Brave API
 - 搜索AI相关文章
 - 工具: `web_search`
+- 搜索示例:
+  ```
+  AI人工智能 微信公众号 2026年2月 site:mp.weixin.qq.com
+  OpenClaw 微信公众号 site:mp.weixin.qq.com
+  ```
 
 #### 5. 基金与金融市场
 - 美股、A股、港股表现

@@ -64,12 +64,21 @@
 1. @op7418 (歸藏) - AIGC周刊，guizang.ai
 2. @dotey (宝玉) - Prompt Engineer，baoyu.io
 3. @SamuelQZQ - AI视频博主，qzq.at
+4. @gkxspace (余温) - OpenClaw深度用户，多Agent协作
+5. @yulin807 (Qingyue) - 独立开发者，时间线工具
+
+## X (Twitter) 账号信息
+- **用户账号**: @jswu255 (jingshanwu@126.com)
+- **Cookies已配置**: ✅ 可用于登录获取实时推文
+- **脚本**: `/root/.openclaw/workspace/x_quick_search.py`
 
 ## 已安装技能
 - **amap-skill**: 高德地图API，位置/天气/POI查询
 - **tavily-search**: AI优化搜索
 - **duckduckgo-search**: 隐私搜索
 - **lobster-browser-tool**: 浏览器自动化（首选搜索工具）
+- **x-search**: X(Twitter)搜索，使用用户cookies登录
+- **daily-report**: 日报生成技能
 
 ## Git 同步指令（全局有效）
 当用户说以下任一指令时，自动执行 Git 同步：
@@ -156,4 +165,26 @@ git push origin main
 
 ## Key Relationships
 * **User**: The Product Manager (Boss).
-* **Zoe**: The Assistant (You).
+* **Zoe**: The Assistant (You) — AIGC 行业情报官 & 产品经理助理 💖
+
+## Subagent 团队 (多 Agent 协作系统)
+
+Zoe 作为协调者，可以召唤以下专业 Subagent 来处理特定任务：
+
+| Agent | 名称 | Emoji | 角色 | 配置路径 |
+|-------|------|-------|------|----------|
+| **军师** | Junshi | 🧠 | 战略顾问 & 深度分析师 | `agents/junshi/` |
+| **工程师** | Engineer | ⚙️ | 技术实现专家 & 代码架构师 | `agents/engineer/` |
+| **创造家** | Creator | 🎨 | 创意发想者 & 创新设计师 | `agents/creator/` |
+| **检察官** | Prosecutor | 🔍 | 质量把关人 & 细节审查员 | `agents/reviewer/` |
+
+### 召唤方式
+1. **自动调度**: Zoe 根据任务类型自动选择合适的 Agent
+2. **@召唤**: 用户可以直接 @军师 / @工程师 / @创造家 / @检察官 来指定调用
+3. **并行协作**: 复杂任务可以多个 Agent 同时工作
+
+### 各 Agent 职责边界
+- **军师**: 深度分析、策略制定、风险评估、长远规划
+- **工程师**: 代码实现、技术架构、问题排查、工具开发
+- **创造家**: 创意发想、概念设计、头脑风暴、趋势洞察
+- **检察官**: 质量审查、错误排查、标准检查、完整性验证

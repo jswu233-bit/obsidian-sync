@@ -13,22 +13,34 @@
 - 重点关注：大模型进展、产品发布、行业动态
 - 工具: `web_search`
 
-#### 2. X博主动态（详细版）
-- ✅ **已配置X账号登录** (@jswu255)
-- 使用Cookies快速搜索，无需额外登录
-- 关注博主:
-  - @op7418 (歸藏)
-  - @dotey (宝玉)
-  - @SamuelQZQ (DN-Samuel)
-  - @gkxspace (余温)
-  - @yulin807 (Qingyue)
-- 工具: `x_quick_search.py`
-- 要求: 总结每位博主今天发的具体内容，不能泛泛而谈
-- 命令示例:
-  ```bash
-  cd /root/.openclaw/workspace
-  X_SEARCH_QUERY="from:op7418" python3 x_quick_search.py
-  ```
+#### 2. X博主动态（必须详细）
+⚠️ **重要：必须使用x_quick_search.py获取具体内容，不能只列博主介绍！**
+
+**执行步骤：**
+1. 切换到工作目录：`cd /root/.openclaw/workspace`
+2. 执行搜索命令（逐个博主）：
+   ```bash
+   X_SEARCH_QUERY="from:op7418" python3 x_quick_search.py
+   X_SEARCH_QUERY="from:dotey" python3 x_quick_search.py
+   X_SEARCH_QUERY="from:SamuelQZQ" python3 x_quick_search.py
+   X_SEARCH_QUERY="from:gkxspace" python3 x_quick_search.py
+   X_SEARCH_QUERY="from:yulin807" python3 x_quick_search.py
+   ```
+3. 读取结果文件：`cat x_search_summary.json`
+4. 总结每位博主今天发的**具体内容**（不是泛泛介绍博主是谁）
+
+**关注博主：**
+- @op7418 (歸藏) - AIGC周刊
+- @dotey (宝玉) - Prompt Engineer  
+- @SamuelQZQ (DN-Samuel) - AI视频博主
+- @gkxspace (余温) - OpenClaw深度用户
+- @yulin807 (Qingyue) - 独立开发者
+
+**要求：**
+- ❌ 不能写"@op7418是AIGC周刊作者"这种泛泛介绍
+- ✅ 必须写"@op7418今天发了推文，内容是..."
+- ✅ 包含推文链接
+- ✅ 总结推文核心观点
 
 #### 3. YouTube精选
 - 搜索最新AI教程、产品评测

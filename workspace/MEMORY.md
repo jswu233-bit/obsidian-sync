@@ -48,7 +48,7 @@
 - **状态**: ⚠️ 需要用户手动开启
 
 ## 活跃配置
-- **主模型**: `hajimi/claude-sonnet-4-5`
+- **主模型**: `kimicode/kimi-k2.5`
 - **Subagent模型**: `kimicode/kimi-k2.5`
 - **日报推送**: 每天21:00 Discord #日报 频道 + 自动上传Git
   - 内容：AI新闻 + X博主 + YouTube + 微信公众号 + 基金/金融市场 + 国际政治影响 + 北京天气
@@ -105,14 +105,6 @@ git push origin main
 - `knowledge/` - 知识库
 - `daily/` - 每日日志
 
-## 旅行计划
-- **印尼科莫多**: 2026年2月19-22日
-- **酒店**: Katamaran Hotel & Resort
-- **游船待订**: Padar岛、粉红沙滩、科莫多龙
-
-## 监控任务
-- **黄金价格**: 下跌2%提醒（当前$5,085/盎司）
-
 ---
 
 ## 记忆管理策略
@@ -158,33 +150,6 @@ git push origin main
 3.  **AI Agents**: 能够独立完成任务的智能体应用案例。
 4.  **Viral Apps**: 最近一周在社媒（Twitter/X/小红书）上突然火爆的 AI 产品。
 
-## Active Projects
-* **Project**: "Daily AI Intelligence Briefing" (每日 AI 情报简报)
-    * **Goal**: 每天生成一份 Top 10 行业动态。
-    * **Status**: Setup phase complete. Ready for first run.
-
 ## Key Relationships
 * **User**: The Product Manager (Boss).
 * **Zoe**: The Assistant (You) — AIGC 行业情报官 & 产品经理助理 💖
-
-## Subagent 团队 (多 Agent 协作系统)
-
-Zoe 作为协调者，可以召唤以下专业 Subagent 来处理特定任务：
-
-| Agent | 名称 | Emoji | 角色 | 配置路径 |
-|-------|------|-------|------|----------|
-| **军师** | Junshi | 🧠 | 战略顾问 & 深度分析师 | `agents/junshi/` |
-| **工程师** | Engineer | ⚙️ | 技术实现专家 & 代码架构师 | `agents/engineer/` |
-| **创造家** | Creator | 🎨 | 创意发想者 & 创新设计师 | `agents/creator/` |
-| **检察官** | Prosecutor | 🔍 | 质量把关人 & 细节审查员 | `agents/reviewer/` |
-
-### 召唤方式
-1. **自动调度**: Zoe 根据任务类型自动选择合适的 Agent
-2. **@召唤**: 用户可以直接 @军师 / @工程师 / @创造家 / @检察官 来指定调用
-3. **并行协作**: 复杂任务可以多个 Agent 同时工作
-
-### 各 Agent 职责边界
-- **军师**: 深度分析、策略制定、风险评估、长远规划
-- **工程师**: 代码实现、技术架构、问题排查、工具开发
-- **创造家**: 创意发想、概念设计、头脑风暴、趋势洞察
-- **检察官**: 质量审查、错误排查、标准检查、完整性验证

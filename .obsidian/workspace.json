@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "workspace/IDENTITY.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IDENTITY"
+              "title": "README"
             }
           }
         ]
@@ -197,6 +197,10 @@
   "active": "b220daad01ef5712",
   "lastOpenFiles": [
     "workspace/MEMORY.md",
+    "skills/daily-report/SKILL.md",
+    "inbox/同步测试.md",
+    "workspace/IDENTITY.md",
+    "未命名",
     "workspace/SOUL.md",
     "workspace/TOOLS.md",
     "workspace/USER.md",
@@ -210,7 +214,6 @@
     "workspace/skills/amap/scripts/lib/http.ts",
     "workspace/skills/amap/scripts/lib/endpoints.ts",
     "workspace/skills/amap/scripts/lib/config.ts",
-    "workspace/skills/amap/scripts/lib/commands.ts",
     "workspace/skills/amap/references/examples.md",
     "workspace/skills/amap/references/command-map.md",
     "workspace/skills/youtube-api-skill/SKILL.md",
@@ -228,9 +231,6 @@
     "workspace/skills/flight-search/CHANGELOG.md",
     "workspace/skills/duckduckgo-search/SKILL.md",
     "workspace/skills/daily-report/SKILL.md",
-    "workspace/skills/amap/SKILL.md",
-    "workspace/memory/template.md",
-    "workspace/memory/2026-02-22.md",
-    "workspace/memory/2026-02-19.md"
+    "workspace/skills/amap/SKILL.md"
   ]
 }

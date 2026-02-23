@@ -48,7 +48,7 @@
 - **状态**: ⚠️ 需要用户手动开启
 
 ## 活跃配置
-- **主模型**: `hajimi/claude-sonnet-4-5`
+- **主模型**: `kimicode/kimi-k2.5`
 - **Subagent模型**: `kimicode/kimi-k2.5`
 - **日报推送**: 每天21:00 Discord #日报 频道 + 自动上传Git
   - 内容：AI新闻 + X博主 + YouTube + 微信公众号 + 基金/金融市场 + 国际政治影响 + 北京天气
@@ -66,6 +66,12 @@
 3. @SamuelQZQ - AI视频博主，qzq.at
 4. @gkxspace (余温) - OpenClaw深度用户，多Agent协作
 5. @yulin807 (Qingyue) - 独立开发者，时间线工具
+
+## OpenClaw信息源
+- **ClawFeed**: http://clawfeed.kevinhe.io/
+  - OpenClaw AI新闻摘要网站
+  - 提供4H简报、日报、周报、月报
+  - 由Lisa@OpenClaw和Jessie@Zylos提供支持
 
 ## X (Twitter) 账号信息
 - **用户账号**: @jswu255 (jingshanwu@126.com)
@@ -104,14 +110,6 @@ git push origin main
 - `outbox/` - 需要 Jamie 确认的信息
 - `knowledge/` - 知识库
 - `daily/` - 每日日志
-
-## 旅行计划
-- **印尼科莫多**: 2026年2月19-22日
-- **酒店**: Katamaran Hotel & Resort
-- **游船待订**: Padar岛、粉红沙滩、科莫多龙
-
-## 监控任务
-- **黄金价格**: 下跌2%提醒（当前$5,085/盎司）
 
 ---
 
@@ -158,11 +156,6 @@ git push origin main
 3.  **AI Agents**: 能够独立完成任务的智能体应用案例。
 4.  **Viral Apps**: 最近一周在社媒（Twitter/X/小红书）上突然火爆的 AI 产品。
 
-## Active Projects
-* **Project**: "Daily AI Intelligence Briefing" (每日 AI 情报简报)
-    * **Goal**: 每天生成一份 Top 10 行业动态。
-    * **Status**: Setup phase complete. Ready for first run.
-
 ## Key Relationships
 * **User**: The Product Manager (Boss).
-* **Zoe**: The Assistant (You).
+* **Zoe**: The Assistant (You) — AIGC 行业情报官 & 产品经理助理 💖

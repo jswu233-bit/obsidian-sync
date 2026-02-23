@@ -11,10 +11,14 @@
             "id": "b220daad01ef5712",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "workspace/IDENTITY.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "IDENTITY"
             }
           }
         ]
@@ -192,6 +196,10 @@
   },
   "active": "b220daad01ef5712",
   "lastOpenFiles": [
+    "workspace/MEMORY.md",
+    "workspace/SOUL.md",
+    "workspace/TOOLS.md",
+    "workspace/USER.md",
     "daily/2026-02-17.md",
     "workspace/skills/amap/tests/fixtures/geocode-success.json",
     "workspace/skills/amap/tests/fixtures/geocode-error.json",
@@ -223,10 +231,6 @@
     "workspace/skills/amap/SKILL.md",
     "workspace/memory/template.md",
     "workspace/memory/2026-02-22.md",
-    "workspace/memory/2026-02-19.md",
-    "workspace/memory/2026-02-17.md",
-    "workspace/memory/2026-02-15.md",
-    "workspace/USER.md",
-    "workspace/TOOLS.md"
+    "workspace/memory/2026-02-19.md"
   ]
 }

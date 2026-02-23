@@ -6,78 +6,76 @@
 - **每天21:00**（北京时间）
 - 频道: Discord #日报
 
-### 内容板块
+### 内容板块（6大板块）
 
 #### 1. AI新闻板块
 - 搜索今日最新AI新闻（国内外）
 - 重点关注：大模型进展、产品发布、行业动态
+- 格式：Top 10列表，每条含标题+摘要+链接
 - 工具: `web_search`
 
-#### 2. X博主动态（必须详细）
-⚠️ **重要：必须使用x_quick_search.py获取具体内容，不能只列博主介绍！**
+#### 2. OpenClaw新闻（10大热门）
+- ✅ **单独板块，必须详细**
+- OpenClaw最新动态、GitHub更新、社区讨论
+- 格式：Top 10，每条含标题+详细说明+扩展阅读链接
+- 工具: `web_search` + `x_quick_search.py`（搜索OpenClaw相关推文）
+- 来源：GitHub、Reddit、Discord、官方Blog
 
-**执行步骤：**
-1. 切换到工作目录：`cd /root/.openclaw/workspace`
-2. 执行搜索命令（逐个博主）：
-   ```bash
-   X_SEARCH_QUERY="from:op7418" python3 x_quick_search.py
-   X_SEARCH_QUERY="from:dotey" python3 x_quick_search.py
-   X_SEARCH_QUERY="from:SamuelQZQ" python3 x_quick_search.py
-   X_SEARCH_QUERY="from:gkxspace" python3 x_quick_search.py
-   X_SEARCH_QUERY="from:yulin807" python3 x_quick_search.py
-   ```
-3. 读取结果文件：`cat x_search_summary.json`
-4. 总结每位博主今天发的**具体内容**（不是泛泛介绍博主是谁）
-
-**关注博主：**
-- @op7418 (歸藏) - AIGC周刊
-- @dotey (宝玉) - Prompt Engineer  
-- @SamuelQZQ (DN-Samuel) - AI视频博主
-- @gkxspace (余温) - OpenClaw深度用户
-- @yulin807 (Qingyue) - 独立开发者
-
-**要求：**
-- ❌ 不能写"@op7418是AIGC周刊作者"这种泛泛介绍
-- ✅ 必须写"@op7418今天发了推文，内容是..."
-- ✅ 包含推文链接
-- ✅ 总结推文核心观点
-
-#### 3. YouTube精选
-- 搜索最新AI教程、产品评测
+#### 3. 国内外金融新闻
+- 与黄金、美股、A股、港股指数影响相关的资讯
+- 重点关注：
+  - 黄金价格变动及影响因素
+  - 美股三大指数（道指、纳指、标普500）
+  - A股市场动态
+  - 港股市场表现
 - 工具: `web_search`
 
-#### 4. 微信公众号
-- ✅ **可搜索**，使用Brave API
-- 搜索AI相关文章
-- 工具: `web_search`
-- 搜索示例:
-  ```
-  AI人工智能 微信公众号 2026年2月 site:mp.weixin.qq.com
-  OpenClaw 微信公众号 site:mp.weixin.qq.com
-  ```
+#### 4. 社交媒体动态（AI和OpenClaw热门）
 
-#### 5. 基金与金融市场
+**X博主（必须详细）：**
+- ✅ **已配置X账号登录** (@jswu255)
+- 关注博主:
+  - @op7418 (歸藏)
+  - @dotey (宝玉)
+  - @SamuelQZQ (DN-Samuel)
+  - @gkxspace (余温)
+  - @yulin807 (Qingyue)
+- 工具: `x_quick_search.py`
+- 要求：总结每位博主今天发的具体内容，不能泛泛而谈
+
+**微信公众号：**
+- 财经早餐、香帅的金融江湖、小狼的Eft投资
+- 工具: `web_search`
+- 要求：深度观点分析，不是简单提及
+
+**YouTube：**
+- AI教程、OpenClaw相关视频
+- 工具: `web_search`
+
+#### 5. 基金和金融市场表现（保持现状）
 - 美股、A股、港股表现
 - 大宗商品（黄金、原油）
+- 汇率变动
 - 工具: `web_search`
 
-#### 6. 天气信息
+#### 6. 天气信息（保持现状）
 - **北京天气**（使用天气技能）
+- 包含温度、湿度、风力、全天预报
 - 工具: `curl wttr.in/Beijing`
 
 ## 生成流程
 
 ```
-1. 获取当前日期 → date +%Y-%m-%d (注意：必须是2026年，不是2025年)
-2. 搜索AI新闻 → web_search
-3. 获取X博主推文 → x_quick_search.py
-4. 搜索YouTube → web_search
-5. 搜索公众号 → web_search
-6. 搜索金融市场 → web_search
-7. 获取北京天气 → wttr.in
-8. 整理成Markdown (验证日期为2026年)
+1. 获取当前日期 → date +%Y-%m-%d (注意：必须是2026年)
+2. AI新闻 → web_search (Top 10)
+3. OpenClaw新闻 → web_search + x_quick_search.py (Top 10)
+4. 国内外金融新闻 → web_search (黄金、美股、A股、港股)
+5. 社交媒体动态 → x_quick_search.py + web_search
+6. 基金和金融市场 → web_search
+7. 北京天气 → wttr.in
+8. 整理成Markdown
 9. 发送到Discord
-10. 保存到Git: daily/YYYY-MM-DD-日报.md (YYYY=2026)
+10. 保存到Git: daily/YYYY-MM-DD-日报.md
 11. git add → git commit → git push
 ```
 
@@ -85,34 +83,97 @@
 - **当前年份是2026年，不是2025年！**
 - 文件命名: `2026-MM-DD-日报.md`
 - 日报标题: `📰 Jamie每日综合日报 — 2026年M月D日`
-- 提交信息: `📰 添加2026-MM-DD日报`
 
-## 文件格式
+## 各板块格式要求
 
-### Discord格式
-- 使用emoji美化
-- 每个板块清晰分隔
-- 所有链接可点击
+### AI新闻（Top 10）
+```
+**1. [新闻标题]** 🔥
+• [要点1]
+• [要点2]
+• [链接]
+```
 
-### Git文件格式
-- Markdown格式
-- 包含完整链接
-- 文件命名: `YYYY-MM-DD-日报.md`
+### OpenClaw新闻（Top 10）
+```
+**1. [标题]** [emoji]
+• [详细说明]
+• [影响/意义]
+• [扩展阅读链接]
+```
+
+### 金融新闻
+```
+**黄金市场**
+• [价格变动]
+• [影响因素]
+• [链接]
+
+**美股市场**
+• [道指/纳指/标普表现]
+• [影响因素]
+• [链接]
+
+**A股市场**
+• [主要指数表现]
+• [热点板块]
+• [链接]
+
+**港股市场**
+• [恒生指数表现]
+• [热点板块]
+• [链接]
+```
+
+### 社交媒体
+```
+**X博主**
+**@[博主名]** - [身份]
+• [今天发的具体内容1]
+• [今天发的具体内容2]
+• [推文链接]
+
+**微信公众号**
+**[公众号名]** - [主题]
+• [深度观点1]
+• [深度观点2]
+• [链接]
+
+**YouTube**
+• [视频标题] - [频道] - [链接]
+```
+
+### 基金和金融市场
+```
+| 指数/商品 | 价格 | 变动 |
+|-----------|------|------|
+| [名称] | [价格] | [变动] |
+```
+
+### 天气
+```
+• 天气：[图标] [状况]
+• 温度：[温度]
+• 湿度：[湿度]
+• 风力：[风力]
+```
 
 ## Git提交信息模板
 ```
-📰 添加YYYY-MM-DD日报
+📰 添加2026-MM-DD日报
 
 - AI新闻: [要点]
-- X博主: [博主名] - [内容摘要]
-- YouTube: [视频标题]
-- 公众号: [文章标题]
-- 金融市场: [关键数据]
+- OpenClaw: [要点]
+- 金融新闻: [要点]
+- 社交媒体: [博主/公众号摘要]
+- 基金市场: [关键数据]
 - 天气: [天气概况]
 ```
 
 ## 注意事项
-- 每个X博主内容需要具体总结，不能泛泛而谈
+- OpenClaw必须作为单独板块，Top 10格式
+- X博主内容必须具体（今天发了什么），不能泛泛介绍
+- 金融新闻要涵盖黄金、美股、A股、港股
+- 公众号观点要深入分析，不是简单提及
 - 所有外部链接需要可点击
-- 天气固定使用北京
 - 每天21:00准时发送

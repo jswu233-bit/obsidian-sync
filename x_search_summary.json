@@ -1,13 +1,13 @@
 {
   "success": true,
-  "query": "from:FinanceYF5 OpenClaw OR from:op7418 OpenClaw OR from:0xAllen OpenClaw",
-  "url": "https://x.com/search?q=from:FinanceYF5%20OpenClaw%20OR%20from:op7418%20OpenClaw%20OR%20from:0xAllen%20OpenClaw&f=live",
+  "query": "from:op7418 OR from:dotey OR from:SamuelQZQ OR from:gkxspace OR from:yulin807",
+  "url": "https://x.com/search?q=from:op7418%20OR%20from:dotey%20OR%20from:SamuelQZQ%20OR%20from:gkxspace%20OR%20from:yulin807&f=live",
   "tweet_count": 5,
   "tweets": [
-    "0xAllen\n@0xAllen\n·\nFeb 14\n现在每天花在AI上面的时间越来越多，越来越觉得科幻电影中的赛博场景离我们越来越近。\n\nSpeaceX全资收购x AI，openclaw订阅量飙升。这一切都在证明AI需求的超过我们理解的爆发式增长。未来AI面临的瓶颈第一个是电力，第二个便是AI带来的经济模型。\nShow more\nQuote\n0xAllen\n@0xAllen\n·\nFeb 12\n Article\nOpenclaw小龙虾纳米级安装教程\n首先说一下我的需求：\n1. 我的TG里面有大量的群组信息需要处理，我没有过多的时间每天泡在群里，所以期望有人给我监控所有群信息\n2. 这个监控能按照我设定的规则识别群关键信息并拆解成任务定期汇报给我\n3....\n1\n4\n16\n6.6K",
-    "AI Will\n@FinanceYF5\n·\nFeb 12\n根据我目前2.12的认知 快速弄了个Openclaw生态图\n\n一周后迭代！\n需要订正请留言\n10\n31\n141\n11K",
-    "0xAllen\n@0xAllen\n·\nFeb 12\n Article\nOpenclaw小龙虾纳米级安装教程\n首先说一下我的需求：\n1. 我的TG里面有大量的群组信息需要处理，我没有过多的时间每天泡在群里，所以期望有人给我监控所有群信息\n2. 这个监控能按照我设定的规则识别群关键信息并拆解成任务定期汇报给我\n3....\n24\n108\n390\n58K",
-    "AI Will\n@FinanceYF5\n·\nFeb 11\nReplying to \n@FinanceYF5\n链接：\nGitHub - hesamsheikh/awesome-openclaw-usecases: A community collection of OpenClaw use cases for...\nFrom github.com\n1\n3\n9\n2.1K",
-    "AI Will\n@FinanceYF5\n·\nFeb 11\n一组很棒的、适用于你 agent 的真实使用案例合集。\n2\n8\n40\n7.6K"
+    "QingYue\n@YuLin807\n·\n1h\n今天 openclaw 帮我干了点啥？！\n\n今天有推友有问我能不能付费部署一下小龙虾，我想正好可以用来测试我对openclaw这个项目的理解。\n\n为了保障顾客的API以及VPS地址 密码不被泄露，我让小龙虾设计了一套反向连接方案，优点就是顾客不必对我透露关键信息也能完成部署。\nShow more\nQuote\nQingYue\n@YuLin807\n·\n21h\n今天 openclaw 帮我干了点啥？！\n\n今天龙虾干了一整天，感觉要写成小说了 。\n\n早上帮我分析了竞品的架构（@izag82161 那个 24/7 系统），发现人家用 Kimi K2.5 + cron x30 撑全天，一年才 113 刀——学到了。\n\n然后折腾了半天 本地Mac Excalidraw 导出 PNG，绕了一大圈，最后靠一个叫 Peekaboo x.com/YuLin807/s",
+    "QingYue\n@YuLin807\n·\n2h\nReplying to \n@zxhfighter\nQuote\nLeo\n@runes_leo\n·\n13h\n本周最大的工程输出：终于把散落在各处的采集脚本揉成了 x-reader。\n\n在这个 AI 递归进化的时代，比起“读什么”，更重要的是“怎么读”。我不想在微信、Telegram 和 X 之间来回切，也不想被算法投喂。\n\n我需要的是：一个高度定制化的“数字漏斗”。\n\nx-reader 产品级交付清单：\n\n- 微信 & 小红书：Puppeteer\nShow more\n21",
+    "QingYue\n@YuLin807\n·\n3h\nReplying to \n@188888_x\n直接讲 还有一些固定的Agent是设定好的\n1\n1\n16",
+    "QingYue\n@YuLin807\n·\n3h\nReplying to \n@188888_x\n还好\n2\n1\n21",
+    "QingYue\n@YuLin807\n·\n3h\nReplying to \n@188888_x\nclaude max + minimax\n1\n1\n45"
   ]
 }

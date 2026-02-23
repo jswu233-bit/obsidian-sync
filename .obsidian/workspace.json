@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "68da0f8159f34103",
+        "id": "67735edaf35a7a0d",
         "type": "tabs",
         "children": [
           {
-            "id": "b220daad01ef5712",
+            "id": "810aa81e4ce48cfe",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "README"
+              "title": "新标签页"
             }
           }
         ]
@@ -194,8 +190,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b220daad01ef5712",
+  "active": "810aa81e4ce48cfe",
   "lastOpenFiles": [
+    "README.md",
     "workspace/MEMORY.md",
     "skills/daily-report/SKILL.md",
     "inbox/同步测试.md",
@@ -230,7 +227,6 @@
     "workspace/skills/flight-search/AGENTS.md",
     "workspace/skills/flight-search/CHANGELOG.md",
     "workspace/skills/duckduckgo-search/SKILL.md",
-    "workspace/skills/daily-report/SKILL.md",
-    "workspace/skills/amap/SKILL.md"
+    "workspace/skills/daily-report/SKILL.md"
   ]
 }

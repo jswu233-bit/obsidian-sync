@@ -37,16 +37,33 @@
 
 #### 4. 社交媒体动态（AI和OpenClaw热门）
 
-**X博主（必须详细）：**
+**借鉴ClawFeed的Sources系统管理X博主：**
+
+| 博主 | Source类型 | 内容重点 |
+|------|-----------|---------|
+| @op7418 | twitter_feed | AIGC周刊、国产AI、产品评测 |
+| @dotey | twitter_feed | 提示词工程、AI应用方法论 |
+| @SamuelQZQ | twitter_feed | AI视频、编程工具、技术评测 |
+| @gkxspace | twitter_feed | 多Agent协作、OpenClaw架构 |
+| @yulin807 | twitter_feed | 时间线工具、独立开发 |
+
 - ✅ **已配置X账号登录** (@jswu255)
-- 关注博主:
-  - @op7418 (歸藏)
-  - @dotey (宝玉)
-  - @SamuelQZQ (DN-Samuel)
-  - @gkxspace (余温)
-  - @yulin807 (Qingyue)
-- 工具: `x_quick_search.py`
+- 工具: `x_quick_search.py`（类似ClawFeed的twitter_feed抓取）
+- 命令：
+  ```bash
+  cd /root/.openclaw/workspace
+  X_SEARCH_QUERY="from:op7418" python3 x_quick_search.py
+  X_SEARCH_QUERY="from:dotey" python3 x_quick_search.py
+  X_SEARCH_QUERY="from:SamuelQZQ" python3 x_quick_search.py
+  X_SEARCH_QUERY="from:gkxspace" python3 x_quick_search.py
+  X_SEARCH_QUERY="from:yulin807" python3 x_quick_search.py
+  ```
 - 要求：总结每位博主今天发的具体内容，不能泛泛而谈
+
+**ClawFeed信息源（推荐）：**
+- ClawFeed: http://clawfeed.kevinhe.io/
+- 提供OpenClaw相关的4H简报、日报、周报
+- 可作为OpenClaw新闻的补充来源
 
 **微信公众号：**
 - 财经早餐、香帅的金融江湖、小狼的Eft投资

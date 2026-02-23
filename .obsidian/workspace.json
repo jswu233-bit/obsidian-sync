@@ -11,14 +11,10 @@
             "id": "b220daad01ef5712",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "daily/2026-02-17.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2026-02-17"
+              "title": "新标签页"
             }
           }
         ]
@@ -164,13 +160,23 @@
               "icon": "lucide-list",
               "title": "Outline of Welcome"
             }
+          },
+          {
+            "id": "cd4a2a1499ff9e34",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -186,14 +192,41 @@
   },
   "active": "b220daad01ef5712",
   "lastOpenFiles": [
-    "inbox/同步测试.md",
-    "README.md",
     "daily/2026-02-17.md",
-    "daily",
-    "obsidian-sync",
-    "sync.sh",
-    "inbox",
-    "0. 信息池",
-    "Welcome.md"
+    "workspace/skills/amap/tests/fixtures/geocode-success.json",
+    "workspace/skills/amap/tests/fixtures/geocode-error.json",
+    "workspace/skills/amap/tests/fixtures/geocode-empty.json",
+    "workspace/skills/amap/tests/fixtures/bike-success.json",
+    "workspace/skills/amap/tests/fixtures/bike-error.json",
+    "workspace/skills/amap/scripts/lib/validators.ts",
+    "workspace/skills/amap/scripts/lib/http.ts",
+    "workspace/skills/amap/scripts/lib/endpoints.ts",
+    "workspace/skills/amap/scripts/lib/config.ts",
+    "workspace/skills/amap/scripts/lib/commands.ts",
+    "workspace/skills/amap/references/examples.md",
+    "workspace/skills/amap/references/command-map.md",
+    "workspace/skills/youtube-api-skill/SKILL.md",
+    "workspace/skills/x-search/SKILL.md",
+    "workspace/skills/weather/SKILL.md",
+    "workspace/skills/tavily-search/SKILL.md",
+    "workspace/skills/summarize/SKILL.md",
+    "workspace/skills/notion/SKILL.md",
+    "workspace/skills/openai-whisper/SKILL.md",
+    "workspace/skills/gog/SKILL.md",
+    "workspace/skills/git-sync/SKILL.md",
+    "workspace/skills/flight-search/SKILL.md",
+    "workspace/skills/flight-search/README.md",
+    "workspace/skills/flight-search/AGENTS.md",
+    "workspace/skills/flight-search/CHANGELOG.md",
+    "workspace/skills/duckduckgo-search/SKILL.md",
+    "workspace/skills/daily-report/SKILL.md",
+    "workspace/skills/amap/SKILL.md",
+    "workspace/memory/template.md",
+    "workspace/memory/2026-02-22.md",
+    "workspace/memory/2026-02-19.md",
+    "workspace/memory/2026-02-17.md",
+    "workspace/memory/2026-02-15.md",
+    "workspace/USER.md",
+    "workspace/TOOLS.md"
   ]
 }

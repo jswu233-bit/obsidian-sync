@@ -37,33 +37,35 @@
 
 #### 4. 社交媒体动态（AI和OpenClaw热门）
 
-**借鉴ClawFeed的Sources系统管理X博主：**
-
-| 博主 | Source类型 | 内容重点 |
-|------|-----------|---------|
-| @op7418 | twitter_feed | AIGC周刊、国产AI、产品评测 |
-| @dotey | twitter_feed | 提示词工程、AI应用方法论 |
-| @SamuelQZQ | twitter_feed | AI视频、编程工具、技术评测 |
-| @gkxspace | twitter_feed | 多Agent协作、OpenClaw架构 |
-| @yulin807 | twitter_feed | 时间线工具、独立开发 |
-
-- ✅ **已配置X账号登录** (@jswu255)
-- 工具: `x_quick_search.py`（类似ClawFeed的twitter_feed抓取）
-- 命令：
-  ```bash
-  cd /root/.openclaw/workspace
-  X_SEARCH_QUERY="from:op7418" python3 x_quick_search.py
-  X_SEARCH_QUERY="from:dotey" python3 x_quick_search.py
-  X_SEARCH_QUERY="from:SamuelQZQ" python3 x_quick_search.py
-  X_SEARCH_QUERY="from:gkxspace" python3 x_quick_search.py
-  X_SEARCH_QUERY="from:yulin807" python3 x_quick_search.py
-  ```
-- 要求：总结每位博主今天发的具体内容，不能泛泛而谈
+**X博主（热门观点模式）：**
+- ✅ **改为读取热门博主观点**，不再固定5个博主
+- **获取方式**：
+  1. 使用ClawFeed的热门推荐：http://clawfeed.kevinhe.io/
+  2. 搜索今日AI/OpenClaw热门话题下的高互动推文
+  3. 使用命令：
+     ```bash
+     cd /root/.openclaw/workspace
+     # 搜索热门AI话题
+     X_SEARCH_QUERY="AI artificial intelligence filter:popular" python3 x_quick_search.py
+     # 搜索OpenClaw相关
+     X_SEARCH_QUERY="OpenClaw filter:popular" python3 x_quick_search.py
+     ```
+- **选择标准**：
+  - 高互动量（点赞、转发、评论）
+  - 内容质量高（有深度观点，非泛泛而谈）
+  - 与AI/OpenClaw相关
+  - 今日发布或近24小时内
+- **输出要求**：
+  - 博主名 + 身份标签
+  - 核心观点摘要（不是全文复制）
+  - 为什么这个观点值得关注
+  - 推文链接
 
 **ClawFeed信息源（推荐）：**
 - ClawFeed: http://clawfeed.kevinhe.io/
-- 提供OpenClaw相关的4H简报、日报、周报
-- 可作为OpenClaw新闻的补充来源
+- 提供AI/OpenClaw热门话题聚合
+- 提供4H简报、日报、周报、月报
+- 可作为热门博主和内容发现的主要来源
 
 **微信公众号：**
 - 财经早餐、香帅的金融江湖、小狼的Eft投资

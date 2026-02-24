@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "67735edaf35a7a0d",
+        "id": "f01f0b3f11833fd4",
         "type": "tabs",
         "children": [
           {
-            "id": "810aa81e4ce48cfe",
+            "id": "dd4ea0788addab02",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -187,11 +187,13 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "terminal:Open terminal": false
     }
   },
-  "active": "810aa81e4ce48cfe",
+  "active": "ecbd8703ca2b79f5",
   "lastOpenFiles": [
+    "daily/2026-02-23-日报.md",
     "README.md",
     "workspace/MEMORY.md",
     "skills/daily-report/SKILL.md",
@@ -226,7 +228,6 @@
     "workspace/skills/flight-search/README.md",
     "workspace/skills/flight-search/AGENTS.md",
     "workspace/skills/flight-search/CHANGELOG.md",
-    "workspace/skills/duckduckgo-search/SKILL.md",
-    "workspace/skills/daily-report/SKILL.md"
+    "workspace/skills/duckduckgo-search/SKILL.md"
   ]
 }

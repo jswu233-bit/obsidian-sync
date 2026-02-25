@@ -67,6 +67,12 @@
 4. @gkxspace (余温) - OpenClaw深度用户，多Agent协作
 5. @yulin807 (Qingyue) - 独立开发者，时间线工具
 
+## OpenClaw信息源
+- **ClawFeed**: http://clawfeed.kevinhe.io/
+  - OpenClaw AI新闻摘要网站
+  - 提供4H简报、日报、周报、月报
+  - 由Lisa@OpenClaw和Jessie@Zylos提供支持
+
 ## X (Twitter) 账号信息
 - **用户账号**: @jswu255 (jingshanwu@126.com)
 - **Cookies已配置**: ✅ 可用于登录获取实时推文

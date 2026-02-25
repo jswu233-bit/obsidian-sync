@@ -16,10 +16,15 @@
 
 #### 2. OpenClaw新闻（10大热门）
 - ✅ **单独板块，必须详细**
-- OpenClaw最新动态、GitHub更新、社区讨论
+- **主要信息源**：
+  - ClawFeed: http://clawfeed.kevinhe.io/ (4H简报、日报、周报、月报)
+  - GitHub: https://github.com/openclaw/openclaw/releases
+  - Reddit: r/openclaw
+  - Discord社区
+  - 官方Blog: https://openclaws.io/blog/
 - 格式：Top 10，每条含标题+详细说明+扩展阅读链接
-- 工具: `web_search` + `x_quick_search.py`（搜索OpenClaw相关推文）
-- 来源：GitHub、Reddit、Discord、官方Blog
+- 工具: `web_fetch` (ClawFeed) + `web_search` + `x_quick_search.py`
+- 要求：从ClawFeed获取最新OpenClaw动态
 
 #### 3. 国内外金融新闻
 - 与黄金、美股、A股、港股指数影响相关的资讯
@@ -32,16 +37,35 @@
 
 #### 4. 社交媒体动态（AI和OpenClaw热门）
 
-**X博主（必须详细）：**
-- ✅ **已配置X账号登录** (@jswu255)
-- 关注博主:
-  - @op7418 (歸藏)
-  - @dotey (宝玉)
-  - @SamuelQZQ (DN-Samuel)
-  - @gkxspace (余温)
-  - @yulin807 (Qingyue)
-- 工具: `x_quick_search.py`
-- 要求：总结每位博主今天发的具体内容，不能泛泛而谈
+**X博主（热门观点模式）：**
+- ✅ **改为读取热门博主观点**，不再固定5个博主
+- **获取方式**：
+  1. 使用ClawFeed的热门推荐：http://clawfeed.kevinhe.io/
+  2. 搜索今日AI/OpenClaw热门话题下的高互动推文
+  3. 使用命令：
+     ```bash
+     cd /root/.openclaw/workspace
+     # 搜索热门AI话题
+     X_SEARCH_QUERY="AI artificial intelligence filter:popular" python3 x_quick_search.py
+     # 搜索OpenClaw相关
+     X_SEARCH_QUERY="OpenClaw filter:popular" python3 x_quick_search.py
+     ```
+- **选择标准**：
+  - 高互动量（点赞、转发、评论）
+  - 内容质量高（有深度观点，非泛泛而谈）
+  - 与AI/OpenClaw相关
+  - 今日发布或近24小时内
+- **输出要求**：
+  - 博主名 + 身份标签
+  - 核心观点摘要（不是全文复制）
+  - 为什么这个观点值得关注
+  - 推文链接
+
+**ClawFeed信息源（推荐）：**
+- ClawFeed: http://clawfeed.kevinhe.io/
+- 提供AI/OpenClaw热门话题聚合
+- 提供4H简报、日报、周报、月报
+- 可作为热门博主和内容发现的主要来源
 
 **微信公众号：**
 - 财经早餐、香帅的金融江湖、小狼的Eft投资

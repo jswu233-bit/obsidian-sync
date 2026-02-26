@@ -87,20 +87,47 @@
 - 包含温度、湿度、风力、全天预报
 - 工具: `curl wttr.in/Beijing`
 
-## 生成流程
+## 生成流程（团队协作版）
 
+### 角色分工
+- **情报官 (intel)**: 负责所有搜索和数据抓取工作
+- **Zoe (main)**: 负责审阅、解读、点评、整合、发送
+
+### 流程
 ```
-1. 获取当前日期 → date +%Y-%m-%d (注意：必须是2026年)
-2. AI新闻 → web_search (Top 10)
-3. OpenClaw新闻 → web_search + x_quick_search.py (Top 10)
-4. 国内外金融新闻 → web_search (黄金、美股、A股、港股)
-5. 社交媒体动态 → x_quick_search.py + web_search
-6. 基金和金融市场 → web_search
-7. 北京天气 → wttr.in
-8. 整理成Markdown
-9. 发送到Discord
-10. 保存到Git: daily/YYYY-MM-DD-日报.md
-11. git add → git commit → git push
+Phase 1 — 情报官搜索（派活给 intel sub-agent）
+  1. AI新闻搜索 → web_search (Top 10)
+  2. OpenClaw新闻 → web_search + ClawFeed + x_quick_search.py (Top 10)
+  3. 国内外金融新闻 → web_search (黄金、美股、A股、港股)
+  4. X博主推文抓取 → x-tweet-fetcher (Camofox) 抓取关注博主最新推文
+  5. 微信公众号 → sogou_wechat.py / web_search 备用
+  6. 基金和金融市场数据 → web_search
+  7. 北京天气 → wttr.in
+  → 情报官将原始数据整理后交回 Zoe
+
+Phase 2 — Zoe 审阅 & 解读
+  8. 审阅情报官返回的原始数据，筛选高质量内容
+  9. 为每条内容撰写中文要点解读和 Zoe 点评
+  10. 整合成完整 Markdown 日报
+
+Phase 3 — 发布
+  11. 发送到 Discord #日报
+  12. 保存到 Git: daily/YYYY-MM-DD-日报.md
+  13. git add → git commit → git push
+```
+
+### 派活示例
+Zoe 使用 sessions_spawn 派活给情报官：
+```
+task: "今日日报搜索任务 (2026-MM-DD)：
+1. 搜索今日 AI 新闻 Top 10（国内外）
+2. 搜索 OpenClaw 社区动态 Top 10（ClawFeed + HN + Reddit + V2EX + Qiita）
+3. 搜索金融新闻（黄金、美股、A股、港股）
+4. 用 x-tweet-fetcher 抓取以下博主最新推文：@op7418 @dotey @SamuelQZQ @gkxspace @yulin807
+5. 搜索微信公众号最新文章：财经早餐、香帅的金融江湖、小狼的Eft投资
+6. 获取基金和金融市场数据
+7. 获取北京天气
+将所有原始数据整理成结构化 JSON/Markdown 返回。"
 ```
 
 ## 日期验证
@@ -192,6 +219,54 @@
 - 社交媒体: [博主/公众号摘要]
 - 基金市场: [关键数据]
 - 天气: [天气概况]
+```
+
+## ⚠️ 内容解读硬性规则（最高优先级）
+
+### 核心原则：Jamie 不应该需要点开任何链接才能理解内容
+
+**所有 X 推文、微信公众号文章必须包含 Zoe 写的中文要点解读。**
+
+### 禁止行为（违反任何一条视为日报不合格）：
+1. ❌ **禁止** 只丢链接让 Jamie 自己去看
+2. ❌ **禁止** 用"由于API限制/平台限制，未能获取"作为借口跳过内容
+3. ❌ **禁止** 只列博主名+链接的空表格
+4. ❌ **禁止** 用泛泛的频道推荐代替当天具体内容
+5. ❌ **禁止** 只写一句话标题当作"摘要"
+
+### 必须做到：
+1. ✅ 每条 X 推文必须包含：**博主名 → 核心观点（2-3句话） → 为什么值得关注 → 链接**
+2. ✅ 每篇公众号文章必须包含：**公众号名 → 文章主题 → 关键要点（3-5个bullet） → Zoe 的一句话点评 → 链接**
+3. ✅ 如果某个源获取失败，必须用备用方案（web_search / web_fetch）找到替代内容，而不是留空
+4. ✅ YouTube 视频必须包含：**视频标题 → 内容摘要（2-3句话） → 链接**
+
+### 获取失败时的降级策略：
+```
+x_quick_search.py 失败 → web_search "site:x.com [博主名] [话题]" → web_fetch 推文页面
+sogou_wechat.py 失败 → web_search "[公众号名] 最新文章" → web_fetch 文章页面
+YouTube API 失败 → web_search "site:youtube.com [话题] today" → web_fetch 视频页面
+```
+
+### 解读格式示例：
+
+**X 推文解读：**
+```
+**@op7418** — AI产品观察者
+💬 核心观点：Claude 的新 Cowork 功能本质上是在抢 Copilot 的饭碗，直接嵌入 Office 全家桶。这不是"AI助手"了，这是"AI同事"。
+🔍 为什么关注：Anthropic 从 API 公司转向 toB 产品公司的信号，对产品经理来说意味着 AI 工具的竞争格局在变。
+📎 [推文链接]
+```
+
+**公众号解读：**
+```
+**量子位** — 《2025AI应用大爆发，2026普通人有什么机会？》
+📌 关键要点：
+• 企业 GenAI 支出从 115 亿美元跃升至 370 亿美元，年增 3.2 倍
+• AI 应用层（而非基础模型层）成为最大受益者
+• 普通人的机会在于"AI + 垂直场景"的微创业
+• 报告预测 2026 年将出现首批"AI-native"独角兽
+💡 Zoe 点评：这篇对 Jamie 做产品规划很有参考价值，尤其是"AI应用层受益最大"这个判断，和你关注的 AIGC 工具方向完全吻合。
+📎 [阅读原文]
 ```
 
 ## 注意事项

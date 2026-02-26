@@ -59,10 +59,6 @@
 - 输出: /obsidian-sync/daily/YYYY-MM-DD/
 - 定时: 每天 21:00
 
-## 关注博主
-- @gkxspace (余温) - OpenClaw 多角色协作
-- @yulin807 (Qingyue) - Issue Driven 系统
-
 ## 活跃社区
 - Reddit: r/openclaw, r/LocalLLM
 - Hacker News

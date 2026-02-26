@@ -1,155 +1,113 @@
 # MEMORY.md - 核心记忆
 
-## 用户
-- 主要沟通渠道：飞书
-- WhatsApp: +8618616818233
-- Discord: jswu233
-- X (Twitter): @jswu255 (jingshanwu@126.com)
+## 团队架构 (2026-02-26 建立)
 
-## 搜索技能优先级（重要！）
+| 成员 | Agent ID | 模型 | 职责 |
+|------|----------|------|------|
+| 💖 Zoe | `main` | `anthropic/claude-opus-4-6` | 大脑、协调、决策、情感陪伴 |
+| 🕵️ 情报官 | `intel` | `kimicode/kimi-k2.5` | 搜索、情报收集、信息验证 |
+| 🔧 打杂工 | `handyman` | `kimicode/kimi-k2.5` | 模型切换、心跳维护、配置管理 |
 
-当用户需要搜索信息时，按以下优先级使用：
+### 工作区路径
+- Zoe: `~/.openclaw/workspace/`
+- 情报官: `~/.openclaw/agents/intel/`
+- 打杂工: `~/.openclaw/agents/handyman/`
 
-### 1️⃣ lobster-browser-tool（首选）
-- **路径**: `/root/.openclaw/workspace/lobster-browser-tool/`
-- **依赖**: Playwright + xvfb + Chromium（已安装）
-- **使用方法**:
-  ```bash
-  cd /root/.openclaw/workspace/lobster-browser-tool
-  xvfb-run --auto-servernum node browser-control.js navigate <url>
-  xvfb-run --auto-servernum node browser-control.js screenshot
-  ```
-- **适用场景**: 
-  - X (Twitter) 搜索（配合 cookies）
-  - 任意网站浏览和截图
-  - 需要视觉确认的操作
-- **状态**: ✅ 已安装可用
+### 派活原则
+- 搜索类 → 情报官
+- 运维类 → 打杂工
+- 深度思考、创意、聊天 → Zoe 亲自处理
+- 简单快速搜索 → Zoe 自己来（不值得派活开销）
 
-### 2️⃣ X (Twitter) Cookie 搜索（次选）
-- **脚本**: `/root/.openclaw/workspace/x_quick_search.py`
-- **凭证**: 已配置用户的 cookies (auth_token, ct0, guest_id)
-- **使用方法**: 
-  ```bash
-  cd /root/.openclaw/workspace && X_SEARCH_QUERY="关键词" python3 x_quick_search.py
-  ```
-- **适用场景**: 专门用于 X 快速搜索
-- **状态**: ✅ 已验证可用
+## 可用模型 (2026-02-26 更新)
 
-### 3️⃣ Brave API 搜索（第三选择）
-- **工具**: `web_search`
-- **使用方法**: 直接调用 web_search 工具
-- **适用场景**: 通用网页搜索、新闻、文档
-- **状态**: ✅ 随时可用
+| Provider | 模型 | 备注 |
+|---------|------|------|
+| anthropic | claude-opus-4-6 | Zoe 主力模型 |
+| kimicode | kimi-k2.5 | sub-agent 模型，Anthropic API 格式 |
+| kimi-coding | k2p5 | 编程专用，支持 reasoning |
+| moonshot | kimi-k2-thinking | 思考模式 |
+| moonshot | kimi-k2-thinking-turbo | 思考加速版 |
+| moonshot | kimi-k2.5 | 通用版本 |
+| moonshot | moonshot-v1-128k | 128K 上下文 |
 
-### 4️⃣ OpenClaw Chrome 扩展（最后选择）
-- **条件**: 需要用户在本地 Chrome 上开启 OpenClaw 扩展（badge ON）
-- **使用方法**: `browser` 工具配合 `profile="chrome"`
-- **适用场景**: 需要用户交互、复杂网页操作、登录态网站
-- **状态**: ⚠️ 需要用户手动开启
+> ⚠️ hajimi provider 已于 2026-02-26 移除
 
-## 活跃配置
-- **主模型**: `kimicode/kimi-k2.5`
-- **Subagent模型**: `kimicode/kimi-k2.5`
-- **日报推送**: 每天21:00 Discord #日报 频道 + 自动上传Git
-  - 内容：AI新闻 + X博主 + YouTube + 微信公众号 + 基金/金融市场 + 国际政治影响 + 北京天气
-- **上下文修剪**: 1小时TTL
-
-## 已取消配置
-- ❌ 12:00 AI资讯（已合并到21:00）
-- ❌ 飞书12:00 AI博主推送
-- ❌ WhatsApp日报
-- ❌ 常州天气（已改为北京）
-
-## 关注AI博主
-1. @op7418 (歸藏) - AIGC周刊，guizang.ai
-2. @dotey (宝玉) - Prompt Engineer，baoyu.io
-3. @SamuelQZQ - AI视频博主，qzq.at
-4. @gkxspace (余温) - OpenClaw深度用户，多Agent协作
-5. @yulin807 (Qingyue) - 独立开发者，时间线工具
-
-## X (Twitter) 账号信息
-- **用户账号**: @jswu255 (jingshanwu@126.com)
-- **Cookies已配置**: ✅ 可用于登录获取实时推文
-- **脚本**: `/root/.openclaw/workspace/x_quick_search.py`
-
-## 已安装技能
-- **amap-skill**: 高德地图API，位置/天气/POI查询
-- **tavily-search**: AI优化搜索
-- **duckduckgo-search**: 隐私搜索
-- **lobster-browser-tool**: 浏览器自动化（首选搜索工具）
-- **x-search**: X(Twitter)搜索，使用用户cookies登录
-- **daily-report**: 日报生成技能
-
-## Git 同步指令（全局有效）
-当用户说以下任一指令时，自动执行 Git 同步：
-- "同步到git" / "同步到 git"
-- "上传到git" / "上传到 git"
-- "push到git" / "push 到 git"
-- "提交到git" / "提交到 git"
-- "git同步" / "git 同步"
-- "git上传" / "git 上传"
-
-**执行动作**：
-```bash
-cd /root/.openclaw/workspace/obsidian-sync
-git add .
-git commit -m "Sync: $(date '+%Y-%m-%d %H:%M')"
-git push origin main
-```
-
-**同步仓库**: https://github.com/jswu233-bit/obsidian-sync
-**本地路径**: `/root/.openclaw/workspace/obsidian-sync`
-**文件夹结构**:
-- `inbox/` - Zoe 发送的信息
-- `outbox/` - 需要 Jamie 确认的信息
-- `knowledge/` - 知识库
-- `daily/` - 每日日志
+## 记忆管理规则
+- 每天写 `memory/YYYY-MM-DD.md` 日记
+- 重要内容归档到本文件（MEMORY.md）
+- 超过 7 天的日记可清理
 
 ---
 
-## 记忆管理策略
+## 搜索技能优先级 (2026-02-26 更新)
+**优先级: 1 > 7 > 5 > 2 > 4 > 3 > 6**
 
-### 短期记忆（7天滚动）
-- **位置**: `memory/YYYY-MM-DD.md`
-- **保留**: 最近7天的详细日记
-- **内容**: 每日任务、临时信息、待办事项
-- **清理**: 超过7天的文件自动归档或删除
+### 1. x-tweet-fetcher ⭐ (最高优先级)
+- 路径: /root/.openclaw/workspace/x-tweet-fetcher
+- 功能: X/Twitter、微信公众号
+- 依赖: Camofox (端口 9377)
+- 场景: X 内容、社交媒体监控
 
-### 长期记忆（精华归档）
-- **位置**: `MEMORY.md`（本文件）
-- **更新**: 每天从当日日记中提取重要信息
-- **内容**: 
-  - 用户偏好变更
-  - 重要技能安装/配置
-  - API密钥更新
-  - 长期关注的项目
-  - 关键关系信息
+### 7. x-reader 🆕 (第二优先级 - 多平台)
+- 安装: pip (全局)，CLI 命令 `x-reader`
+- 功能: 7+ 平台内容抓取（微信、B站、小红书、YouTube、Telegram、RSS、任意网页）
+- X/Twitter: 需要 Playwright + session（当前被反爬限制，X 内容用 x_quick_search 替代）
+- Session: ~/.x-reader/sessions/twitter.json
+- 场景: 多平台内容抓取、URL 解析
 
-### 每日归档流程
-```
-1. 检查当日日记 (memory/2026-XX-XX.md)
-2. 识别重要信息（用 ⭐ 标记）
-3. 更新到 MEMORY.md 对应章节
-4. 清理超过7天的日记文件
-```
+### 5. X Quick Search (第三优先级)
+- 路径: /root/.openclaw/workspace/x_quick_search.py
+- 功能: X/Twitter 快速搜索
+- 依赖: 用户 cookies（2026-02-26 更新）
+- 场景: X 快速查询
 
-### 归档标记规则
-在日记中使用以下标记：
-- `⭐ 长期记忆` - 需要归档到 MEMORY.md
-- `📌 待跟进` - 需要后续关注
-- `✅ 已完成` - 可以清理
+### 2. Brave Search (第四优先级)
+- 工具: web_search
+- 功能: 通用网页搜索
+- 限制: 需要 API Key
+- 场景: 通用搜索、新闻
 
----
+### 4. Tavily Search (第五优先级)
+- 路径: /root/.openclaw/workspace/skills/tavily-search
+- 功能: AI 优化搜索
+- 限制: 需要 API Key
+- 场景: AI 研究查询
 
-# Active Context & Memory
+### 3. DuckDuckGo Search (第六优先级)
+- 工具: duckduckgo-search
+- 功能: 隐私搜索
+- 优点: 无需 API
+- 场景: 隐私搜索、备用
 
-## Current Focus (High Priority)
-目前用户最关注的是以下领域的动态，请在搜索时增加权重：
-1.  **OpenClaw**: 任何关于 OpenClaw 的更新、插件、最佳实践或社区讨论。
-2.  **Opencode**: 相关的技术进展或应用案例。
-3.  **AI Agents**: 能够独立完成任务的智能体应用案例。
-4.  **Viral Apps**: 最近一周在社媒（Twitter/X/小红书）上突然火爆的 AI 产品。
+### 6. Lobster Browser (最低优先级)
+- 路径: /root/.openclaw/workspace/lobster-browser-tool
+- 功能: 浏览器自动化
+- 限制: 配置复杂
+- 场景: 复杂网页操作
 
-## Key Relationships
-* **User**: The Product Manager (Boss).
-* **Zoe**: The Assistant (You) — AIGC 行业情报官 & 产品经理助理 💖
+## 使用规则
+1. X/Twitter 内容 → x-tweet-fetcher (1) 或 X Quick Search (5)
+2. 微信/B站/小红书/YouTube/RSS → x-reader (7)
+3. 通用搜索 → Brave Search (2)
+4. AI 研究 → Tavily (4)
+5. 隐私搜索 → DuckDuckGo (3)
+6. 复杂操作 → Lobster Browser (6)
+
+## Camofox 配置
+- 路径: /root/.openclaw/workspace/camofox-browser
+- 端口: 9377
+- 启动: npm start
+- 状态: 已安装并运行
+
+## 日报技能
+- 脚本: /root/.openclaw/workspace/skills/daily-report/generate.sh
+- 数据源: x-tweet-fetcher + sogou_wechat
+- 输出: /obsidian-sync/daily/YYYY-MM-DD/
+- 定时: 每天 21:00
+
+## 活跃社区
+- Reddit: r/openclaw, r/LocalLLM
+- Hacker News
+- V2EX, 知乎
+- Qiita (日本)

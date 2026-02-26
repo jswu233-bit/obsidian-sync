@@ -87,20 +87,47 @@
 - 包含温度、湿度、风力、全天预报
 - 工具: `curl wttr.in/Beijing`
 
-## 生成流程
+## 生成流程（团队协作版）
 
+### 角色分工
+- **情报官 (intel)**: 负责所有搜索和数据抓取工作
+- **Zoe (main)**: 负责审阅、解读、点评、整合、发送
+
+### 流程
 ```
-1. 获取当前日期 → date +%Y-%m-%d (注意：必须是2026年)
-2. AI新闻 → web_search (Top 10)
-3. OpenClaw新闻 → web_search + x_quick_search.py (Top 10)
-4. 国内外金融新闻 → web_search (黄金、美股、A股、港股)
-5. 社交媒体动态 → x_quick_search.py + web_search
-6. 基金和金融市场 → web_search
-7. 北京天气 → wttr.in
-8. 整理成Markdown
-9. 发送到Discord
-10. 保存到Git: daily/YYYY-MM-DD-日报.md
-11. git add → git commit → git push
+Phase 1 — 情报官搜索（派活给 intel sub-agent）
+  1. AI新闻搜索 → web_search (Top 10)
+  2. OpenClaw新闻 → web_search + ClawFeed + x_quick_search.py (Top 10)
+  3. 国内外金融新闻 → web_search (黄金、美股、A股、港股)
+  4. X博主推文抓取 → x-tweet-fetcher (Camofox) 抓取关注博主最新推文
+  5. 微信公众号 → sogou_wechat.py / web_search 备用
+  6. 基金和金融市场数据 → web_search
+  7. 北京天气 → wttr.in
+  → 情报官将原始数据整理后交回 Zoe
+
+Phase 2 — Zoe 审阅 & 解读
+  8. 审阅情报官返回的原始数据，筛选高质量内容
+  9. 为每条内容撰写中文要点解读和 Zoe 点评
+  10. 整合成完整 Markdown 日报
+
+Phase 3 — 发布
+  11. 发送到 Discord #日报
+  12. 保存到 Git: daily/YYYY-MM-DD-日报.md
+  13. git add → git commit → git push
+```
+
+### 派活示例
+Zoe 使用 sessions_spawn 派活给情报官：
+```
+task: "今日日报搜索任务 (2026-MM-DD)：
+1. 搜索今日 AI 新闻 Top 10（国内外）
+2. 搜索 OpenClaw 社区动态 Top 10（ClawFeed + HN + Reddit + V2EX + Qiita）
+3. 搜索金融新闻（黄金、美股、A股、港股）
+4. 用 x-tweet-fetcher 抓取以下博主最新推文：@op7418 @dotey @SamuelQZQ @gkxspace @yulin807
+5. 搜索微信公众号最新文章：财经早餐、香帅的金融江湖、小狼的Eft投资
+6. 获取基金和金融市场数据
+7. 获取北京天气
+将所有原始数据整理成结构化 JSON/Markdown 返回。"
 ```
 
 ## 日期验证

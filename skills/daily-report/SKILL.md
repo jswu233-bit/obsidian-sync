@@ -16,10 +16,15 @@
 
 #### 2. OpenClaw新闻（10大热门）
 - ✅ **单独板块，必须详细**
-- OpenClaw最新动态、GitHub更新、社区讨论
+- **主要信息源**：
+  - ClawFeed: http://clawfeed.kevinhe.io/ (4H简报、日报、周报、月报)
+  - GitHub: https://github.com/openclaw/openclaw/releases
+  - Reddit: r/openclaw
+  - Discord社区
+  - 官方Blog: https://openclaws.io/blog/
 - 格式：Top 10，每条含标题+详细说明+扩展阅读链接
-- 工具: `web_search` + `x_quick_search.py`（搜索OpenClaw相关推文）
-- 来源：GitHub、Reddit、Discord、官方Blog
+- 工具: `web_fetch` (ClawFeed) + `web_search` + `x_quick_search.py`
+- 要求：从ClawFeed获取最新OpenClaw动态
 
 #### 3. 国内外金融新闻
 - 与黄金、美股、A股、港股指数影响相关的资讯
@@ -32,16 +37,35 @@
 
 #### 4. 社交媒体动态（AI和OpenClaw热门）
 
-**X博主（必须详细）：**
-- ✅ **已配置X账号登录** (@jswu255)
-- 关注博主:
-  - @op7418 (歸藏)
-  - @dotey (宝玉)
-  - @SamuelQZQ (DN-Samuel)
-  - @gkxspace (余温)
-  - @yulin807 (Qingyue)
-- 工具: `x_quick_search.py`
-- 要求：总结每位博主今天发的具体内容，不能泛泛而谈
+**X博主（热门观点模式）：**
+- ✅ **改为读取热门博主观点**，不再固定5个博主
+- **获取方式**：
+  1. 使用ClawFeed的热门推荐：http://clawfeed.kevinhe.io/
+  2. 搜索今日AI/OpenClaw热门话题下的高互动推文
+  3. 使用命令：
+     ```bash
+     cd /root/.openclaw/workspace
+     # 搜索热门AI话题
+     X_SEARCH_QUERY="AI artificial intelligence filter:popular" python3 x_quick_search.py
+     # 搜索OpenClaw相关
+     X_SEARCH_QUERY="OpenClaw filter:popular" python3 x_quick_search.py
+     ```
+- **选择标准**：
+  - 高互动量（点赞、转发、评论）
+  - 内容质量高（有深度观点，非泛泛而谈）
+  - 与AI/OpenClaw相关
+  - 今日发布或近24小时内
+- **输出要求**：
+  - 博主名 + 身份标签
+  - 核心观点摘要（不是全文复制）
+  - 为什么这个观点值得关注
+  - 推文链接
+
+**ClawFeed信息源（推荐）：**
+- ClawFeed: http://clawfeed.kevinhe.io/
+- 提供AI/OpenClaw热门话题聚合
+- 提供4H简报、日报、周报、月报
+- 可作为热门博主和内容发现的主要来源
 
 **微信公众号：**
 - 财经早餐、香帅的金融江湖、小狼的Eft投资
@@ -168,6 +192,54 @@
 - 社交媒体: [博主/公众号摘要]
 - 基金市场: [关键数据]
 - 天气: [天气概况]
+```
+
+## ⚠️ 内容解读硬性规则（最高优先级）
+
+### 核心原则：Jamie 不应该需要点开任何链接才能理解内容
+
+**所有 X 推文、微信公众号文章必须包含 Zoe 写的中文要点解读。**
+
+### 禁止行为（违反任何一条视为日报不合格）：
+1. ❌ **禁止** 只丢链接让 Jamie 自己去看
+2. ❌ **禁止** 用"由于API限制/平台限制，未能获取"作为借口跳过内容
+3. ❌ **禁止** 只列博主名+链接的空表格
+4. ❌ **禁止** 用泛泛的频道推荐代替当天具体内容
+5. ❌ **禁止** 只写一句话标题当作"摘要"
+
+### 必须做到：
+1. ✅ 每条 X 推文必须包含：**博主名 → 核心观点（2-3句话） → 为什么值得关注 → 链接**
+2. ✅ 每篇公众号文章必须包含：**公众号名 → 文章主题 → 关键要点（3-5个bullet） → Zoe 的一句话点评 → 链接**
+3. ✅ 如果某个源获取失败，必须用备用方案（web_search / web_fetch）找到替代内容，而不是留空
+4. ✅ YouTube 视频必须包含：**视频标题 → 内容摘要（2-3句话） → 链接**
+
+### 获取失败时的降级策略：
+```
+x_quick_search.py 失败 → web_search "site:x.com [博主名] [话题]" → web_fetch 推文页面
+sogou_wechat.py 失败 → web_search "[公众号名] 最新文章" → web_fetch 文章页面
+YouTube API 失败 → web_search "site:youtube.com [话题] today" → web_fetch 视频页面
+```
+
+### 解读格式示例：
+
+**X 推文解读：**
+```
+**@op7418** — AI产品观察者
+💬 核心观点：Claude 的新 Cowork 功能本质上是在抢 Copilot 的饭碗，直接嵌入 Office 全家桶。这不是"AI助手"了，这是"AI同事"。
+🔍 为什么关注：Anthropic 从 API 公司转向 toB 产品公司的信号，对产品经理来说意味着 AI 工具的竞争格局在变。
+📎 [推文链接]
+```
+
+**公众号解读：**
+```
+**量子位** — 《2025AI应用大爆发，2026普通人有什么机会？》
+📌 关键要点：
+• 企业 GenAI 支出从 115 亿美元跃升至 370 亿美元，年增 3.2 倍
+• AI 应用层（而非基础模型层）成为最大受益者
+• 普通人的机会在于"AI + 垂直场景"的微创业
+• 报告预测 2026 年将出现首批"AI-native"独角兽
+💡 Zoe 点评：这篇对 Jamie 做产品规划很有参考价值，尤其是"AI应用层受益最大"这个判断，和你关注的 AIGC 工具方向完全吻合。
+📎 [阅读原文]
 ```
 
 ## 注意事项

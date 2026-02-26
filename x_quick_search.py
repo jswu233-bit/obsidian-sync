@@ -14,7 +14,7 @@ def quick_search_x(search_query="openclaw"):
     cookies = [
         {
             "name": "auth_token",
-            "value": "b10b5cb100fa9c87db534746c4bf7b23d45eabc5",
+            "value": "1888150ab680b69516e9900c084294ec46802ccd",
             "domain": ".x.com",
             "path": "/",
             "httpOnly": True,
@@ -22,15 +22,7 @@ def quick_search_x(search_query="openclaw"):
         },
         {
             "name": "ct0",
-            "value": "c607857c29764e3820c3cf17477306792697138d7c68548f709efcd2a4c1adbab59347842efc9c4c806586996b89f1439a390ba0f711fce6a6ea9e9abee6cefff97dbbb0efa3ba1cff13b9c24286bd94",
-            "domain": ".x.com",
-            "path": "/",
-            "httpOnly": False,
-            "secure": True
-        },
-        {
-            "name": "guest_id",
-            "value": "v1%3A177130196792033591",
+            "value": "b2423ca9468b32039c444fe7c1e510d16f91b036160037b7677eb7a8ed1fc44dee932d461aeacdaadd9515b676697932ea598b66e68ddc911c0389527dc3a6845786e28fb34d326e6634231beb6c4875",
             "domain": ".x.com",
             "path": "/",
             "httpOnly": False,

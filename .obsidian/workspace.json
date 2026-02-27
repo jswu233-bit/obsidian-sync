@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6742244628447ddd",
+        "id": "23669eecbd35b401",
         "type": "tabs",
         "children": [
           {
-            "id": "dc5edd8af9c8fa7c",
+            "id": "45c10b9d1be381f7",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -191,8 +191,9 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "dc5edd8af9c8fa7c",
+  "active": "45c10b9d1be381f7",
   "lastOpenFiles": [
+    "未命名.base",
     "workspace/agents/intel/SOUL.md",
     "workspace/agents/intel/IDENTITY.md",
     "workspace/agents/handyman/SOUL.md",
@@ -227,7 +228,6 @@
     "workspace/memory/2026-02-23.md",
     "skills/youtube-api-skill/SKILL.md",
     "skills/x-search/SKILL.md",
-    "skills/weather/SKILL.md",
-    "skills/flight-search/SKILL.md"
+    "skills/weather/SKILL.md"
   ]
 }

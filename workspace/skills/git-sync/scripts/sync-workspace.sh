@@ -37,6 +37,20 @@ if [ -d "$SOURCE_DIR/skills" ]; then
     echo "  ✅ 已同步: skills/ 文件夹"
 fi
 
+# 同步日报文件夹（如果存在）
+DAILY_DIR="/root/.openclaw/workspace/obsidian-sync/daily"
+if [ ! -d "$DAILY_DIR" ]; then
+    mkdir -p "$DAILY_DIR"
+    echo "  📁 已创建: daily/ 目录"
+fi
+
+# 确保 box 目录存在（用于 Jamie 和 Zoe 之间的信息交换）
+BOX_DIR="/root/.openclaw/workspace/obsidian-sync/box"
+if [ ! -d "$BOX_DIR" ]; then
+    mkdir -p "$BOX_DIR"
+    echo "  📁 已创建: box/ 目录"
+fi
+
 echo "✅ Workspace 文件同步完成"
 
 # 执行 Git 同步

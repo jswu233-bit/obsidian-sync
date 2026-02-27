@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "23669eecbd35b401",
+        "id": "66022f7dae646f44",
         "type": "tabs",
         "children": [
           {
-            "id": "45c10b9d1be381f7",
+            "id": "55a4633f111b1dc9",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -191,7 +191,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "45c10b9d1be381f7",
+  "active": "55a4633f111b1dc9",
   "lastOpenFiles": [
     "未命名.base",
     "workspace/agents/intel/SOUL.md",

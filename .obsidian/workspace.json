@@ -197,10 +197,15 @@
   },
   "active": "55a4633f111b1dc9",
   "lastOpenFiles": [
-    "workspace/memory/2026-02-28.md",
     "daily/2026-02-27-日报.md",
-    "daily/2026-02-23-日报.md",
+    "workspace/skills/x-search/SKILL.md",
+    "workspace/agents/handyman/IDENTITY.md",
+    "workspace/MEMORY.md",
+    "workspace/SOUL.md",
     "box/README.md",
+    "daily/2026-02-26-日报.md",
+    "workspace/memory/2026-02-28.md",
+    "daily/2026-02-23-日报.md",
     "文件夹结构.md",
     "box",
     "README.md",
@@ -212,10 +217,7 @@
     "workspace/agents/intel/SOUL.md",
     "workspace/agents/intel/IDENTITY.md",
     "workspace/agents/handyman/SOUL.md",
-    "workspace/agents/handyman/IDENTITY.md",
-    "workspace/SOUL.md",
     "workspace/IDENTITY.md",
-    "daily/2026-02-26-日报.md",
     "daily/2026-02-25-日报.md",
     "skills/tavily-search/scripts/search.mjs",
     "skills/tavily-search/scripts/extract.mjs",
@@ -230,8 +232,6 @@
     "skills/search",
     "skills/openai-whisper/SKILL.md",
     "skills/notion/SKILL.md",
-    "skills/gog/SKILL.md",
-    "skills/git-sync/SKILL.md",
-    "workspace/skills/search/CONFIG.md"
+    "skills/gog/SKILL.md"
   ]
 }

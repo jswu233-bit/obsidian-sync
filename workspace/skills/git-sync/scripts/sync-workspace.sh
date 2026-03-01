@@ -93,11 +93,11 @@ EOF
 fi
 
 if [ -f "$STATUS_TEMPLATE_PATH" ]; then
-    # 获取 Zoe 的当前模型
-    ZOE_MODEL=$(session_status | grep "model" | awk '{print $NF}' | head -n 1)
+    # 获取 Zoe 的当前模型 (从 SOUL.md 提取)
+    SOUL_FILE="$SOURCE_DIR/SOUL.md"
+    ZOE_MODEL=$(grep -A 2 "运行配置 (Runtime)" "$SOUL_FILE" | grep "模型:" | cut -d ':' -f 2- | sed 's/^[[:space:]]*`//g; s/`$//g')
 
     # 获取 Zoe 的核心信息 (从 SOUL.md)
-    SOUL_FILE="$SOURCE_DIR/SOUL.md"
     ZOE_NAME=$(grep -m 1 "Name:" "$SOUL_FILE" | cut -d ':' -f 2- | sed 's/^[[:space:]]*//')
     ZOE_ROLE=$(grep -m 1 "Role:" "$SOUL_FILE" | cut -d ':' -f 2- | sed 's/^[[:space:]]*//')
     ZOE_MOTTO=$(grep -m 1 ">" "$SOUL_FILE" | head -n 1 | sed 's/^> //') # 提取座右铭
@@ -110,16 +110,16 @@ if [ -f "$STATUS_TEMPLATE_PATH" ]; then
     CURRENT_DATETIME=$(date '+%Y-%m-%d %H:%M:%S')
 
     # 读取模板并替换占位符
-    # 使用 cat 结合 sed -e 的方式进行多行替换
+    # 使用 cat 结合 sed -e 的方式进行多行替换，并更换分隔符
     cat "$STATUS_TEMPLATE_PATH" | \
-    sed -e "s|{{ZOE_MODEL}}|$ZOE_MODEL|g" \
-        -e "s|{{CURRENT_TASK}}|正在协助 Jamie 处理 Obsidian Git 同步及 Opencode 集成|g" \
-        -e "s|{{CURRENT_DATETIME}}|$CURRENT_DATETIME|g" \
-        -e "s|{{INTEL_MODEL}}|$INTEL_MODEL|g" \
-        -e "s|{{HANDYMAN_MODEL}}|$HANDYMAN_MODEL|g" \
-        -e "s|{{ZOE_NAME}}|$ZOE_NAME|g" \
-        -e "s|{{ZOE_ROLE}}|$ZOE_ROLE|g" \
-        -e "s|{{ZOE_MOTTO}}|$ZOE_MOTTO|g" \
+    sed -e "s#{{ZOE_MODEL}}#$ZOE_MODEL#g" \
+        -e "s#{{CURRENT_TASK}}#正在协助 Jamie 处理 Obsidian Git 同步及 Opencode 集成#g" \
+        -e "s#{{CURRENT_DATETIME}}#$CURRENT_DATETIME#g" \
+        -e "s#{{INTEL_MODEL}}#$INTEL_MODEL#g" \
+        -e "s#{{HANDYMAN_MODEL}}#$HANDYMAN_MODEL#g" \
+        -e "s#{{ZOE_NAME}}#$ZOE_NAME#g" \
+        -e "s#{{ZOE_ROLE}}#$ZOE_ROLE#g" \
+        -e "s#{{ZOE_MOTTO}}#$ZOE_MOTTO#g" \
         > "$STATUS_OUTPUT_PATH"
 
     echo "  ✅ 已生成并同步: box/dashboard/status.md"

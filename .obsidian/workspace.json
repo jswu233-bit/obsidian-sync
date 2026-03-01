@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2026-02-26-日报.md",
+                "file": "box/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-02-26-日报"
+              "title": "README"
             }
           }
         ]
@@ -197,6 +197,11 @@
   },
   "active": "ecbd8703ca2b79f5",
   "lastOpenFiles": [
+    "workspace/memory/2026-03-01.md",
+    "box/dashboard/status_template.md",
+    "box/dashboard/status.md",
+    "box/dashboard",
+    "daily/2026-02-26-日报.md",
     "daily/2026-02-28-日报.md",
     "daily/2026-02-27-日报.md",
     "workspace/skills/x-search/SKILL.md",
@@ -204,7 +209,6 @@
     "workspace/MEMORY.md",
     "workspace/SOUL.md",
     "box/README.md",
-    "daily/2026-02-26-日报.md",
     "workspace/memory/2026-02-28.md",
     "daily/2026-02-23-日报.md",
     "文件夹结构.md",
@@ -228,10 +232,6 @@
     "skills/tavily-search",
     "skills/summarize/_meta.json",
     "skills/summarize/SKILL.md",
-    "skills/summarize",
-    "skills/search/CONFIG.md",
-    "skills/search",
-    "skills/openai-whisper/SKILL.md",
-    "skills/notion/SKILL.md"
+    "skills/summarize"
   ]
 }

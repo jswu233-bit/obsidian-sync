@@ -51,81 +51,81 @@ if [ ! -d "$BOX_DIR" ]; then
     echo "  📁 已创建: box/ 目录"
 fi
 
-# 确保 dashboard 目录存在
-DASHBOARD_DIR="/root/.openclaw/workspace/obsidian-sync/box/dashboard"
-if [ ! -d "$DASHBOARD_DIR" ]; then
-    mkdir -p "$DASHBOARD_DIR"
-    echo "  📁 已创建: box/dashboard/ 目录"
-fi
+# 移除 dashboard 目录及其相关逻辑 (根据 Jamie 的要求)
+# DASHBOARD_DIR="/root/.openclaw/workspace/obsidian-sync/box/dashboard"
+# if [ ! -d "$DASHBOARD_DIR" ]; then
+#     mkdir -p "$DASHBOARD_DIR"
+#     echo "  📁 已创建: box/dashboard/ 目录"
+# fi
 
-# 生成并同步 Zoe 的状态文件 (status.md)
-STATUS_TEMPLATE_PATH="$DASHBOARD_DIR/status_template.md"
-STATUS_OUTPUT_PATH="$DASHBOARD_DIR/status.md"
+# # 生成并同步 Zoe 的状态文件 (status.md)
+# STATUS_TEMPLATE_PATH="$DASHBOARD_DIR/status_template.md"
+# STATUS_OUTPUT_PATH="$DASHBOARD_DIR/status.md"
 
-# 临时创建 status_template.md，以防不存在
-if [ ! -f "$STATUS_TEMPLATE_PATH" ]; then
-    cat << EOF > "$STATUS_TEMPLATE_PATH"
-# Zoe 的状态看板
+# # 临时创建 status_template.md，以防不存在
+# if [ ! -f "$STATUS_TEMPLATE_PATH" ]; then
+#     cat << EOF > "$STATUS_TEMPLATE_PATH"
+# # Zoe 的状态看板
 
-这里会同步 Zoe (main agent) 和 sub-agent 的运行状态。
+# 这里会同步 Zoe (main agent) 和 sub-agent 的运行状态。
 
-## 当前 Zoe (main) 状态
-- **模型**: {{ZOE_MODEL}}
-- **当前任务**: 正在协助 Jamie 处理 Obsidian Git 同步及 Opencode 集成
-- **上次更新**: {{CURRENT_DATETIME}}
+# ## 当前 Zoe (main) 状态
+# - **模型**: {{ZOE_MODEL}}
+# - **当前任务**: 正在协助 Jamie 处理 Obsidian Git 同步及 Opencode 集成
+# - **上次更新**: {{CURRENT_DATETIME}}
 
-## Sub-agent 状态
-- **🕵️ 情报官 (intel)**:
-    - **模型**: {{INTEL_MODEL}}
-    - **职责**: 搜索、情报收集、信息验证
-- **🔧 打杂工 (handyman)**:
-    - **模型**: {{HANDYMAN_MODEL}}
-    - **职责**: 运维、配置、心跳维护
+# ## Sub-agent 状态
+# - **🕵️ 情报官 (intel)**:
+#     - **模型**: {{INTEL_MODEL}}
+#     - **职责**: 搜索、情报收集、信息验证
+# - **🔧 打杂工 (handyman)**:
+#     - **模型**: {{HANDYMAN_MODEL}}
+#     - **职责**: 运维、配置、心跳维护
 
-## Zoe 的核心信息
-- **名称**: {{ZOE_NAME}}
-- **角色**: {{ZOE_ROLE}}
-- **座右铭**: {{ZOE_MOTTO}}
+# ## Zoe 的核心信息
+# - **名称**: {{ZOE_NAME}}
+# - **角色**: {{ZOE_ROLE}}
+# - **座右铭**: {{ZOE_MOTTO}}
 
----
-**提示**: 此文件会在每次执行 `git-sync` 时自动更新。
-EOF
-fi
+# ---
+# **提示**: 此文件会在每次执行 `git-sync` 时自动更新。
+# EOF
+# fi
 
-if [ -f "$STATUS_TEMPLATE_PATH" ]; then
-    # 获取 Zoe 的当前模型 (从 SOUL.md 提取)
-    SOUL_FILE="$SOURCE_DIR/SOUL.md"
-    ZOE_MODEL=$(grep -A 2 "运行配置 (Runtime)" "$SOUL_FILE" | grep "模型:" | cut -d ':' -f 2- | sed 's/^[[:space:]]*`//g; s/`$//g')
+# if [ -f "$STATUS_TEMPLATE_PATH" ]; then
+#     # 获取 Zoe 的当前模型 (从 SOUL.md 提取)
+#     SOUL_FILE="$SOURCE_DIR/SOUL.md"
+#     ZOE_MODEL=$(grep -A 2 "运行配置 (Runtime)" "$SOUL_FILE" | grep "模型:" | cut -d ':' -f 2- | sed 's/^[[:space:]]*`//g; s/`$//g')
 
-    # 获取 Zoe 的核心信息 (从 SOUL.md)
-    ZOE_NAME=$(grep -m 1 "Name:" "$SOUL_FILE" | cut -d ':' -f 2- | sed 's/^[[:space:]]*//')
-    ZOE_ROLE=$(grep -m 1 "Role:" "$SOUL_FILE" | cut -d ':' -f 2- | sed 's/^[[:space:]]*//')
-    ZOE_MOTTO=$(grep -m 1 ">" "$SOUL_FILE" | head -n 1 | sed 's/^> //') # 提取座右铭
+#     # 获取 Zoe 的核心信息 (从 SOUL.md)
+#     ZOE_NAME=$(grep -m 1 "Name:" "$SOUL_FILE" | cut -d ':' -f 2- | sed 's/^[[:space:]]*//')
+#     ZOE_ROLE=$(grep -m 1 "Role:" "$SOUL_FILE" | cut -d ':' -f 2- | sed 's/^[[:space:]]*//')
+#     ZOE_MOTTO=$(grep -m 1 ">" "$SOUL_FILE" | head -n 1 | sed 's/^> //') # 提取座右铭
 
-    # 获取 Sub-agent 的模型信息 (从 MEMORY.md)
-    MEMORY_FILE="$SOURCE_DIR/MEMORY.md"
-    INTEL_MODEL=$(grep "🕵️ 情报官" "$MEMORY_FILE" | awk '{print $NF}' | head -n 1)
-    HANDYMAN_MODEL=$(grep "🔧 打杂工" "$MEMORY_FILE" | awk '{print $NF}' | head -n 1)
+#     # 获取 Sub-agent 的模型信息 (从 MEMORY.md)
+#     MEMORY_FILE="$SOURCE_DIR/MEMORY.md"
+#     INTEL_MODEL=$(grep "🕵️ 情报官" "$MEMORY_FILE" | awk '{print $NF}' | head -n 1)
+#     HANDYMAN_MODEL=$(grep "🔧 打杂工" "$MEMORY_FILE" | awk '{print $NF}' | head -n 1)
 
-    CURRENT_DATETIME=$(date '+%Y-%m-%d %H:%M:%S')
+#     CURRENT_DATETIME=$(date '+%Y-%m-%d %H:%M:%S')
 
-    # 读取模板并替换占位符
-    # 使用 cat 结合 sed -e 的方式进行多行替换，并更换分隔符
-    cat "$STATUS_TEMPLATE_PATH" | \
-    sed -e "s#{{ZOE_MODEL}}#$ZOE_MODEL#g" \
-        -e "s#{{CURRENT_TASK}}#正在协助 Jamie 处理 Obsidian Git 同步及 Opencode 集成#g" \
-        -e "s#{{CURRENT_DATETIME}}#$CURRENT_DATETIME#g" \
-        -e "s#{{INTEL_MODEL}}#$INTEL_MODEL#g" \
-        -e "s#{{HANDYMAN_MODEL}}#$HANDYMAN_MODEL#g" \
-        -e "s#{{ZOE_NAME}}#$ZOE_NAME#g" \
-        -e "s#{{ZOE_ROLE}}#$ZOE_ROLE#g" \
-        -e "s#{{ZOE_MOTTO}}#$ZOE_MOTTO#g" \
-        > "$STATUS_OUTPUT_PATH"
+#     # 读取模板并替换占位符
+#     # 使用 cat 结合 sed -e 的方式进行多行替换，并更换分隔符
+#     cat "$STATUS_TEMPLATE_PATH" | \
+#     sed -e "s#{{ZOE_MODEL}}#$ZOE_MODEL#g" \
+#         -e "s#{{CURRENT_TASK}}#正在协助 Jamie 处理 Obsidian Git 同步及 Opencode 集成#g" \
+#         -e "s#{{CURRENT_DATETIME}}#$CURRENT_DATETIME#g" \
+#         -e "s#{{INTEL_MODEL}}#$INTEL_MODEL#g" \
+#         -e "s#{{HANDYMAN_MODEL}}#$HANDYMAN_MODEL#g" \
+#         -e "s#{{ZOE_NAME}}#$ZOE_NAME#g" \
+#         -e "s#{{ZOE_ROLE}}#$ZOE_ROLE#g" \
+#         -e "s#{{ZOE_MOTTO}}#$ZOE_MOTTO#g" \
+#         > "$STATUS_OUTPUT_PATH"
 
-    echo "  ✅ 已生成并同步: box/dashboard/status.md"
-else
-    echo "  ⚠️  Zoe 状态模板文件不存在: $STATUS_TEMPLATE_PATH"
-fi
+#     echo "  ✅ 已生成并同步: box/dashboard/status.md"
+# else
+#     echo "  ⚠️  Zoe 状态模板文件不存在: $STATUS_TEMPLATE_PATH"
+# fi
 
 echo "✅ Workspace 文件同步完成"
 

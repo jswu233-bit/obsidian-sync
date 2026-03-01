@@ -197,6 +197,7 @@
   },
   "active": "ecbd8703ca2b79f5",
   "lastOpenFiles": [
+    "daily/2026-03-01-日报.md",
     "workspace/memory/2026-03-01.md",
     "box/dashboard/status_template.md",
     "box/dashboard/status.md",
@@ -231,7 +232,6 @@
     "skills/tavily-search/scripts",
     "skills/tavily-search",
     "skills/summarize/_meta.json",
-    "skills/summarize/SKILL.md",
     "skills/summarize"
   ]
 }

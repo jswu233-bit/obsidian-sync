@@ -195,8 +195,9 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "55a4633f111b1dc9",
+  "active": "ecbd8703ca2b79f5",
   "lastOpenFiles": [
+    "daily/2026-02-28-日报.md",
     "daily/2026-02-27-日报.md",
     "workspace/skills/x-search/SKILL.md",
     "workspace/agents/handyman/IDENTITY.md",
@@ -231,7 +232,6 @@
     "skills/search/CONFIG.md",
     "skills/search",
     "skills/openai-whisper/SKILL.md",
-    "skills/notion/SKILL.md",
-    "skills/gog/SKILL.md"
+    "skills/notion/SKILL.md"
   ]
 }

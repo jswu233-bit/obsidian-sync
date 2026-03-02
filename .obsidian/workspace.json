@@ -198,6 +198,7 @@
   },
   "active": "55a4633f111b1dc9",
   "lastOpenFiles": [
+    "daily/2026-03-02-日报.md",
     "box/README.md",
     "daily/2026-03-01-日报.md",
     "workspace/memory/2026-03-01.md",
@@ -229,7 +230,6 @@
     "skills/tavily-search/scripts/search.mjs",
     "skills/tavily-search/scripts/extract.mjs",
     "skills/tavily-search/_meta.json",
-    "skills/tavily-search/SKILL.md",
     "skills/tavily-search/scripts",
     "skills/tavily-search",
     "skills/summarize/_meta.json",

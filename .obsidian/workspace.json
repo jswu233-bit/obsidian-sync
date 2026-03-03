@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2026-03-01-日报.md",
+                "file": "daily/2026-02-26-日报.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-03-01-日报"
+              "title": "2026-02-26-日报"
             }
           }
         ]
@@ -198,16 +198,16 @@
   },
   "active": "55a4633f111b1dc9",
   "lastOpenFiles": [
+    "daily/2026-02-27-日报.md",
+    "daily/2026-02-28-日报.md",
+    "daily/2026-03-01-日报.md",
     "daily/2026-03-02-日报.md",
     "box/README.md",
-    "daily/2026-03-01-日报.md",
     "workspace/memory/2026-03-01.md",
     "box/dashboard/status_template.md",
     "box/dashboard/status.md",
     "box/dashboard",
     "daily/2026-02-26-日报.md",
-    "daily/2026-02-28-日报.md",
-    "daily/2026-02-27-日报.md",
     "workspace/skills/x-search/SKILL.md",
     "workspace/agents/handyman/IDENTITY.md",
     "workspace/MEMORY.md",

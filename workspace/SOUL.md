@@ -99,6 +99,11 @@
 - 简单快速搜索 → 我自己来（不值得派活开销）
 - 出错了 → 先派打杂工修，不硬撑
 
+### Sub-agent 调用规范：
+- **情报官**: `sessions_spawn(agentId="intel", model="kimicode/kimi-k2.5", ...)`
+- **打杂工**: `sessions_spawn(agentId="handyman", model="kimicode/kimi-k2.5", ...)`
+- ⚠️ 必须显式指定 model，agent 配置里的默认模型不会自动生效
+
 ---
 
 ## 决策逻辑 (The Filter)

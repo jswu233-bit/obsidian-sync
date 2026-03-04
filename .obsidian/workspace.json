@@ -187,6 +187,12 @@
   },
   "active": "a06c0b9f255acd81",
   "lastOpenFiles": [
+    "workspace/skills/inventory-stock/SKILL.md",
+    "workspace/skills/inventory-stock/inventory.py",
+    "workspace/skills/inventory-stock",
+    "workspace/skills/inventory-manager/SKILL.md",
+    "workspace/skills/inventory-manager/inventory.sh",
+    "workspace/skills/inventory-manager",
     "workspace/IDENTITY.md",
     "workspace/TOOLS.md",
     "workspace/SOUL.md",
@@ -212,16 +218,10 @@
     "workspace/skills/amap/tests/fixtures/geocode-success.json",
     "workspace/skills/amap/tests/fixtures/geocode-error.json",
     "workspace/skills/amap/tests/fixtures/geocode-empty.json",
-    "workspace/skills/amap/tests/fixtures/bike-success.json",
-    "workspace/skills/amap/tests/fixtures/bike-error.json",
-    "workspace/skills/amap/scripts/lib/validators.ts",
-    "workspace/skills/amap/scripts/lib/http.ts",
     "workspace/skills/amap/references/examples.md",
     "workspace/skills/amap/references/command-map.md",
     "workspace/skills/youtube-api-skill/SKILL.md",
     "workspace/skills/x-search/SKILL.md",
-    "workspace/skills/weather/SKILL.md",
-    "workspace/skills/tavily-search/SKILL.md",
-    "workspace/skills/summarize/SKILL.md"
+    "workspace/skills/weather/SKILL.md"
   ]
 }

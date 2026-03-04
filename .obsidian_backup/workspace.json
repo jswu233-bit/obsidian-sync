@@ -11,14 +11,10 @@
             "id": "5b7cfc7583193412",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "SYNC_FIX_README.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "SYNC_FIX_README"
+              "title": "新标签页"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SYNC_FIX_README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "SYNC_FIX_README 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SYNC_FIX_README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "SYNC_FIX_README 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -156,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SYNC_FIX_README.md",
+                "file": "欢迎.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "SYNC_FIX_README 的大纲"
+              "title": "欢迎 的大纲"
             }
           }
         ]
@@ -184,43 +178,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5b7cfc7583193412",
+  "active": "cb37b61f21901185",
   "lastOpenFiles": [
-    "欢迎.md",
-    "workspace/skills/amap/tests/fixtures/geocode-success.json",
-    "workspace/skills/amap/tests/fixtures/geocode-error.json",
-    "workspace/skills/amap/tests/fixtures/geocode-empty.json",
-    "workspace/skills/amap/tests/fixtures/bike-success.json",
-    "workspace/skills/amap/tests/fixtures/bike-error.json",
-    "workspace/skills/amap/scripts/lib/validators.ts",
-    "workspace/skills/amap/scripts/lib/http.ts",
-    "workspace/skills/amap/scripts/lib/endpoints.ts",
-    "workspace/skills/amap/scripts/lib/config.ts",
-    "workspace/skills/amap/scripts/lib/commands.ts",
-    "workspace/skills/amap/references/examples.md",
-    "workspace/skills/amap/references/command-map.md",
-    "workspace/skills/youtube-api-skill/SKILL.md",
-    "workspace/skills/x-search/SKILL.md",
-    "workspace/skills/weather/SKILL.md",
-    "workspace/skills/tavily-search/SKILL.md",
-    "workspace/skills/summarize/SKILL.md",
-    "workspace/skills/search/CONFIG.md",
-    "workspace/skills/openai-whisper/SKILL.md",
-    "workspace/skills/notion/SKILL.md",
-    "workspace/skills/gog/SKILL.md",
-    "workspace/skills/git-sync/SKILL.md",
-    "workspace/skills/flight-search/SKILL.md",
-    "workspace/skills/flight-search/README.md",
-    "workspace/skills/flight-search/CHANGELOG.md",
-    "workspace/skills/flight-search/AGENTS.md",
-    "workspace/skills/duckduckgo-search/SKILL.md",
-    "workspace/skills/daily-report/SKILL.md",
-    "workspace/skills/amap/SKILL.md",
-    "workspace/agents/intel/SOUL.md",
-    "workspace/agents/intel/IDENTITY.md",
-    "workspace/agents/handyman/SOUL.md",
-    "workspace/agents/handyman/IDENTITY.md",
-    "workspace/memory/template.md",
-    "workspace/memory/2026-03-04.md"
+    "SYNC_FIX_README.md",
+    "欢迎.md"
   ]
 }

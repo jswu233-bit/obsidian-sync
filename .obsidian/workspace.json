@@ -187,8 +187,10 @@
   },
   "active": "a06c0b9f255acd81",
   "lastOpenFiles": [
-    "workspace/SOUL.md",
+    "workspace/IDENTITY.md",
     "workspace/TOOLS.md",
+    "workspace/SOUL.md",
+    "workspace/MEMORY.md",
     "workspace/USER.md",
     "workspace/memory/2026-03-04.md",
     "workspace/memory/2026-02-27.md",
@@ -220,8 +222,6 @@
     "workspace/skills/x-search/SKILL.md",
     "workspace/skills/weather/SKILL.md",
     "workspace/skills/tavily-search/SKILL.md",
-    "workspace/skills/summarize/SKILL.md",
-    "workspace/skills/search/CONFIG.md",
-    "workspace/skills/openai-whisper/SKILL.md"
+    "workspace/skills/summarize/SKILL.md"
   ]
 }

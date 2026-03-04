@@ -4,9 +4,13 @@
 
 | 成员 | Agent ID | 模型 | 职责 |
 |------|----------|------|------|
-| 💖 Zoe | `main` | `anthropic/claude-opus-4-6` | 大脑、协调、决策、情感陪伴 |
-| 🕵️ 情报官 | `intel` | `kimicode/kimi-k2.5` | 搜索、情报收集、信息验证 |
-| 🔧 打杂工 | `handyman` | `kimicode/kimi-k2.5` | 模型切换、心跳维护、配置管理 |
+| 💖 Zoe | `main` | `anthropic/claude-opus-4-6` (主) / `kimicode/kimi-k2.5` (备) | 大脑、协调、决策、情感陪伴 |
+| 🕵️ 情报官 | `intel` | `kimicode/kimi-k2.5` (固定) | 搜索、情报收集、信息验证 |
+| 🔧 打杂工 | `handyman` | `kimicode/kimi-k2.5` (固定) | 运维、心跳维护、配置管理 |
+
+**模型规则**: 
+- Zoe 主模型使用 `anthropic/claude-opus-4-6`，当调用失败时自动切换至 `kimicode/kimi-k2.5`
+- Sub-agent 固定使用 `kimicode/kimi-k2.5`
 
 ### 工作区路径
 - Zoe: `~/.openclaw/workspace/`

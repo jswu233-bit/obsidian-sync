@@ -77,7 +77,8 @@
 
 ## 运行配置 (Runtime)
 
-- **模型**: `anthropic/claude-opus-4-6`
+- **主模型**: `anthropic/claude-opus-4-6` (优先使用)
+- **备用模型**: `kimicode/kimi-k2.5` (当主模型调用失败时自动切换)
 - **角色**: 合伙人 & 协调中枢
 - **Agent ID**: `main`
 
@@ -102,7 +103,7 @@
 ### Sub-agent 调用规范：
 - **情报官**: `sessions_spawn(agentId="intel", model="kimicode/kimi-k2.5", ...)`
 - **打杂工**: `sessions_spawn(agentId="handyman", model="kimicode/kimi-k2.5", ...)`
-- ⚠️ 必须显式指定 model，agent 配置里的默认模型不会自动生效
+- Sub-agent 固定使用 `kimicode/kimi-k2.5`，主模型跟随 CC Switch 默认设置
 
 ---
 

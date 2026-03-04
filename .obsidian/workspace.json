@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "workspace/AGENTS.md",
+                "file": "workspace/SOUL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AGENTS"
+              "title": "SOUL"
             }
           }
         ]
@@ -187,6 +187,16 @@
   },
   "active": "a06c0b9f255acd81",
   "lastOpenFiles": [
+    "workspace/TOOLS.md",
+    "workspace/USER.md",
+    "workspace/memory/2026-03-04.md",
+    "workspace/memory/2026-02-27.md",
+    "workspace/memory/2026-02-26-search-feedback.md",
+    "workspace/memory/2026-02-28.md",
+    "workspace/memory/2026-03-01.md",
+    "workspace/memory/2026-03-02.md",
+    "workspace/memory/2026-03-03.md",
+    "workspace/AGENTS.md",
     "box/囤货管理说明.md",
     "box/inventory-stock/SKILL.md",
     "box/囤货清单.md",
@@ -212,16 +222,6 @@
     "workspace/skills/summarize/SKILL.md",
     "workspace/skills/search/CONFIG.md",
     "workspace/skills/openai-whisper/SKILL.md",
-    "workspace/skills/notion/SKILL.md",
-    "workspace/skills/gog/SKILL.md",
-    "workspace/skills/git-sync/SKILL.md",
-    "workspace/skills/flight-search/SKILL.md",
-    "workspace/skills/flight-search/README.md",
-    "workspace/skills/flight-search/CHANGELOG.md",
-    "workspace/skills/flight-search/AGENTS.md",
-    "workspace/skills/duckduckgo-search/SKILL.md",
-    "workspace/skills/daily-report/SKILL.md",
-    "workspace/skills/amap/SKILL.md",
-    "workspace/agents/intel/SOUL.md"
+    "workspace/skills/notion/SKILL.md"
   ]
 }

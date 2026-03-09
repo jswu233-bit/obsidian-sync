@@ -44,7 +44,7 @@
   2. 搜索今日AI/OpenClaw热门话题下的高互动推文
   3. 使用命令：
      ```bash
-     cd /root/.openclaw/workspace
+     cd /Users/jamiewu/.openclaw/workspace
      # 搜索热门AI话题
      X_SEARCH_QUERY="AI artificial intelligence filter:popular" python3 x_quick_search.py
      # 搜索OpenClaw相关

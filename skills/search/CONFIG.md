@@ -4,14 +4,14 @@
 ## 搜索技能优先级
 
 ### 1. x-tweet-fetcher ⭐ (最高优先级)
-- **路径**: /root/.openclaw/workspace/x-tweet-fetcher
+- **路径**: /Users/jamiewu/.openclaw/workspace/x-tweet-fetcher
 - **功能**: X/Twitter 用户时间线、关键词搜索、微信公众号
 - **依赖**: Camofox (端口 9377)
 - **优点**: 无需 API 密钥，本地运行
 - **使用场景**: X 内容、微信公众号、社交媒体监控
 
 ### 5. X Quick Search (第二优先级)
-- **路径**: /root/.openclaw/workspace/x_quick_search.py
+- **路径**: /Users/jamiewu/.openclaw/workspace/x_quick_search.py
 - **功能**: X/Twitter 快速搜索
 - **依赖**: 用户配置的 cookies
 - **优点**: 无需 Camofox，快速启动
@@ -25,7 +25,7 @@
 - **使用场景**: 通用网页搜索、新闻、文档
 
 ### 4. Tavily Search (第四优先级)
-- **路径**: /root/.openclaw/workspace/skills/tavily-search
+- **路径**: /Users/jamiewu/.openclaw/workspace/skills/tavily-search
 - **功能**: AI 优化搜索
 - **优点**: 专为 AI Agent 设计，结果结构化
 - **限制**: 需要 API Key
@@ -39,7 +39,7 @@
 - **使用场景**: 隐私搜索、备用方案
 
 ### 6. Lobster Browser (最低优先级)
-- **路径**: /root/.openclaw/workspace/lobster-browser-tool
+- **路径**: /Users/jamiewu/.openclaw/workspace/lobster-browser-tool
 - **功能**: 浏览器自动化
 - **优点**: 可视化操作
 - **限制**: 配置复杂，需要 Playwright
@@ -63,19 +63,19 @@
 netstat -tlnp | grep 9377
 
 # 如未运行，启动 Camofox
-cd /root/.openclaw/workspace/camofox-browser && npm start
+cd /Users/jamiewu/.openclaw/workspace/camofox-browser && npm start
 ```
 
 ## 执行命令示例
 
 ### 优先级 1: x-tweet-fetcher
-cd /root/.openclaw/workspace/x-tweet-fetcher
+cd /Users/jamiewu/.openclaw/workspace/x-tweet-fetcher
 python3 scripts/fetch_tweet.py --user username --limit 10
 python3 scripts/x_discover.py --keywords "关键词" --limit 10
 python3 scripts/sogou_wechat.py --keyword "关键词" --limit 10
 
 ### 优先级 5: X Quick Search
-cd /root/.openclaw/workspace
+cd /Users/jamiewu/.openclaw/workspace
 X_SEARCH_QUERY="关键词" python3 x_quick_search.py
 
 ### 优先级 2: Brave Search
@@ -88,5 +88,5 @@ web_search --query "关键词" --count 10
 # 使用 duckduckgo-search
 
 ### 优先级 6: Lobster Browser
-cd /root/.openclaw/workspace/lobster-browser-tool
+cd /Users/jamiewu/.openclaw/workspace/lobster-browser-tool
 node browser-control.js navigate <url>

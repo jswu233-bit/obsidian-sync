@@ -1,23 +1,29 @@
 # MEMORY.md - 核心记忆
 
-## 团队架构 (2026-02-26 建立)
+## 团队架构 (2026-03-08 更新)
 
 | 成员 | Agent ID | 模型 | 职责 |
 |------|----------|------|------|
-| 💖 Zoe | `main` | `anthropic/claude-opus-4-6` | 大脑、协调、决策、情感陪伴 |
-| 🕵️ 情报官 | `intel` | `kimicode/kimi-k2.5` | 搜索、情报收集、信息验证 |
-| 🔧 打杂工 | `handyman` | `kimicode/kimi-k2.5` | 模型切换、心跳维护、配置管理 |
+| 💖 Zoe | `main` | `anthropic/claude-opus-4-6` (主) / `kimicode/kimi-k2.5` (备) | 大脑、协调、决策、情感陪伴 |
+| 🕵️ Spy (侦察官) | `spy` | `kimicode/kimi-k2.5` (固定) | 全网搜索、看风向、抓重点、领域情报 |
+| 😊 Joy (书童) | `joy` | `kimicode/kimi-k2.5` (固定) | 陪学习、督促、英语教学 |
+| ⚙️ Ops (扫地僧) | `ops` | `kimicode/kimi-k2.5` (固定) | 保运行、控心跳、换模型、运维 |
+
+**模型规则**: 
+- Zoe 主模型使用 `anthropic/claude-opus-4-6`，当调用失败时自动切换至 `kimicode/kimi-k2.5`
+- Spy、Joy、Ops 固定使用 `kimicode/kimi-k2.5`
 
 ### 工作区路径
 - Zoe: `~/.openclaw/workspace/`
-- 情报官: `~/.openclaw/agents/intel/`
-- 打杂工: `~/.openclaw/agents/handyman/`
+- Spy: `~/.openclaw/agents/spy/`
+- Joy: `~/.openclaw/agents/joy/`
+- Ops: `~/.openclaw/agents/ops/`
 
 ### 派活原则
-- 搜索类 → 情报官
-- 运维类 → 打杂工
-- 深度思考、创意、聊天 → Zoe 亲自处理
-- 简单快速搜索 → Zoe 自己来（不值得派活开销）
+- **情报搜索** → Spy（"Spy，帮我检索今天关于 AIGC 行业的所有重磅新闻"）
+- **学习陪伴** → Joy（"Joy，这是我今天的英语阅读材料，半小时后请来提问我"）
+- **运维监控** → Ops（"Ops，检查主模型心跳，如果响应延迟超过 5s 立即切换备用链路"）
+- **深度思考、创意、决策** → Zoe 亲自处理
 
 ## 可用模型 (2026-02-26 更新)
 
@@ -44,7 +50,7 @@
 **优先级: 1 > 7 > 5 > 2 > 4 > 3 > 6**
 
 ### 1. x-tweet-fetcher ⭐ (最高优先级)
-- 路径: /root/.openclaw/workspace/x-tweet-fetcher
+- 路径: /Users/jamiewu/.openclaw/workspace/x-tweet-fetcher
 - 功能: X/Twitter、微信公众号
 - 依赖: Camofox (端口 9377)
 - 场景: X 内容、社交媒体监控
@@ -57,7 +63,7 @@
 - 场景: 多平台内容抓取、URL 解析
 
 ### 5. X Quick Search (第三优先级)
-- 路径: /root/.openclaw/workspace/x_quick_search.py
+- 路径: /Users/jamiewu/.openclaw/workspace/x_quick_search.py
 - 功能: X/Twitter 快速搜索
 - 依赖: 用户 cookies（2026-02-26 更新）
 - 场景: X 快速查询
@@ -69,7 +75,7 @@
 - 场景: 通用搜索、新闻
 
 ### 4. Tavily Search (第五优先级)
-- 路径: /root/.openclaw/workspace/skills/tavily-search
+- 路径: /Users/jamiewu/.openclaw/workspace/skills/tavily-search
 - 功能: AI 优化搜索
 - 限制: 需要 API Key
 - 场景: AI 研究查询
@@ -81,7 +87,7 @@
 - 场景: 隐私搜索、备用
 
 ### 6. Lobster Browser (最低优先级)
-- 路径: /root/.openclaw/workspace/lobster-browser-tool
+- 路径: /Users/jamiewu/.openclaw/workspace/lobster-browser-tool
 - 功能: 浏览器自动化
 - 限制: 配置复杂
 - 场景: 复杂网页操作
@@ -95,13 +101,13 @@
 6. 复杂操作 → Lobster Browser (6)
 
 ## Camofox 配置
-- 路径: /root/.openclaw/workspace/camofox-browser
+- 路径: /Users/jamiewu/.openclaw/workspace/camofox-browser
 - 端口: 9377
 - 启动: npm start
 - 状态: 已安装并运行
 
 ## 日报技能
-- 脚本: /root/.openclaw/workspace/skills/daily-report/generate.sh
+- 脚本: /Users/jamiewu/.openclaw/workspace/skills/daily-report/generate.sh
 - 数据源: x-tweet-fetcher + sogou_wechat
 - 输出: /obsidian-sync/daily/YYYY-MM-DD/
 - 定时: 每天 21:00

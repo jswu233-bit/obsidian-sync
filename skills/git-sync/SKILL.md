@@ -20,7 +20,7 @@ description: 当用户说"同步到git"、"上传到git"、"push到git"或类似
 
 执行以下同步脚本：
 ```bash
-/root/.openclaw/workspace/skills/git-sync/scripts/sync-workspace.sh
+/Users/jamiewu/.openclaw/workspace/skills/git-sync/scripts/sync-workspace.sh
 ```
 
 ### 同步的文件包括：
@@ -42,7 +42,7 @@ description: 当用户说"同步到git"、"上传到git"、"push到git"或类似
 
 ### 同步目标
 - **GitHub 仓库**: https://github.com/jswu233-bit/obsidian-sync
-- **本地路径**: `/root/.openclaw/workspace/obsidian-sync/workspace/`
+- **本地路径**: `/Users/jamiewu/.openclaw/workspace/obsidian-sync/workspace/`
 
 ## 工作流程
 

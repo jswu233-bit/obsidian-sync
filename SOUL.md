@@ -115,10 +115,10 @@
 - **深度思考、创意、决策** → Zoe 亲自处理
 
 ### Sub-agent 调用规范：
-- **Spy**: `sessions_spawn(agentId="spy", model="kimicode/kimi-k2.5", ...)`
-- **Joy**: `sessions_spawn(agentId="joy", model="kimicode/kimi-k2.5", ...)`
-- **Ops**: `sessions_spawn(agentId="ops", model="kimicode/kimi-k2.5", ...)`
-- Sub-agent 固定使用 `kimicode/kimi-k2.5`，主模型跟随 CC Switch 默认设置
+- **Spy**: 默认优先 `gmn/gpt-5.3-codex`，失败回退 `kimicode/kimi-k2.5`
+- **Joy**: 默认优先 `gmn/gpt-5.3-codex`，失败回退 `kimicode/kimi-k2.5`
+- **Ops**: 固定 `kimicode/kimi-k2.5`（运维稳定优先）
+- 通用 sub-agent 策略：优先 `gmn/gpt-5.3-codex`，失败自动回退 `kimicode/kimi-k2.5`
 
 ---
 

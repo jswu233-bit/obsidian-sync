@@ -1,0 +1,80 @@
+:root {
+  --bg: #0f1220;
+  --card: #171b2e;
+  --text: #f0f3ff;
+  --muted: #9da7c3;
+  --accent: #7aa2ff;
+  --warn: #ff9b6a;
+  --danger: #ff5f7a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: radial-gradient(circle at top, #1b2140, var(--bg));
+  color: var(--text);
+}
+.container { max-width: 1100px; margin: 28px auto; padding: 0 16px 24px; }
+header h1 { margin: 0; }
+#meta { color: var(--muted); margin-top: 6px; }
+.toolbar {
+  margin: 16px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+input[type="text"] {
+  flex: 1;
+  min-width: 240px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #3a4368;
+  background: #13172a;
+  color: var(--text);
+}
+.checkbox { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.metric {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 12px;
+  border-radius: 10px;
+}
+.metric .label { color: var(--muted); font-size: 12px; }
+.metric .value { font-size: 26px; font-weight: 800; margin-top: 4px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 12px; }
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.card h3 { margin: 0 0 8px; font-size: 16px; }
+.item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+}
+.item:last-child { border-bottom: 0; }
+.item .left { color: #dbe3ff; }
+.item .spec { color: var(--muted); font-size: 12px; }
+.badge { font-weight: 700; color: #c5cfff; }
+.badge.low { color: var(--warn); }
+.badge.danger { color: var(--danger); }
+.empty { color: var(--muted); }

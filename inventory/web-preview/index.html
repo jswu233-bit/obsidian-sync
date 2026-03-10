@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>囤货库存看板（本地预览）</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🧺 囤货库存看板</h1>
+      <p id="meta">正在读取库存数据...</p>
+    </header>
+
+    <section class="toolbar">
+      <input id="search" type="text" placeholder="搜索物品名（例如：抽纸 / 洗衣液）" />
+      <label class="checkbox">
+        <input type="checkbox" id="only-low" />
+        仅看低库存（≤2）
+      </label>
+      <button id="reload">重新加载</button>
+    </section>
+
+    <section id="summary" class="summary"></section>
+    <section id="cards" class="cards"></section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

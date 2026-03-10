@@ -8,9 +8,12 @@
 </head>
 <body>
   <main class="container">
-    <header>
-      <h1>🧺 囤货库存看板</h1>
-      <p id="meta">正在读取库存数据...</p>
+    <header class="hero">
+      <div>
+        <h1>🧺 囤货库存看板</h1>
+        <p id="meta">正在读取库存数据...</p>
+      </div>
+      <div id="health" class="health"></div>
     </header>
 
     <section class="toolbar">
@@ -23,6 +26,7 @@
     </section>
 
     <section id="summary" class="summary"></section>
+    <section id="urgent" class="urgent"></section>
     <section id="cards" class="cards"></section>
   </main>
 

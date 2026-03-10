@@ -8,7 +8,9 @@ const state = {
 
 const els = {
   meta: document.getElementById("meta"),
+  health: document.getElementById("health"),
   summary: document.getElementById("summary"),
+  urgent: document.getElementById("urgent"),
   cards: document.getElementById("cards"),
   search: document.getElementById("search"),
   onlyLow: document.getElementById("only-low"),
@@ -22,17 +24,43 @@ function stockBadge(item) {
   return `<span class="badge">${n}${item.unit || ""}</span>`;
 }
 
+function stockPercent(item) {
+  const n = Number(item.current_stock ?? 0);
+  return Math.max(2, Math.min(100, n <= 2 ? n * 20 : Math.log10(n + 1) * 45));
+}
+
 function renderSummary(data, visibleItems) {
   const total = data.items?.length || 0;
-  const low = (data.items || []).filter(i => Number(i.current_stock) <= 2).length;
   const visible = visibleItems.length;
+  const lowVisible = visibleItems.filter(i => Number(i.current_stock) <= 2).length;
   const catCount = new Set((visibleItems || []).map(i => i.category)).size;
 
   els.summary.innerHTML = `
     <div class="metric"><div class="label">总物品数</div><div class="value">${total}</div></div>
     <div class="metric"><div class="label">当前显示</div><div class="value">${visible}</div></div>
-    <div class="metric"><div class="label">低库存（≤2）</div><div class="value">${low}</div></div>
+    <div class="metric"><div class="label">低库存（当前筛选）</div><div class="value">${lowVisible}</div></div>
     <div class="metric"><div class="label">涉及分类</div><div class="value">${catCount}</div></div>
+  `;
+}
+
+function renderUrgent(items) {
+  const urgent = [...items]
+    .filter(i => Number(i.current_stock) <= 2)
+    .sort((a, b) => Number(a.current_stock) - Number(b.current_stock))
+    .slice(0, 8);
+
+  if (!urgent.length) {
+    els.urgent.innerHTML = "";
+    return;
+  }
+
+  els.urgent.innerHTML = `
+    <div class="urgent-box">
+      <div class="urgent-title">⚠️ 建议优先补货</div>
+      <div class="chips">
+        ${urgent.map(i => `<span class="chip">${i.name} · ${i.current_stock}${i.unit || ""}</span>`).join("")}
+      </div>
+    </div>
   `;
 }
 
@@ -44,6 +72,7 @@ function renderCards(data) {
   });
 
   renderSummary(data, items);
+  renderUrgent(items);
 
   const groups = (data.categories || []).map(cat => ({
     cat,
@@ -57,14 +86,17 @@ function renderCards(data) {
 
   els.cards.innerHTML = groups.map(g => `
     <article class="card">
-      <h3>${g.cat}</h3>
+      <h3>${g.cat}<span class="count">${g.list.length} 项</span></h3>
       ${g.list.map(item => `
         <div class="item">
           <div>
             <div class="left">${item.name}</div>
             <div class="spec">${item.spec || "-"} · 更新：${item.last_updated || "-"}</div>
           </div>
-          <div>${stockBadge(item)}</div>
+          <div class="item-right">
+            <div>${stockBadge(item)}</div>
+            <div class="bar"><span style="width:${stockPercent(item)}%"></span></div>
+          </div>
         </div>
       `).join("")}
     </article>
@@ -79,6 +111,8 @@ async function loadData() {
     const data = jsyaml.load(yamlText);
 
     state.raw = data;
+    const lowCount = (data.items || []).filter(i => Number(i.current_stock) <= 2).length;
+    els.health.textContent = lowCount > 0 ? `库存状态：有 ${lowCount} 项偏低` : "库存状态：健康";
     els.meta.textContent = `数据源：inventory/stock.yaml · 最后刷新：${new Date().toLocaleString()}`;
     renderCards(data);
   } catch (e) {

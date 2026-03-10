@@ -3,35 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Monitor</title>
+  <title>Zoe Runtime Monitor</title>
+  <meta http-equiv="refresh" content="0; url=http://localhost:18789/" />
   <style>
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0b1020;color:#e9eeff}
-    .wrap{max-width:1200px;margin:24px auto;padding:0 16px}
-    .head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
-    .title{font-size:22px;font-weight:800}
-    .sub{color:#9aa6c7;font-size:13px}
-    .badge{padding:6px 10px;border-radius:999px;background:#1a2a4d;border:1px solid #2f4b82;color:#a9c4ff;font-size:12px}
-    .card{background:#121931;border:1px solid #27345f;border-radius:12px;padding:10px}
-    iframe{width:100%;height:78vh;border:0;border-radius:10px;background:#0f1630}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0b1020;color:#e9eeff;display:grid;place-items:center;height:100vh}
+    .box{max-width:680px;padding:20px;border:1px solid #2a3a6d;border-radius:12px;background:#121932}
     a{color:#8fb3ff}
+    .muted{color:#9aa6c7;font-size:13px}
   </style>
-  <meta http-equiv="refresh" content="0; url=/inventory/web-preview/index.html" />
 </head>
 <body>
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <div class="title">📊 Dashboard Monitor</div>
-        <div class="sub">已切换到实时库存看板，避免旧静态数据误导</div>
-      </div>
-      <div class="badge">Auto Redirect</div>
-    </div>
-    <div class="card">
-      <p>如果没有自动跳转，请手动打开：
-        <a href="/inventory/web-preview/index.html">/inventory/web-preview/index.html</a>
-      </p>
-      <iframe src="/inventory/web-preview/index.html" title="Inventory Dashboard"></iframe>
-    </div>
+  <div class="box">
+    <h2>🧭 正在跳转到 OpenClaw 实时监控面板…</h2>
+    <p class="muted">这里展示的是 runtime 实时状态（session / sub-agent / channel / gateway），不是静态页面。</p>
+    <p>若未自动跳转，请手动打开：</p>
+    <ul>
+      <li><a href="http://localhost:18789/">http://localhost:18789/</a></li>
+      <li><a href="http://192.168.31.212:18789/">http://192.168.31.212:18789/</a>（局域网）</li>
+    </ul>
   </div>
 </body>
 </html>

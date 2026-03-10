@@ -1,210 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zoe Team Monitor</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'SF Mono',Monaco,Consolas,monospace;background:#0a0e14;color:#d4d4d4;padding:20px;line-height:1.6}
-.container{max-width:1400px;margin:0 auto}
-.header{text-align:center;margin-bottom:30px;padding:20px;background:linear-gradient(135deg,#1a1f2e 0%,#0f1419 100%);border-radius:12px;border:1px solid #1e2530}
-.header h1{font-size:28px;color:#00d9ff;margin-bottom:8px;font-weight:700}
-.header .subtitle{color:#6b7280;font-size:13px;margin-top:4px}
-.header .time{color:#9ca3af;font-size:12px;margin-top:8px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-bottom:20px}
-.card{background:#13171f;border:1px solid #1e2530;border-radius:10px;padding:20px;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00d9ff,#7c3aed)}
-.card-title{font-size:14px;color:#6b7280;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-weight:600}
-.metric{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e2530}
-.metric:last-child{border:none}
-.metric-label{color:#9ca3af;font-size:13px}
-.metric-value{color:#fff;font-size:15px;font-weight:600}
-.status-badge{display:inline-block;padding:4px 10px;border-radius:12px;font-size:11px;font-weight:600;text-transform:uppercase}
-.status-badge.online{background:#10b98133;color:#10b981}
-.status-badge.idle{background:#f59e0b33;color:#f59e0b}
-.agent-card{border-left:3px solid #00d9ff}
-.agent-card.intel{border-left-color:#7c3aed}
-.agent-card.handyman{border-left-color:#10b981}
-.agent-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.agent-emoji{font-size:32px}
-.agent-info h3{font-size:16px;color:#fff;margin-bottom:4px}
-.agent-info .role{font-size:12px;color:#6b7280}
-.progress-bar{width:100%;height:6px;background:#1e2530;border-radius:3px;overflow:hidden;margin-top:8px}
-.progress-fill{height:100%;background:linear-gradient(90deg,#00d9ff,#7c3aed);transition:width 0.3s}
-.channels{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.channel-tag{display:flex;align-items:center;gap:6px;background:#1e2530;padding:6px 12px;border-radius:6px;font-size:12px}
-.dot{width:6px;height:6px;border-radius:50%}
-.dot.on{background:#10b981}
-.dot.off{background:#ef4444}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
-.stat-box{background:#1e2530;padding:12px;border-radius:8px;text-align:center}
-.stat-box .value{font-size:20px;color:#00d9ff;font-weight:700;margin-bottom:4px}
-.stat-box .label{font-size:11px;color:#6b7280;text-transform:uppercase}
-.log-entry{padding:8px 12px;background:#1e2530;border-radius:6px;margin-bottom:8px;font-size:12px}
-.log-entry .timestamp{color:#6b7280;margin-right:8px}
-.log-entry .message{color:#d4d4d4}
-.footer{text-align:center;margin-top:30px;padding:20px;color:#6b7280;font-size:12px}
-.host-info{background:#1e2530;padding:8px 12px;border-radius:6px;font-size:11px;color:#9ca3af;margin-top:12px}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Monitor</title>
+  <style>
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0b1020;color:#e9eeff}
+    .wrap{max-width:1200px;margin:24px auto;padding:0 16px}
+    .head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+    .title{font-size:22px;font-weight:800}
+    .sub{color:#9aa6c7;font-size:13px}
+    .badge{padding:6px 10px;border-radius:999px;background:#1a2a4d;border:1px solid #2f4b82;color:#a9c4ff;font-size:12px}
+    .card{background:#121931;border:1px solid #27345f;border-radius:12px;padding:10px}
+    iframe{width:100%;height:78vh;border:0;border-radius:10px;background:#0f1630}
+    a{color:#8fb3ff}
+  </style>
+  <meta http-equiv="refresh" content="0; url=/inventory/web-preview/index.html" />
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1>🦞 Zoe Team Monitor</h1>
-<div class="subtitle">Running on Jamie's Mac mini</div>
-<div class="time">Last updated: <span id="time">2026-03-08 14:10 Asia/Shanghai</span></div>
-</div>
-
-<div class="grid">
-<div class="card agent-card">
-<div class="agent-header">
-<div class="agent-emoji">💖</div>
-<div class="agent-info">
-<h3>Zoe</h3>
-<div class="role">Team Lead · Main Agent</div>
-</div>
-<span class="status-badge online">ONLINE</span>
-</div>
-<div class="metric">
-<span class="metric-label">Model</span>
-<span class="metric-value">aigocode/claude-opus-4-6</span>
-</div>
-<div class="metric">
-<span class="metric-label">Context Usage</span>
-<span class="metric-value">131k / 200k (66%)</span>
-</div>
-<div class="progress-bar"><div class="progress-fill" style="width:66%"></div></div>
-<div class="metric">
-<span class="metric-label">Cache Hit</span>
-<span class="metric-value">87%</span>
-</div>
-<div class="metric">
-<span class="metric-label">Tokens (in/out)</span>
-<span class="metric-value">1.1k / 2.8k</span>
-</div>
-<div class="metric">
-<span class="metric-label">Cost</span>
-<span class="metric-value">$0.08</span>
-</div>
-</div>
-
-<div class="card agent-card intel">
-<div class="agent-header">
-<div class="agent-emoji">🕵️</div>
-<div class="agent-info">
-<h3>情报官</h3>
-<div class="role">Intel Officer · Search Agent</div>
-</div>
-<span class="status-badge idle">IDLE</span>
-</div>
-<div class="metric">
-<span class="metric-label">Model</span>
-<span class="metric-value">kimicode/kimi-k2.5</span>
-</div>
-<div class="metric">
-<span class="metric-label">Last Active</span>
-<span class="metric-value">60+ min ago</span>
-</div>
-<div class="metric">
-<span class="metric-label">Total Runs</span>
-<span class="metric-value">0 (last 60min)</span>
-</div>
-</div>
-
-<div class="card agent-card handyman">
-<div class="agent-header">
-<div class="agent-emoji">🔧</div>
-<div class="agent-info">
-<h3>打杂工</h3>
-<div class="role">Handyman · Ops Agent</div>
-</div>
-<span class="status-badge idle">IDLE</span>
-</div>
-<div class="metric">
-<span class="metric-label">Model</span>
-<span class="metric-value">kimicode/kimi-k2.5</span>
-</div>
-<div class="metric">
-<span class="metric-label">Last Active</span>
-<span class="metric-value">60+ min ago</span>
-</div>
-<div class="metric">
-<span class="metric-label">Total Runs</span>
-<span class="metric-value">0 (last 60min)</span>
-</div>
-</div>
-</div>
-
-<div class="card">
-<div class="card-title">📡 Channel Status</div>
-<div class="channels">
-<div class="channel-tag"><span class="dot on"></span>Discord</div>
-<div class="channel-tag"><span class="dot on"></span>WhatsApp</div>
-<div class="channel-tag"><span class="dot on"></span>飞书</div>
-<div class="channel-tag"><span class="dot off"></span>Telegram</div>
-</div>
-</div>
-
-<div class="card">
-<div class="card-title">📊 System Stats</div>
-<div class="stats-grid">
-<div class="stat-box">
-<div class="value">1</div>
-<div class="label">Active Sessions</div>
-</div>
-<div class="stat-box">
-<div class="value">0</div>
-<div class="label">Running Tasks</div>
-</div>
-<div class="stat-box">
-<div class="value">200k</div>
-<div class="label">Context Limit</div>
-</div>
-<div class="stat-box">
-<div class="value">87%</div>
-<div class="label">Cache Hit Rate</div>
-</div>
-</div>
-</div>
-
-<div class="card">
-<div class="card-title">📝 Recent Activity</div>
-<div class="log-entry">
-<span class="timestamp">14:10</span>
-<span class="message">Zoe: Session active on discord:#agent</span>
-</div>
-<div class="log-entry">
-<span class="timestamp">14:10</span>
-<span class="message">System: Context usage at 66% (131k/200k)</span>
-</div>
-<div class="log-entry">
-<span class="timestamp">14:10</span>
-<span class="message">System: Cache hit rate: 87%</span>
-</div>
-</div>
-
-<div class="card">
-<div class="card-title">🖥️ Host Information</div>
-<div class="host-info">
-<div>Platform: macOS (Darwin 25.2.0 arm64)</div>
-<div>OpenClaw: 2026.3.2 (85377a2)</div>
-<div>Runtime: direct · Think: off · elevated</div>
-<div>Workspace: ~/.openclaw/workspace</div>
-</div>
-</div>
-
-<div class="footer">
-OpenClaw 2026.3.2 · Jamie's Mac mini · Asia/Shanghai
-</div>
-</div>
-
-<script>
-setInterval(()=>{
-const now = new Date();
-const options = {timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false};
-document.getElementById('time').textContent=now.toLocaleString('zh-CN',options).replace(/\//g,'-');
-},1000);
-</script>
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="title">📊 Dashboard Monitor</div>
+        <div class="sub">已切换到实时库存看板，避免旧静态数据误导</div>
+      </div>
+      <div class="badge">Auto Redirect</div>
+    </div>
+    <div class="card">
+      <p>如果没有自动跳转，请手动打开：
+        <a href="/inventory/web-preview/index.html">/inventory/web-preview/index.html</a>
+      </p>
+      <iframe src="/inventory/web-preview/index.html" title="Inventory Dashboard"></iframe>
+    </div>
+  </div>
 </body>
 </html>

@@ -14,12 +14,16 @@
     .card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px}
     .k{font-size:12px;color:var(--muted)} .v{font-size:28px;font-weight:800}
     .agents{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-top:10px}
-    .agent h3{margin:0 0 8px;font-size:16px}
+    .agent h3{margin:0 0 8px;font-size:16px;display:flex;align-items:center;justify-content:space-between}
     .badge{padding:2px 8px;border-radius:999px;font-size:12px}
     .on{background:#1f4f40;color:#9bf0cc}.off{background:#4b3a1a;color:#ffd89a}
-    .list{margin:6px 0 0;padding-left:18px;color:#cfd8ff;font-size:13px}
     .row{display:flex;justify-content:space-between;gap:8px;padding:4px 0;border-bottom:1px dashed #30426f}
     .row:last-child{border-bottom:0}
+    .agent-id{display:flex;align-items:center;gap:10px}
+    .avatar{width:34px;height:34px;border-radius:999px;display:grid;place-items:center;font-size:19px;background:#1c2850;border:1px solid #37508e}
+    .name{display:flex;flex-direction:column;line-height:1.2}
+    .name b{font-size:15px}
+    .name span{font-size:11px;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -29,7 +33,7 @@
         <h2 style="margin:0">🧭 Zoe Runtime Dashboard</h2>
         <div class="sub" id="meta">读取中...</div>
       </div>
-      <div class="sub">自动刷新: 10s</div>
+      <div class="sub">刷新频率: 1小时（由 Ops 维护）</div>
     </div>
 
     <section class="grid" id="summary"></section>
@@ -41,6 +45,12 @@
   </div>
 
 <script>
+const AGENTS = {
+  main: { name: 'Zoe', role: 'MAIN', avatar: '💖', model: 'anthropic/claude-opus-4-6 (主) / kimicode/kimi-k2.5 (备)' },
+  spy: { name: 'Spy', role: '侦察官', avatar: '🕵️', model: 'gmn/gpt-5.3-codex (优先) / kimicode/kimi-k2.5 (回退)' },
+  joy: { name: 'Joy', role: '书童', avatar: '😊', model: 'gmn/gpt-5.3-codex (优先) / kimicode/kimi-k2.5 (回退)' },
+  ops: { name: 'Ops', role: '扫地僧', avatar: '⚙️', model: 'kimicode/kimi-k2.5 (固定)' }
+};
 function fmtAgo(ms){if(ms<6e4)return '刚刚';if(ms<36e5)return Math.floor(ms/6e4)+'m';return Math.floor(ms/36e5)+'h'}
 function card(k,v){return `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`}
 function render(data){
@@ -58,20 +68,25 @@ function render(data){
 
   const agents=['main','spy','joy','ops'];
   document.getElementById('agents').innerHTML=agents.map(a=>{
+    const meta=AGENTS[a]||{name:a,role:'',avatar:'🤖',model:'-'};
     const active=(byAgent[a]||0)>0;
     const hb=(data?.heartbeat?.agents||[]).find(x=>x.agentId===a);
-    return `<div class="card agent"><h3>${a.toUpperCase()} <span class="badge ${active?'on':'off'}">${active?'活跃':'空闲'}</span></h3>
+    return `<div class="card agent"><h3>
+      <span class="agent-id"><span class="avatar">${meta.avatar}</span><span class="name"><b>${meta.name}</b><span>${meta.role}</span></span></span>
+      <span class="badge ${active?'on':'off'}">${active?'活跃':'空闲'}</span>
+    </h3>
       <div class="row"><span>最近会话</span><span>${byAgent[a]||0}</span></div>
       <div class="row"><span>心跳</span><span>${hb?.enabled?hb.every:'disabled'}</span></div>
+      <div class="row"><span>模型</span><span style="text-align:right;max-width:65%">${meta.model}</span></div>
     </div>`
   }).join('');
 
-  document.getElementById('recent').innerHTML=recent.slice(0,10).map(s=>`<div class="row"><span>${s.agentId} · ${s.kind}</span><span>${fmtAgo(s.age||0)} · ${s.percentUsed||'?'}%</span></div>`).join('')||'<div class="sub">暂无</div>';
+  document.getElementById('recent').innerHTML=recent.slice(0,10).map(s=>`<div class="row"><span>${AGENTS[s.agentId]?.name||s.agentId} · ${s.kind}</span><span>${fmtAgo(s.age||0)} · ${s.percentUsed||'?'}%</span></div>`).join('')||'<div class="sub">暂无</div>';
 }
 async function load(){
   try{const r=await fetch('/monitor-data.json?'+Date.now());const d=await r.json();render(d);}catch(e){document.getElementById('meta').textContent='读取失败：'+e.message}
 }
-load();setInterval(load,10000);
+load();setInterval(load,3600*1000);
 </script>
 </body>
 </html>

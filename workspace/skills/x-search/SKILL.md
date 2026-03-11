@@ -11,7 +11,7 @@
 
 ### 快速搜索脚本
 ```bash
-cd /root/.openclaw/workspace
+cd /Users/jamiewu/.openclaw/workspace
 X_SEARCH_QUERY="搜索关键词" python3 x_quick_search.py
 ```
 

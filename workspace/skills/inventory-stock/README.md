@@ -56,7 +56,7 @@ python3 web_app.py
 
 ## 数据源
 
-应用从 `/root/.openclaw/workspace/inventory/stock.yaml` 读取库存数据。
+应用从 `/Users/jamiewu/.openclaw/workspace/inventory/stock.yaml` 读取库存数据。
 
 ## 技术栈
 

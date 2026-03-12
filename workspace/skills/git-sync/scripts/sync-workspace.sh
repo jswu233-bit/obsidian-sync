@@ -17,7 +17,13 @@ files=("IDENTITY.md" "SOUL.md" "USER.md" "MEMORY.md" "AGENTS.md" "TOOLS.md" "BOO
 for file in "${files[@]}"; do
     if [ -f "$SOURCE_DIR/$file" ]; then
         cp "$SOURCE_DIR/$file" "$TARGET_DIR/"
-        echo "  ✅ 已同步: $file ($(stat -c%s "$SOURCE_DIR/$file") bytes)"
+        # 兼容 macOS(BSD stat) 与 Linux(GNU stat)
+        if size=$(stat -f%z "$SOURCE_DIR/$file" 2>/dev/null); then
+            :
+        else
+            size=$(stat -c%s "$SOURCE_DIR/$file" 2>/dev/null || wc -c < "$SOURCE_DIR/$file")
+        fi
+        echo "  ✅ 已同步: $file (${size} bytes)"
     else
         echo "  ⚠️  文件不存在: $file"
     fi

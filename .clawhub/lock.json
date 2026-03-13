@@ -15,7 +15,7 @@
     },
     "summarize": {
       "version": "1.0.0",
-      "installedAt": 1771326142108
+      "installedAt": 1773391809101
     },
     "youtube-api-skill": {
       "version": "1.0.3",
@@ -40,6 +40,14 @@
     "skill-creator": {
       "version": "0.1.0",
       "installedAt": 1773391628684
+    },
+    "agent-browser": {
+      "version": "0.2.0",
+      "installedAt": 1773391810128
+    },
+    "find-skills": {
+      "version": "0.1.0",
+      "installedAt": 1773391811161
     }
   }
 }

@@ -36,6 +36,10 @@
     "flight-search": {
       "version": "0.1.7",
       "installedAt": 1771335261219
+    },
+    "skill-creator": {
+      "version": "0.1.0",
+      "installedAt": 1773391628684
     }
   }
 }

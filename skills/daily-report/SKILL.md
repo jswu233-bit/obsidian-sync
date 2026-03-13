@@ -6,7 +6,7 @@
 - **每天21:00**（北京时间）
 - 频道: Discord #日报
 
-### 内容板块（6大板块）
+### 内容板块（7+1板块）
 
 #### 1. AI新闻板块
 - 搜索今日最新AI新闻（国内外）
@@ -90,44 +90,75 @@
 ## 生成流程（团队协作版）
 
 ### 角色分工
-- **情报官 (intel)**: 负责所有搜索和数据抓取工作
+- **Spy (spy)**: 负责所有搜索和数据抓取工作
 - **Zoe (main)**: 负责审阅、解读、点评、整合、发送
 
 ### 流程
 ```
-Phase 1 — 情报官搜索（派活给 intel sub-agent）
+Phase 1 — Spy 搜索（派活给 spy sub-agent）
   1. AI新闻搜索 → web_search (Top 10)
   2. OpenClaw新闻 → web_search + ClawFeed + x_quick_search.py (Top 10)
   3. 国内外金融新闻 → web_search (黄金、美股、A股、港股)
-  4. X博主推文抓取 → x-tweet-fetcher (Camofox) 抓取关注博主最新推文
-  5. 微信公众号 → sogou_wechat.py / web_search 备用
+  4. X博主推文抓取 → x_quick_search.py 搜索热门话题
+  5. 微信公众号 → web_search 搜索最新文章
   6. 基金和金融市场数据 → web_search
-  7. 北京天气 → wttr.in
-  → 情报官将原始数据整理后交回 Zoe
+  7. 北京天气 → curl wttr.in/Beijing
+  → Spy 将原始数据整理后交回 Zoe
 
 Phase 2 — Zoe 审阅 & 解读
-  8. 审阅情报官返回的原始数据，筛选高质量内容
+  8. 审阅 Spy 返回的原始数据，筛选高质量内容
   9. 为每条内容撰写中文要点解读和 Zoe 点评
   10. 整合成完整 Markdown 日报
 
 Phase 3 — 发布
-  11. 发送到 Discord #日报
-  12. 保存到 Git: daily/YYYY-MM-DD-日报.md
-  13. git add → git commit → git push
+  11. 保存到 Git: daily/YYYY-MM-DD-日报.md
+  12. git add → git commit → git push origin main
+  13. 发送到 Discord #daily
 ```
 
 ### 派活示例
-Zoe 使用 sessions_spawn 派活给情报官：
+Zoe 使用 sessions_spawn 派活给 Spy：
 ```
+agentId: "spy"
+mode: "run"
+model: "kimicode/kimi-k2.5"
 task: "今日日报搜索任务 (2026-MM-DD)：
-1. 搜索今日 AI 新闻 Top 10（国内外）
-2. 搜索 OpenClaw 社区动态 Top 10（ClawFeed + HN + Reddit + V2EX + Qiita）
-3. 搜索金融新闻（黄金、美股、A股、港股）
-4. 用 x-tweet-fetcher 抓取以下博主最新推文：@op7418 @dotey @SamuelQZQ @gkxspace @yulin807
-5. 搜索微信公众号最新文章：财经早餐、香帅的金融江湖、小狼的Eft投资
-6. 获取基金和金融市场数据
-7. 获取北京天气
-将所有原始数据整理成结构化 JSON/Markdown 返回。"
+
+请搜集以下所有信息并整理成结构化格式返回：
+
+1. **AI新闻 Top 10**（国内外）
+   - 使用 web_search 搜索今日最新 AI 新闻
+   - 重点：大模型进展、产品发布、行业动态
+
+2. **OpenClaw新闻 Top 10**（必须详细）
+   - ClawFeed: http://clawfeed.kevinhe.io/
+   - GitHub releases: https://github.com/openclaw/openclaw/releases
+   - Reddit: r/openclaw
+   - 官方Blog: https://openclaws.io/blog/
+
+3. **金融新闻**（黄金、美股、A股、港股）
+   - 黄金价格变动及影响因素
+   - 美股三大指数（道指、纳指、标普500）
+   - A股市场动态
+   - 港股市场表现
+
+4. **X博主热门推文**
+   - 使用 x_quick_search.py 搜索今日 AI/OpenClaw 热门话题
+   - 选择标准：高互动量、内容质量高、与AI/OpenClaw相关
+
+5. **微信公众号最新文章**
+   - 财经早餐、香帅的金融江湖、小狼的Eft投资
+   - 使用 web_search 搜索最新文章
+
+6. **基金和金融市场数据**
+   - 美股、A股、港股表现
+   - 大宗商品（黄金、原油）
+   - 汇率变动
+
+7. **北京天气**
+   - 使用 curl wttr.in/Beijing
+
+将所有原始数据整理成结构化 Markdown 返回，包含标题、摘要、链接。"
 ```
 
 ## 日期验证
@@ -268,6 +299,23 @@ YouTube API 失败 → web_search "site:youtube.com [话题] today" → web_fetc
 💡 Zoe 点评：这篇对 Jamie 做产品规划很有参考价值，尤其是"AI应用层受益最大"这个判断，和你关注的 AIGC 工具方向完全吻合。
 📎 [阅读原文]
 ```
+
+### 输出模板（强制）
+- 标题必须是：`# 📰 Jamie每日综合日报 - YYYY年M月D日（Update版）`
+- 顶部必须有更新时间与一句版本说明
+- 必须按顺序包含：
+  1) 🤖 AI新闻板块
+  2) 🐦 X博主动态（完整解读版）
+  3) 📱 微信公众号精选
+  4) 📈 基金与金融市场
+  5) 🌤️ 北京天气
+  6) 📌 日报总结（今日热点 + 今日洞察）
+
+### 质量红线（强制）
+- 禁止出现占位符链接：`xxxxx`、`example.com`、`待补`。
+- 每条内容都要有可点击链接；实在没有单篇直链时，给检索页链接并明确说明。
+- X博主优先覆盖：`@op7418 @dotey @gkxspace @SamuelQZQ @yulin807`，每人至少1条具体观点解读。
+- 禁止输出“未获取/留空”作为最终结果；必须用降级方案补齐。
 
 ## 注意事项
 - OpenClaw必须作为单独板块，Top 10格式

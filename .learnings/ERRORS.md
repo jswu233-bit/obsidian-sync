@@ -74,3 +74,65 @@ fatal: could not read Username for 'https://github.com': Device not configured
 - See Also: none
 
 ---
+
+## [ERR-20260314-001] sessions_spawn (ACP thread-bound on Discord)
+
+**Logged**: 2026-03-14T01:26:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+在 Discord 频道中尝试用 `sessions_spawn(runtime="acp", thread=true)` 调用 Claude Code 创建新 agent 时失败，当前账号未开启 thread-bound ACP。
+
+### Error
+```
+Discord thread-bound ACP spawns are disabled for this account
+(set channels.discord.threadBindings.spawnAcpSessions=true to enable).
+```
+
+### Context
+- Operation: sessions_spawn
+- Params: runtime=acp, agentId=claude-code, thread=true, mode=session
+- User intent: 让 Claude Code 创建新 subagent（Eva/解花语）
+
+### Suggested Fix
+1. 在网关配置中启用 `channels.discord.threadBindings.spawnAcpSessions=true`；
+2. 或者临时改为非 thread-bound ACP 会话（`thread=false`）执行创建任务。
+
+### Metadata
+- Reproducible: yes
+- Related Files: gateway config (channels.discord.threadBindings)
+- See Also: none
+
+---
+
+## [ERR-20260314-002] exec command not found (rg)
+
+**Logged**: 2026-03-14T02:18:00+08:00
+**Priority**: low
+**Status**: pending
+**Area**: infra
+
+### Summary
+在当前主机上使用 `rg` 搜索时失败，系统未安装 ripgrep。
+
+### Error
+```
+zsh:1: command not found: rg
+```
+
+### Context
+- Operation: exec
+- Command: `rg -n ...`
+- Task: 批量定位 workspace 中的 subagent 描述与模型配置
+
+### Suggested Fix
+改用系统自带 `grep -R -n`，避免依赖 `rg`。
+
+### Metadata
+- Reproducible: yes
+- Related Files: none
+- See Also: none
+
+---

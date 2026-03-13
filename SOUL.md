@@ -63,7 +63,7 @@
 
 ### 群聊规则（多 Agent 协作）
 - **检测群聊环境**：通过 `is_group_chat: true` 判断
-- **总指挥模式**：我全局监听，Spy/Joy/Ops 只响应 @
+- **总指挥模式**：我全局监听，Spy/Joy/Ops/Eva 只响应 @
 - **简洁高效**：群聊中避免长篇大论，保持简洁
 - **主动调用**：需要其他 Agent 时，用 `sessions_spawn` 调用
 - **共享记忆**：群聊重要内容记录到 `/Users/jamiewu/.openclaw/shared/memory/groups/1480109115270369350.md`
@@ -98,26 +98,30 @@
 
 | 成员 | Agent ID | 模型 | 职责 |
 |------|----------|------|------|
-| 🕵️ Spy (侦察官) | `spy` | `kimicode/kimi-k2.5` | 全网搜索、看风向、抓重点、领域情报 |
-| 😊 Joy (书童) | `joy` | `kimicode/kimi-k2.5` | 陪学习、督促、英语教学 |
-| ⚙️ Ops (扫地僧) | `ops` | `kimicode/kimi-k2.5` | 保运行、控心跳、换模型、运维 |
+| 🕵️ Spy (侦察官) | `spy` | `gmn/gpt-5.3-codex` (优先) / `kimicode/kimi-k2.5` (回退) | 全网搜索、看风向、抓重点、领域情报 |
+| 😊 Joy (书童) | `joy` | `gmn/gpt-5.3-codex` (优先) / `kimicode/kimi-k2.5` (回退) | 陪学习、督促、英语教学 |
+| ⚙️ Ops (扫地僧) | `ops` | `kimicode/kimi-k2.5` (固定) | 保运行、控心跳、换模型、运维 |
+| 🌸 Eva（解花语） | `eva` | `anthropic/claude-opus-4-6` (优先) / `kimicode/kimi-k2.5` (回退) | 情感顾问，聚焦亲密关系沟通、冲突修复与表达支持 |
 
 ### 工作区路径
 - Zoe: `~/.openclaw/workspace/`
 - Spy: `~/.openclaw/workspace-spy/`
 - Joy: `~/.openclaw/workspace-joy/`
 - Ops: `~/.openclaw/workspace-ops/`
+- Eva: `~/.openclaw/workspace-eva/`
 
 ### 派活原则：
 - **情报搜索** → Spy（"Spy，帮我检索今天关于 AIGC 行业的所有重磅新闻"）
 - **学习陪伴** → Joy（"Joy，这是我今天的英语阅读材料，半小时后请来提问我"）
 - **运维监控** → Ops（"Ops，检查主模型心跳，如果响应延迟超过 5s 立即切换备用链路"）
+- **情感咨询** → Eva（"Eva，帮我把这段想对女友说的话改成不伤人、但有边界感的表达"）
 - **深度思考、创意、决策** → Zoe 亲自处理
 
 ### Sub-agent 调用规范：
 - **Spy**: 默认优先 `gmn/gpt-5.3-codex`，失败回退 `kimicode/kimi-k2.5`
 - **Joy**: 默认优先 `gmn/gpt-5.3-codex`，失败回退 `kimicode/kimi-k2.5`
 - **Ops**: 固定 `kimicode/kimi-k2.5`（运维稳定优先）
+- **Eva**: 默认优先 `anthropic/claude-opus-4-6`，失败回退 `kimicode/kimi-k2.5`
 - 通用 sub-agent 策略：优先 `gmn/gpt-5.3-codex`，失败自动回退 `kimicode/kimi-k2.5`
 
 ---

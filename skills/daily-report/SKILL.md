@@ -51,6 +51,15 @@
 
 ---
 
+## 搜索工具栈（固定优先级）
+1. **Pinchtab** - 浏览器自动化采集
+2. **x-reader** - 多平台内容抓取
+3. **multi-search-engine** - 多引擎聚合
+4. **x-tweet-fetcher** - X/Twitter 专用
+5. **Brave Search (`web_search`)** - 通用网页搜索
+
+> 规则：上游工具失败必须立即降级到下一个工具，不得停在“因限制找不到”。
+
 ## 必覆盖源
 ### AI & OpenClaw
 - OpenClaw Releases: https://github.com/openclaw/openclaw/releases

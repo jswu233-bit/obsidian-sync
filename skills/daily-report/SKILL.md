@@ -97,7 +97,7 @@
 ---
 
 ## 生成流程
-### Phase 1：Spy搜集（必须完整）
+### 第一步：Spy搜集（必须完整）
 Spy 任务要求：
 - AI新闻 Top（国内外）
 - OpenClaw Top 更新（release/blog/community）
@@ -105,12 +105,14 @@ Spy 任务要求：
 - 微信公众号文章
 - 金融市场（美股/A股/港股/黄金/原油/汇率）
 - 北京天气
+- 若 X 无法直读，必须通过搜索工具链尽可能补齐观点内容（x-reader/multi-search-engine/x-tweet-fetcher/web_search）
 
-### Phase 2：Zoe主编（A版成稿）
+### 第二步：Zoe主编（A版成稿）
 - 删除噪音，保留高信号内容
 - 每条改写为 A版三段
 - Zoe点评必须是明确立场判断（继续/暂停、上调/下调、短期/长期），禁止空话点评
 - 《日报总结》至少给出 2 条次日可执行判断
+- 额外新增《Zoe今日点评》：输出当天总判断（方向+风险+动作建议）
 
 ### Phase 3：发布与归档
 - 文件路径：`daily/YYYY-MM-DD-update*.md`

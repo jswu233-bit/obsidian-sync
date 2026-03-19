@@ -39,6 +39,7 @@
 ### 失败兜底纪律（含X平台）
 - 禁止以“限制/找不到”收尾
 - 任一源失败时，立即降级到下一个工具
+- Pinchtab 不可用或失败时，必须按顺序降级：x-reader → multi-search-engine → x-tweet-fetcher → web_search
 - 若 X 无法直接查看：必须走搜索技能兜底（`x-reader` / `multi-search-engine` / `x-tweet-fetcher` / `web_search`），尽可能还原观点内容
 - 必要时用 `web_fetch` 抓正文 + 可信二手源交叉验证
 

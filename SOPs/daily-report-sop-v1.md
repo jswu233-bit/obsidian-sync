@@ -20,7 +20,9 @@
 ---
 
 ## 2. 第一步：Spy采集流程（强制）
-按优先级依次采集：
+按全局搜索技能执行：`skills/search-priority/SKILL.md`
+
+该技能固定顺序：
 1. Pinchtab
 2. x-reader
 3. multi-search-engine

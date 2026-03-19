@@ -1,0 +1,108 @@
+# Daily Report SOP v1（Jamie专用）
+
+> 目的：把“日报技能”变成可重复执行的标准作业流程，确保**每天稳定交付**。
+
+## 0. 交付定义（Definition of Done）
+必须同时满足：
+1. 当天文件存在：`daily/YYYY-MM-DD-update.md`（或 `-update2.md`）
+2. 只发一份总日报（OpenClaw 融合，不单独二发）
+3. A版结构完整（每条：发生了什么 / 为什么重要 / Zoe点评）
+4. 重点条目长摘要达标（AI、OpenClaw、公众号建议 220-400 字）
+5. 无占位词（未获取/待补/留空/xxxxx/example.com）
+6. 已 push 到 `main`，并对 Jamie 回传 commit hash
+
+---
+
+## 1. 每日执行时点
+- 建议执行窗口：每日晚间固定时段（如 21:00-23:30）
+- 若当天中断，必须在当日补齐，不跨日常态化延期
+
+---
+
+## 2. 采集流程（Spy）
+按优先级依次采集：
+1. Pinchtab
+2. x-reader
+3. multi-search-engine
+4. x-tweet-fetcher
+5. Brave（`web_search`）
+
+### 必采集板块
+- AI 新闻
+- OpenClaw（release/blog/community）
+- X 博主：@op7418 @dotey @gkxspace @SamuelQZQ @yulin807
+- 微信公众号：财经早餐 / 香帅的金融江湖 / 小狼的Eft投资
+- 金融市场：美股/A股/港股/黄金/原油/汇率
+- 北京天气
+
+### 失败兜底纪律
+- 禁止以“限制/找不到”收尾
+- 任一源失败时，立即降级到下一个工具
+- 必要时用 `web_fetch` 抓正文 + 可信二手源交叉验证
+
+---
+
+## 3. 编写流程（Zoe）
+### 结构固定
+1. 🤖 AI新闻板块
+2. 🦞 OpenClaw日报融合板块
+3. 🐦 X博主动态（完整解读版）
+4. 📱 微信公众号精选
+5. 📈 基金与金融市场
+6. 🌤️ 北京天气
+7. 📌 日报总结
+
+### 写作规则
+- 每条都写三段：发生了什么 / 为什么重要 / Zoe点评
+- 每条都给可点击链接
+- 重点条目写长摘要，不写短bullet敷衍
+
+---
+
+## 4. 发布流程（Git）
+1. 保存文件到 `daily/YYYY-MM-DD-update*.md`
+2. 执行：
+   - `git add`
+   - `git commit`
+   - `git push origin main`
+3. 若 push 被拒：
+   - `git pull --rebase --autostash origin main`
+   - 再 `git push origin main`
+
+提交信息模板：
+`📰 添加YYYY-MM-DD update日报（A版）`
+
+---
+
+## 5. 发布前强校验（硬闸）
+发布前逐项打勾：
+- [ ] 是今天日期文件
+- [ ] 单份总日报（已融合 OpenClaw）
+- [ ] A版三段式完整
+- [ ] 重点长摘要达标
+- [ ] 关键来源有链接
+- [ ] 无占位符/留空结论
+- [ ] 已 push main
+- [ ] 已回报 commit hash
+
+任一未勾选：禁止发布“已完成”。
+
+---
+
+## 6. 发布后回执模板
+```
+已产出并推送完成 ✅
+- 文件：daily/YYYY-MM-DD-update.md
+- 分支：main
+- commit：<hash>
+```
+
+---
+
+## 7. 复盘触发条件
+满足任一条件，必须复盘并修正流程：
+- 漏产 / 迟产
+- 结构回退（非A版）
+- 未 push main
+- 缺来源链接
+- 被 Jamie 指出“不符合要求”

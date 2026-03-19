@@ -3,6 +3,8 @@
 ## 目标
 产出**一份**“精炼且详细”的总日报（含 OpenClaw 融合板块），可直接阅读做判断，不依赖读者点链接。
 
+> 执行SOP（强制）：`/Users/jamiewu/.openclaw/workspace/SOPs/daily-report-sop-v1.md`
+
 ---
 
 ## 固定分工

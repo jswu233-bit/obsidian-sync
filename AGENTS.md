@@ -11,6 +11,7 @@
 - **Daily notes**: `memory/YYYY-MM-DD.md` — 原始日志
 - **Long-term**: `MEMORY.md` — 精华记忆
 - **Learnings**: `.learnings/LEARNINGS.md`, `.learnings/ERRORS.md` — 经验教训
+- **Feishu index**: 每次写 daily memory 后，同步更新飞书索引表（作为检索入口）
 - **文字 > 大脑** — 想记住就写文件
 
 ## 经验教训记录 (Self-Improvement)

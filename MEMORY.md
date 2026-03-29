@@ -1,66 +1,70 @@
 # MEMORY.md - 核心记忆
 
-> 结构说明（按 Jamie 最新要求）：
-> 1) 记忆部分  2) Skill 部分  3) 日报部分
-
----
 
 ## 一、记忆部分
 
-### 1) 记忆管理规则（写入：2026-03-14）
-- 每天写 `memory/YYYY-MM-DD.md` 日记。
-- 重要内容归档到本文件（`MEMORY.md`）。
-- 2026-03-14 起执行强化纪律：daily memory 不能断档；出现长期规则/流程变更时，当日同步归档到 `MEMORY.md`。
+### 1) 记忆管理与架构（合并更新：2026-03-29）
+- 每天写 `memory/YYYY-MM-DD.md` 日记（daily memory 不能断档）。
+- `MEMORY.md` 仅保留长期规则/稳定偏好/关键决策；原始事实留在 daily memory。
+- 飞书表格仅做第三层索引与管理视图，不存全量细节。
+- 凡涉及“历史决策/用户偏好/既有规则”，先检索记忆再回答。
+- Jamie 明确要求“记住/写进记忆”时：直接同步写入 daily memory 与飞书索引。
 
-### 2) 记忆架构升级 v1（写入：2026-03-19）
-- 分层固定：
-  - `daily memory`：记录原始事实；
-  - `MEMORY.md`：仅保留长期规则/稳定偏好/关键决策；
-  - 飞书表格：仅做关键索引与管理视图，不存全量细节。
-- 长期记忆写入门槛（满足其一才写入）：
-  1. 会影响后续决策；
-  2. Jamie 明确要求“记住/写进记忆”；
-  3. 属于稳定偏好、流程规则或高频复用方法。
-- 调用纪律：凡涉及“历史决策/用户偏好/既有规则”，先检索记忆再回答。
-- 周期清理：每周做一次记忆瘦身（合并重复、删除过期、清理无行动价值项）。
-- 行动导向：高频任务优先沉淀为 SOP。
-- 新增检索策略（写入：2026-03-22）：
-  - 14 天以内事项：优先精确匹配（daily 原文/精确索引）；
-  - 14 天以上事项：优先模糊匹配（语义召回/向量化思路）后再回原文校验。
+### 2) 判例库（CASE）写法（固定）
+- 除纯索引信息外，长期记忆统一按 CASE 模板记录。
+- 模板如下：
 
-### 3) 飞书索引层主表（写入：2026-03-20）
-- 第三层索引层主表（Feishu Bitable）：
-  - URL: `https://fhevyxypcl.feishu.cn/base/NTQnbfnthaTIMxsziNzcJaGNnld?table=tblez1cogebbBzwu&view=vewmQ6sC7t`
-  - app_token: `NTQnbfnthaTIMxsziNzcJaGNnld`
-  - table_id: `tblez1cogebbBzwu`
-  - view_id: `vewmQ6sC7t`
-- 用途：作为记忆系统第三层“关键索引与管理视图”。
-- 执行规则：每次新增/更新 `memory/YYYY-MM-DD.md` 后，必须同步写入飞书索引（字段至少包含：`文本/type/status/priority/source/写入日期`）。
-- 纪律：新增外部系统关键入口（表格/看板/文档）当天同步写入 `MEMORY.md`（URL + 唯一ID + 用途）。
-- 新增执行规则（2026-03-22）：每次写 `daily memory` 后，必须同步在飞书索引表新增/更新对应索引记录（type/status/priority/source/写入日期）。
+```md
+### [CASE-YYYYMMDD-序号] 标题
+- 场景：
+- 判断：
+- 动作：
+- 验收：
+- 回退：
+- type: decision|todo|risk|insight
+- temp: H|W|C
+```
 
-### 4) 教训库纳入规则（写入：2026-03-21）
-- 第二层 `MEMORY.md` 必须纳入“教训/经验”索引，不只记录规则与偏好。
-- 教训来源固定为工作区 `.learnings/`：
-  - `LEARNINGS.md`
-  - `ERRORS.md`
-  - `FEATURE_REQUESTS.md`
+### 3) Hot/Warm/Cold 温度分层与检索策略（固定）
+- H（Hot）：7天内高频会用
+- W（Warm）：8-30天可能复用
+- C（Cold）：30天+低频归档
+- 检索策略：
+  - Hot / Warm：优先精确匹配（daily 原文/精确索引）
+  - Cold：优先模糊匹配（语义召回/向量化思路）后再回原文校验
+- 执行顺序：先飞书索引定位条目，再回读对应 daily memory 详情。
+
+### 4) 主动遗忘机制（固定）
+- 每周执行一次一删（执行清单包含三项）：
+  1. 删重复（同结论多版本只留最新）
+  2. 删过期（已失效流程/入口）
+  3. 删无行动价值（不能指导下次动作）
+
+### 5) 长期层写入门槛（固定）
+- 进入 `MEMORY.md` / 飞书索引的内容必须是：
+  - decision
+  - todo
+  - risk
+  - insight
+- 其他内容全部留在 `daily memory`。
+
+### 6) 飞书索引层主表（写入：2026-03-20）
+- URL: `https://fhevyxypcl.feishu.cn/base/NTQnbfnthaTIMxsziNzcJaGNnld?table=tblez1cogebbBzwu&view=vewmQ6sC7t`
+- app_token: `NTQnbfnthaTIMxsziNzcJaGNnld`
+- table_id: `tblez1cogebbBzwu`
+- view_id: `vewmQ6sC7t`
+- 每次新增/更新 `memory/YYYY-MM-DD.md` 后，必须同步写入飞书索引（至少字段：`文本/type/status/priority/source/写入日期`）。
+- 每条长期项同步一条飞书索引，并补充 `temp`（H/W/C）。
+- 新增外部系统关键入口（表格/看板/文档）当天同步写入 `MEMORY.md`（URL + 唯一ID + 用途）。
+
+### 7) 教训库纳入规则（写入：2026-03-21）
+- 教训来源固定为工作区 `.learnings/`：`LEARNINGS.md`、`ERRORS.md`、`FEATURE_REQUESTS.md`。
 - 出现可复用教训（失败根因/用户纠正/最佳实践）时，当天同步：
   1. 先写入 `.learnings/` 对应文件；
-  2. 同步写入 `memory/YYYY-MM-DD.md`（daily memory）；
-  3. 同步更新飞书索引表（`type/status/priority/source/写入日期`）；
+  2. 同步写入 `memory/YYYY-MM-DD.md`；
+  3. 同步更新飞书索引表；
   4. 再在 `MEMORY.md` 记录长期适用结论与执行约束。
-- 新增升级阈值（写入：2026-03-22）：同类错误连续出现 2 次，必须升级沉淀到长期记忆与规范文件（`MEMORY.md` + `AGENTS.md/TOOLS.md/SOUL.md` 视类型归档）。
-
-### 5) 检索匹配策略（写入：2026-03-22）
-- 14 天以内事项：优先精确匹配（按日期/关键词/明确条目检索，避免语义漂移）。
-- 14 天以上事项：采用模糊匹配（语义相似/向量化思路）先召回背景，再回到原始记录核验关键事实。
-- 执行顺序：先飞书索引定位条目，再回读对应 daily memory 详情。
-- 新增记忆写入规则（写入：2026-03-22）：当 Jamie 明确要求“记住”时，直接同步写入 `daily memory` 与飞书索引表。
-
-### 6) 小F沟通策略偏好（写入：2026-03-23）
-- Jamie 明确确认："套路B（先猜测理解、不给对方重复压力）是有效的"。
-- 互动姿态偏好：保持对方高位感，避免让对方陷入重复解释与被审视位置。
+- 同类错误连续出现 2 次，必须升级沉淀到长期记忆与规范文件（`MEMORY.md` + `AGENTS.md/TOOLS.md/SOUL.md` 视类型归档）。
 
 ---
 
@@ -106,3 +110,4 @@
   4) 若无新增，必须显式写明“今日无新增长期记忆”或“今日无新增飞书索引”；
   5) 执行固定提交命令：`git add memory MEMORY.md .learnings || true && git commit -m "chore(memory): daily log + memory+feishu index sync" || true`。
 - 本规则属长期生效 SOP，默认 `status=active`，优先级 `high`。
+

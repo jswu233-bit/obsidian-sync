@@ -38,6 +38,7 @@
 - 环境 specifics 写 `TOOLS.md`
 - 搜索任务必须统一执行：`SOPs/search-sop.md`（不允许自定义搜索链路）
 - 搜索任务必须先执行 `SOPs/search-sop.md`（不得绕过）
+- `SOPs/daily-report-sop-v1.md` 视为受保护 SOP；不得被同步流程顺手删除。凡执行 sync / 覆盖 / 清理后，必须检查该文件仍存在；若丢失，立即恢复再继续。
 
 ## 回复规则
 - 有用才回复，无意义沉默

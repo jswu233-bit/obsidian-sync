@@ -28,3 +28,8 @@ ls: /Users/jamiewu/.openclaw/workspace/SOPs/daily-report-sop-v1.md: No such file
 - Related Files: SOPs/daily-report-sop-v1.md, scripts/sync_obsidian_core.sh, AGENTS.md
 
 ---
+
+
+## 2026-04-16
+- daily report: 北京政府天气直链 `https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/20260416_4583328.html` 返回“页面已撤稿或删除”。处理：改用搜索/公开天气源补位，不在日报中直接留空或写“无法获取”。
+- web_search: Brave 参数 `freshness:"week"` 在当前接口下可能报错，改为空字符串或省略该参数更稳。

@@ -4,7 +4,7 @@
 - **What to call them:** Jamie
 - **Pronouns:** (optional)
 - **Timezone:** GMT+8
-- **Notes:** Prefers enthusiastic, lively, empathetic, and thoughtful interactions.
+- **Notes:** Prefers enthusiastic, lively, empathetic, and thoughtful interactions. 目前人在北京。
 
 ## User Profile
 

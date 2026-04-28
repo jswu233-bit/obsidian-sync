@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-28T13:00:53.881Z",
+  "entries": {
+    "memory:memory/2026-04-18.md:1:13": {
+      "key": "memory:memory/2026-04-18.md:1:13",
+      "path": "memory/2026-04-18.md",
+      "startLine": 1,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "# 2026-04-18 ## Durable notes - 用户通过 `openclaw-tui` 在短时间内大量重复追问“什么模型”，需注意后续会话去重，避免把重复投递当成多个新任务。 - 本会话已明确答复：当前运行模型是 `digitflow/gpt-5.4`；补充信息：agent=`main`、推理强度=`xhigh`、运行方式=`direct`。 - 同期出现过与消息/网关稳定性相关的系统事件，后续若再异常可优先对照这些原始日志排查： - `System: [2026-04-17 23:30:33 GMT+8] Concurrency limit exceeded for user, please retry later` - `System: [2026-04-18 03:18:12 GMT+8] WhatsApp gateway disconnected (status 428)` - `System: [2026-04-18 03:18:18 GMT+8] WhatsApp gateway connected as +8618616818233.` - `System: [2026-04-18 18:28:28 GMT+8] WhatsApp gateway connected as +8618616818233.` - 用户在 Discord 私聊中大量重复追问“你现在是链接什么？openclaw吗？”。标准答复口径：当前是运行在 `OpenClaw` 框架内，由 `OpenClaw` 负责会话/路由；本会话背后的实际模型是 `digit",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3934606909751892,
+      "maxScore": 0.3934606909751892,
+      "firstRecalledAt": "2026-04-28T13:00:53.881Z",
+      "lastRecalledAt": "2026-04-28T13:00:53.881Z",
+      "queryHashes": [
+        "c96f6fcc8f12"
+      ],
+      "recallDays": [
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gpt",
+        "网关",
+        "openclaw-tui",
+        "digitflow/gpt-5.4",
+        "同期出现过与消息/网关稳定性相关的系统事件",
+        "负责会话/路由",
+        "durable"
+      ]
+    },
+    "memory:memory/2026-04-22.md:1:4": {
+      "key": "memory:memory/2026-04-22.md:1:4",
+      "path": "memory/2026-04-22.md",
+      "startLine": 1,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "- Jamie 新要求：日报需加入飞书知识库页面 `https://waytoagi.feishu.cn/wiki/Taqyw9f7hiMMLSk36BycHfjdn5b` 的总结。 - Jamie 新要求：日报需加入飞书知识库页面 `https://waytoagi.feishu.cn/wiki/Taqyw9f7hiMMLSk36BycHfjdn5b` 的总结。 - Jamie 在比较 Hermes vs OpenClaw 这类架构话题时，更偏好非技术、人话版解释；优先用“总控台/平台 vs 会成长的贴身助手/王牌员工”这类比喻说明。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3892472058534622,
+      "maxScore": 0.3892472058534622,
+      "firstRecalledAt": "2026-04-28T13:00:53.881Z",
+      "lastRecalledAt": "2026-04-28T13:00:53.881Z",
+      "queryHashes": [
+        "c96f6fcc8f12"
+      ],
+      "recallDays": [
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "总控台/平台",
+        "会成长的贴身助手/王牌员工",
+        "jamie",
+        "要求",
+        "日报",
+        "加入",
+        "知识",
+        "https"
+      ]
+    }
+  }
+}

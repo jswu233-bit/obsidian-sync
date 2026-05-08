@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-03T15:31:32.643Z",
+  "updatedAt": "2026-05-08T15:30:36.098Z",
   "entries": {
     "memory:memory/2026-04-18.md:1:13": {
       "key": "memory:memory/2026-04-18.md:1:13",
@@ -71,18 +71,20 @@
       "endLine": 27,
       "source": "memory",
       "snippet": "# 2026-04-11 Daily Memory ## 今日任务 - 执行 cron 提醒：daily-memory-log-creator（每日记忆维护）。 - 检查并创建 `memory/2026-04-11.md`。 - 复盘今日对话与 `.learnings/LEARNINGS.md`，提炼可沉淀的长期规则/关键决策。 - 同步更新 `MEMORY.md` 与飞书索引主表。 - 执行记忆维护 git 提交命令。 ## 重要事件⭐ - 23:30（Asia/Shanghai）收到并执行每日记忆维护提醒。 - 今日 `memory/2026-04-11.md` 原先不存在，已按模板创建。 - 今日新增可沉淀长期规则 3 条：Discord 回复去重、`web_search` 时间过滤互斥、`summarize` CLI 依赖预检。 ## 待跟进 - 确认飞书索引主表已补录今日新增长期记忆条目。 ## 已完成 - 已创建 `memory/2026-04-11.md`。 - 已复核 `MEMORY.md` 现有规则，避免与已存在的日报 A 版模板等条目重复。 - 已从 `.learnings/LEARNINGS.md` 提取今日新增、且仍具长期价值的规则候选。 - 已准备执行 git 提交命令归档本次维护变更。 ## 对话要点 - 今日已有明确用户纠正/工具复盘沉淀在 `.learnings/LEARNINGS.md`： 1) Spy 日报需保持已确认的 A 版格式，不能擅自改版（该规则已存在于 `MEMORY.md`，本次不重复追加）。 2) Discor",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.5049638479948043,
-      "maxScore": 0.5049638479948043,
+      "totalScore": 1.012900748848915,
+      "maxScore": 0.5079369008541107,
       "firstRecalledAt": "2026-05-03T15:31:32.643Z",
-      "lastRecalledAt": "2026-05-03T15:31:32.643Z",
+      "lastRecalledAt": "2026-05-08T15:30:36.098Z",
       "queryHashes": [
-        "d7215cc90cce"
+        "d7215cc90cce",
+        "e2b20a48e685"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-08"
       ],
       "conceptTags": [
         "daily-memory-log-creator",
@@ -102,18 +104,20 @@
       "endLine": 30,
       "source": "memory",
       "snippet": "# 2026-04-10 Daily Memory ## 今日任务 - 执行 cron 提醒：daily-memory-log-creator（每日记忆维护）。 - 检查并维护 `memory/2026-04-10.md`。 - 复盘今日对话，判断是否有需要沉淀到 `MEMORY.md` 的长期有效规则/关键决策。 - 判断是否需要同步新增飞书索引。 ## 重要事件⭐ - 23:30（Asia/Shanghai）收到每日记忆维护定时提醒并执行。 ## 待跟进 - 无。 ## 已完成 - 已创建今日 memory 文件。 - 已检查今日对话：除本次定时维护提醒外，无其他可提炼为长期规则/关键决策的新内容。 - 已评估飞书索引新增需求：今日无新增索引项。 ## 对话要点 - 本次对话仅为定时维护触发，内容聚焦于： 1) 检查/创建今日 memory； 2) 提炼长期记忆； 3) 同步飞书索引； 4) git 提交维护结果。 ## 备注 - 今日无新增长期记忆。 - 今日无新增飞书索引。",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.48732711672782897,
-      "maxScore": 0.48732711672782897,
+      "totalScore": 0.9905883014202117,
+      "maxScore": 0.5032611846923828,
       "firstRecalledAt": "2026-05-03T15:31:32.643Z",
-      "lastRecalledAt": "2026-05-03T15:31:32.643Z",
+      "lastRecalledAt": "2026-05-08T15:30:36.098Z",
       "queryHashes": [
-        "d7215cc90cce"
+        "d7215cc90cce",
+        "e2b20a48e685"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-08"
       ],
       "conceptTags": [
         "daily-memory-log-creator",
@@ -155,6 +159,37 @@
         "今日",
         "任务",
         "执行"
+      ]
+    },
+    "memory:memory/2026-03-30.md:1:25": {
+      "key": "memory:memory/2026-03-30.md:1:25",
+      "path": "memory/2026-03-30.md",
+      "startLine": 1,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "# 2026-03-30 ## 今日任务 - 执行 cron 提醒：daily-memory-log-creator（每日记忆维护）。 - 检查并维护 `memory/2026-03-30.md`。 - 复盘今日对话，提炼长期有效规则/关键决策并评估是否需要写入 `MEMORY.md` 与飞书索引。 ## 重要事件⭐ - 23:30（Asia/Shanghai）收到每日记忆维护定时提醒并执行。 ## 待跟进 - 无。 ## 已完成 - 已创建今日 memory 文件（若原先不存在）。 - 已检查今日对话：暂无需要新增到 `MEMORY.md` 的长期规则/关键决策。 - 已评估飞书索引新增需求：今日无新增索引项。 ## 对话要点 - 本次对话为定时维护触发，内容聚焦于： 1) 检查/创建今日 memory； 2) 同步长期记忆； 3) 同步飞书索引； 4) git 提交维护结果。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4982492625713348,
+      "maxScore": 0.4982492625713348,
+      "firstRecalledAt": "2026-05-08T15:30:36.098Z",
+      "lastRecalledAt": "2026-05-08T15:30:36.098Z",
+      "queryHashes": [
+        "e2b20a48e685"
+      ],
+      "recallDays": [
+        "2026-05-08"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "memory/2026-03-30.md",
+        "提炼长期有效规则/关键决策并评估是否需要写入",
+        "memory.md",
+        "asia/shanghai",
+        "的长期规则/关键决策",
+        "检查/创建今日",
+        "今日"
       ]
     }
   }

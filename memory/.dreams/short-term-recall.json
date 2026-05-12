@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-08T15:30:36.098Z",
+  "updatedAt": "2026-05-11T15:54:15.758Z",
   "entries": {
     "memory:memory/2026-04-18.md:1:13": {
       "key": "memory:memory/2026-04-18.md:1:13",
@@ -40,18 +40,20 @@
       "endLine": 4,
       "source": "memory",
       "snippet": "- Jamie 新要求：日报需加入飞书知识库页面 `https://waytoagi.feishu.cn/wiki/Taqyw9f7hiMMLSk36BycHfjdn5b` 的总结。 - Jamie 新要求：日报需加入飞书知识库页面 `https://waytoagi.feishu.cn/wiki/Taqyw9f7hiMMLSk36BycHfjdn5b` 的总结。 - Jamie 在比较 Hermes vs OpenClaw 这类架构话题时，更偏好非技术、人话版解释；优先用“总控台/平台 vs 会成长的贴身助手/王牌员工”这类比喻说明。",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.3892472058534622,
+      "totalScore": 0.7406743496656417,
       "maxScore": 0.3892472058534622,
       "firstRecalledAt": "2026-04-28T13:00:53.881Z",
-      "lastRecalledAt": "2026-04-28T13:00:53.881Z",
+      "lastRecalledAt": "2026-05-10T13:00:30.801Z",
       "queryHashes": [
-        "c96f6fcc8f12"
+        "c96f6fcc8f12",
+        "51d47b6365f7"
       ],
       "recallDays": [
-        "2026-04-28"
+        "2026-04-28",
+        "2026-05-10"
       ],
       "conceptTags": [
         "总控台/平台",
@@ -71,20 +73,22 @@
       "endLine": 27,
       "source": "memory",
       "snippet": "# 2026-04-11 Daily Memory ## 今日任务 - 执行 cron 提醒：daily-memory-log-creator（每日记忆维护）。 - 检查并创建 `memory/2026-04-11.md`。 - 复盘今日对话与 `.learnings/LEARNINGS.md`，提炼可沉淀的长期规则/关键决策。 - 同步更新 `MEMORY.md` 与飞书索引主表。 - 执行记忆维护 git 提交命令。 ## 重要事件⭐ - 23:30（Asia/Shanghai）收到并执行每日记忆维护提醒。 - 今日 `memory/2026-04-11.md` 原先不存在，已按模板创建。 - 今日新增可沉淀长期规则 3 条：Discord 回复去重、`web_search` 时间过滤互斥、`summarize` CLI 依赖预检。 ## 待跟进 - 确认飞书索引主表已补录今日新增长期记忆条目。 ## 已完成 - 已创建 `memory/2026-04-11.md`。 - 已复核 `MEMORY.md` 现有规则，避免与已存在的日报 A 版模板等条目重复。 - 已从 `.learnings/LEARNINGS.md` 提取今日新增、且仍具长期价值的规则候选。 - 已准备执行 git 提交命令归档本次维护变更。 ## 对话要点 - 今日已有明确用户纠正/工具复盘沉淀在 `.learnings/LEARNINGS.md`： 1) Spy 日报需保持已确认的 A 版格式，不能擅自改版（该规则已存在于 `MEMORY.md`，本次不重复追加）。 2) Discor",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.012900748848915,
+      "totalScore": 1.3115140587091445,
       "maxScore": 0.5079369008541107,
       "firstRecalledAt": "2026-05-03T15:31:32.643Z",
-      "lastRecalledAt": "2026-05-08T15:30:36.098Z",
+      "lastRecalledAt": "2026-05-10T13:12:04.948Z",
       "queryHashes": [
         "d7215cc90cce",
-        "e2b20a48e685"
+        "e2b20a48e685",
+        "5ff906e10129"
       ],
       "recallDays": [
         "2026-05-03",
-        "2026-05-08"
+        "2026-05-08",
+        "2026-05-10"
       ],
       "conceptTags": [
         "daily-memory-log-creator",
@@ -104,20 +108,22 @@
       "endLine": 30,
       "source": "memory",
       "snippet": "# 2026-04-10 Daily Memory ## 今日任务 - 执行 cron 提醒：daily-memory-log-creator（每日记忆维护）。 - 检查并维护 `memory/2026-04-10.md`。 - 复盘今日对话，判断是否有需要沉淀到 `MEMORY.md` 的长期有效规则/关键决策。 - 判断是否需要同步新增飞书索引。 ## 重要事件⭐ - 23:30（Asia/Shanghai）收到每日记忆维护定时提醒并执行。 ## 待跟进 - 无。 ## 已完成 - 已创建今日 memory 文件。 - 已检查今日对话：除本次定时维护提醒外，无其他可提炼为长期规则/关键决策的新内容。 - 已评估飞书索引新增需求：今日无新增索引项。 ## 对话要点 - 本次对话仅为定时维护触发，内容聚焦于： 1) 检查/创建今日 memory； 2) 提炼长期记忆； 3) 同步飞书索引； 4) git 提交维护结果。 ## 备注 - 今日无新增长期记忆。 - 今日无新增飞书索引。",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.9905883014202117,
+      "totalScore": 1.2863105654716491,
       "maxScore": 0.5032611846923828,
       "firstRecalledAt": "2026-05-03T15:31:32.643Z",
-      "lastRecalledAt": "2026-05-08T15:30:36.098Z",
+      "lastRecalledAt": "2026-05-10T13:12:04.948Z",
       "queryHashes": [
         "d7215cc90cce",
-        "e2b20a48e685"
+        "e2b20a48e685",
+        "5ff906e10129"
       ],
       "recallDays": [
         "2026-05-03",
-        "2026-05-08"
+        "2026-05-08",
+        "2026-05-10"
       ],
       "conceptTags": [
         "daily-memory-log-creator",
@@ -189,6 +195,475 @@
         "asia/shanghai",
         "的长期规则/关键决策",
         "检查/创建今日",
+        "今日"
+      ]
+    },
+    "memory:memory/2026-04-07.md:1:47": {
+      "key": "memory:memory/2026-04-07.md:1:47",
+      "path": "memory/2026-04-07.md",
+      "startLine": 1,
+      "endLine": 47,
+      "source": "memory",
+      "snippet": "# 2026-04-07 Daily Memory ## 今日任务 - 无新增任务 ## 重要事件 ⭐ - 无重要事件 ## 待跟进 - 无待跟进事项 ## 已完成 - 无已完成事项 ## 对话要点 - 12:13 - Jamie 询问\"在吗\"（多次重复消息） - 12:16 - Jamie 再次询问\"在吗\" - 23:54 - Jamie 询问\"你在吗\" - 今日主要为简单问候，无实质性任务或决策 ## 备注 - 今日无新增长期记忆需要同步到 MEMORY.md - 今日无新增飞书索引需要写入 # 2026-04-07 Daily Memory ## 今日任务 - 无明确任务记录 ## 重要事件 ⭐ - 无重要事件 ## 待跟进 - 无待跟进事项 ## 已完成 - 无完成事项 ## 对话要点 - 12:13 - Jamie 询问\"在吗\"（重复多次） - 12:16 - Jamie 再次询问\"在吗\" - 23:54 - Jamie 询问\"你在吗\" ## 备注 - 今日无实质性对话内容 - 无新增长期记忆项 - 无需同步飞书索引",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.31335876584053035,
+      "maxScore": 0.31335876584053035,
+      "firstRecalledAt": "2026-05-10T13:12:04.948Z",
+      "lastRecalledAt": "2026-05-10T13:12:04.948Z",
+      "queryHashes": [
+        "5ff906e10129"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "今日",
+        "任务",
+        "新增",
+        "重要",
+        "事件",
+        "跟进",
+        "事项"
+      ]
+    },
+    "memory:memory/2026-04-29.md:1:16": {
+      "key": "memory:memory/2026-04-29.md:1:16",
+      "path": "memory/2026-04-29.md",
+      "startLine": 1,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "# 2026-04-29 ## 今日任务 - 执行每日日报任务 (21:00 定时任务) ## 重要事件⭐ - 正在生成今日日报 ## 待跟进 - 日报发送完成后需记录关键洞察到长期记忆 ## 已完成 - ## 对话要点 - 正在执行日报定时任务，严格遵循SOP流程",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6754889041185379,
+      "maxScore": 0.3679250806570053,
+      "firstRecalledAt": "2026-05-10T13:12:04.948Z",
+      "lastRecalledAt": "2026-05-11T13:00:30.997Z",
+      "queryHashes": [
+        "5ff906e10129",
+        "e4e979b85139"
+      ],
+      "recallDays": [
+        "2026-05-10",
+        "2026-05-11"
+      ],
+      "conceptTags": [
+        "今日",
+        "任务",
+        "执行",
+        "每日",
+        "日报",
+        "重要",
+        "事件",
+        "正在"
+      ]
+    },
+    "memory:memory/2026-04-14.md:1:22": {
+      "key": "memory:memory/2026-04-14.md:1:22",
+      "path": "memory/2026-04-14.md",
+      "startLine": 1,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "# 2026-04-14 ## 今日任务 - 执行 daily-memory-log-creator 定时提醒：检查/创建 daily memory、复核当日是否有新增长期记忆、判断是否需要同步飞书索引、执行 git 提交。 ## 重要事件⭐ - 23:30（Asia/Shanghai）收到每日记忆维护提醒并立即执行。 - 检查结果：`memory/2026-04-14.md` 原先不存在，已按模板创建。 ## 待跟进 - 无。 ## 已完成 - 已创建 `memory/2026-04-14.md`。 - 已复核今日可见对话内容：仅有本次定时维护指令，未产生新的长期有效规则或关键决策。 - 今日无新增长期记忆。 - 今日无新增飞书索引。 ## 对话要点 - 本次对话为 cron 触发的每日记忆维护任务。 - 当前已存在长期规则《每日记忆维护提醒执行规则》（`MEMORY.md` 已覆盖），今日未出现需要追加到 `MEMORY.md` 的新内容。 - 因无新增长期记忆条目，飞书索引主表本次无新增写入。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.29748069047927855,
+      "maxScore": 0.29748069047927855,
+      "firstRecalledAt": "2026-05-10T13:12:04.948Z",
+      "lastRecalledAt": "2026-05-10T13:12:04.948Z",
+      "queryHashes": [
+        "5ff906e10129"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "检查/创建",
+        "asia/shanghai",
+        "memory/2026-04-14.md",
+        "memory.md",
+        "今日",
+        "任务",
+        "执行"
+      ]
+    },
+    "memory:memory/2026-04-15.md:1:23": {
+      "key": "memory:memory/2026-04-15.md:1:23",
+      "path": "memory/2026-04-15.md",
+      "startLine": 1,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "# 2026-04-15 ## 今日任务 - 执行 daily-memory-log-creator 定时提醒：检查/创建 daily memory、复核今日对话是否有新增长期记忆、判断是否需要同步飞书索引、执行 git 提交。 ## 重要事件⭐ - 23:30（Asia/Shanghai）收到每日记忆维护提醒并立即执行。 - 检查结果：`memory/2026-04-15.md` 原先不存在，已按模板创建。 ## 待跟进 - 无。 ## 已完成 - 已创建 `memory/2026-04-15.md`。 - 已复核今日可见对话内容：仅有本次定时维护指令，未产生新的长期有效规则或关键决策。 - 今日无新增长期记忆。 - 今日无新增飞书索引。 ## 对话要点 - 本次对话为 cron 触发的每日记忆维护任务。 - 当前已存在长期规则《每日记忆维护提醒执行规则》（`MEMORY.md` 已覆盖），今日未出现需要追加到 `MEMORY.md` 的新内容。 - 因无新增长期记忆条目，飞书索引主表本次无新增写入。",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7165134578943252,
+      "maxScore": 0.4201343864202499,
+      "firstRecalledAt": "2026-05-10T13:12:04.948Z",
+      "lastRecalledAt": "2026-05-11T15:54:15.758Z",
+      "queryHashes": [
+        "5ff906e10129",
+        "2ad89ac12639"
+      ],
+      "recallDays": [
+        "2026-05-10",
+        "2026-05-11"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "检查/创建",
+        "asia/shanghai",
+        "memory/2026-04-15.md",
+        "memory.md",
+        "今日",
+        "任务",
+        "执行"
+      ]
+    },
+    "memory:memory/2026-03-31.md:1:9": {
+      "key": "memory:memory/2026-03-31.md:1:9",
+      "path": "memory/2026-03-31.md",
+      "startLine": 1,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "# 2026-03-31 - Jamie 在 Discord 的 #skill 频道高频进行技能安装/配置，偏好“直接执行 + 结果回报 + 安装路径”。 - 技能目录长期以 `/Users/jamiewu/.openclaw/workspace/skills/` 为主；用户经常追问“技能具体装到哪里”。 - Jamie 对搜索/抓取工作流有持续需求，关注 X/YouTube/B站 等来源，接受按 SOP 执行并让助手给出可复用流程。 - Jamie 明确推进“剧情 -> 六格恋爱漫画脚本 -> 生图”的流水线，角色设定固定（小F + 中性叙述者“我”），偏好日漫温馨恋爱风。 - 2026-03-31 已完成 `@larksuite/cli` 安装与 skills add；首次初始化为双阶段授权流程（先应用配置授权，再账号 device 授权），当前进行到账号授权确认阶段。 - 安全教训（需反复提醒）：用户多次在群聊明文发送密钥/Cookie/代理凭据；后续遇到凭据暴露必须第一时间提醒“立即轮换/作废并重置”。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.2928929269313812,
+      "maxScore": 0.2928929269313812,
+      "firstRecalledAt": "2026-05-10T13:12:04.948Z",
+      "lastRecalledAt": "2026-05-10T13:12:04.948Z",
+      "queryHashes": [
+        "5ff906e10129"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "频道高频进行技能安装/配置",
+        "users/jamiewu",
+        "openclaw/workspace/skills",
+        "对搜索/抓取工作流有持续需求",
+        "x/youtube/b站",
+        "larksuite/cli",
+        "用户多次在群聊明文发送密钥/cookie/代理凭据",
+        "立即轮换/作废并重置"
+      ]
+    },
+    "memory:memory/2026-04-13.md:1:35": {
+      "key": "memory:memory/2026-04-13.md:1:35",
+      "path": "memory/2026-04-13.md",
+      "startLine": 1,
+      "endLine": 35,
+      "source": "memory",
+      "snippet": "# 2026-04-13 Daily Memory ## 今日任务 - 执行 cron 提醒：daily-memory-log-creator（每日记忆维护）。 - 检查并创建 `memory/2026-04-13.md`。 - 复盘今日对话，判断是否有需要沉淀到 `MEMORY.md` 的长期有效规则/关键决策。 - 评估是否需要同步新增飞书索引主表记录。 - 执行记忆维护 git 提交命令。 ## 重要事件⭐ - 23:30（Asia/Shanghai）收到并执行每日记忆维护提醒。 - 今日 `memory/2026-04-13.md` 原先不存在，已按模板创建。 - 今日对话仅包含本次定时维护指令；复核后未发现超出既有规则的新长期决策。 ## 待跟进 - 无。 ## 已完成 - 已创建 `memory/2026-04-13.md`。 - 已复核 `MEMORY.md` 现有“每日记忆维护提醒执行规则”等长期规则，确认已覆盖本次指令。 - 已判定：今日无新增长期记忆。 - 已判定：今日无新增飞书索引。 - 已准备执行 git 提交命令归档本次维护。 ## 对话要点 - 本次对话仅为 cron 定时维护触发，内容聚焦于： 1) 检查/创建今日 memory； 2) 复核是否有新增长期记忆； 3) 判断是否需要新增飞书索引； 4) 执行固定 git 提交命令。 ## 备注 - 今日无新增长期记忆。 - 今日无新增飞书索引。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.2913218796253204,
+      "maxScore": 0.2913218796253204,
+      "firstRecalledAt": "2026-05-10T13:12:04.948Z",
+      "lastRecalledAt": "2026-05-10T13:12:04.948Z",
+      "queryHashes": [
+        "5ff906e10129"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "memory/2026-04-13.md",
+        "memory.md",
+        "的长期有效规则/关键决策",
+        "asia/shanghai",
+        "检查/创建今日",
+        "今日",
+        "任务"
+      ]
+    },
+    "memory:memory/2026-05-09.md:1:32": {
+      "key": "memory:memory/2026-05-09.md:1:32",
+      "path": "memory/2026-05-09.md",
+      "startLine": 1,
+      "endLine": 32,
+      "source": "memory",
+      "snippet": "# 2026-05-09 Daily Memory ## 今日任务 - 执行 cron 提醒：daily-memory-log-creator（每日记忆维护）。 - 检查并创建 `memory/2026-05-09.md`。 - 复盘今日对话，判断是否有需要沉淀到 `MEMORY.md` 的长期有效规则/关键决策。 - 判断是否需要同步新增飞书索引。 - 执行记忆维护 git 提交命令。 ## 重要事件⭐ - 23:30（Asia/Shanghai）收到每日记忆维护定时提醒并执行。 - 今日 `memory/2026-05-09.md` 原先不存在，已按模板创建。 ## 待跟进 - 无。 ## 已完成 - 已创建今日 memory 文件。 - 已检查今日对话：除本次定时维护提醒外，无其他可提炼为长期规则/关键决策的新内容。 - 已评估飞书索引新增需求：今日无新增索引项。 ## 对话要点 - 本次对话仅为定时维护触发，内容聚焦于： 1) 检查/创建今日 memory； 2) 提炼长期记忆； 3) 同步飞书索引； 4) git 提交维护结果。 ## 备注 - 今日无新增长期记忆。 - 今日无新增飞书索引。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.2907036662101745,
+      "maxScore": 0.2907036662101745,
+      "firstRecalledAt": "2026-05-10T13:12:04.948Z",
+      "lastRecalledAt": "2026-05-10T13:12:04.948Z",
+      "queryHashes": [
+        "5ff906e10129"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "memory/2026-05-09.md",
+        "memory.md",
+        "的长期有效规则/关键决策",
+        "asia/shanghai",
+        "无其他可提炼为长期规则/关键决策的新内容",
+        "检查/创建今日",
+        "今日"
+      ]
+    },
+    "memory:memory/2026-05-07.md:1:22": {
+      "key": "memory:memory/2026-05-07.md:1:22",
+      "path": "memory/2026-05-07.md",
+      "startLine": 1,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "# 2026-05-07 每日记忆维护日志 ## 今日任务 - 执行每日记忆维护提醒（daily-memory-log-creator） ## 重要事件⭐ - 创建 `memory/2026-05-07.md` - 复核今日对话：今日无新增长期记忆 - 复核飞书索引主表：今日无新增飞书索引 ## 待跟进 - 今日无 ## 已完成 - 检查 `memory/2026-05-07.md`：原不存在，已按模板创建 - 复核 `MEMORY.md`：今日无新增长期记忆 - 复核飞书索引主表（app_token=`NTQnbfnthaTIMxsziNzcJaGNnld`，table_id=`tblez1cogebbBzwu`）：今日无新增飞书索引 ## 对话要点 - 收到 cron 提醒后，按固定 SOP 执行每日记忆维护 - 本次仅基于真实结果记录：今日无新增长期记忆；今日无新增飞书索引",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.28958485722541805,
+      "maxScore": 0.28958485722541805,
+      "firstRecalledAt": "2026-05-10T13:12:04.948Z",
+      "lastRecalledAt": "2026-05-10T13:12:04.948Z",
+      "queryHashes": [
+        "5ff906e10129"
+      ],
+      "recallDays": [
+        "2026-05-10"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "memory/2026-05-07.md",
+        "memory.md",
+        "app-token",
+        "table-id",
+        "每日",
+        "记忆",
+        "维护"
+      ]
+    },
+    "memory:memory/2026-05-05.md:1:41": {
+      "key": "memory:memory/2026-05-05.md:1:41",
+      "path": "memory/2026-05-05.md",
+      "startLine": 1,
+      "endLine": 41,
+      "source": "memory",
+      "snippet": "# 2026-05-05 日报采集日志 ## 执行状态 - 开始时间: 21:00 - 执行人: Zoe - SOP版本: daily-report-sop-v1.md ## 采集任务清单 - [ ] AI新闻 - [ ] OpenClaw新闻 - [ ] X博主动态 - [ ] 微信公众号 - [ ] 飞书知识库 - [ ] 金融市场 - [ ] 北京天气 ## 执行记录 - 23:30 收到 daily-memory-log-creator 提醒，执行每日记忆维护。 - 检查 `memory/2026-05-05.md`：文件已存在。 - 复核今日对话：无新增长期有效规则/关键决策，`MEMORY.md` 今日不追加。 - 复核飞书索引主表：今日无新增飞书索引。 - 执行 git 提交命令。 ## 今日任务 - 执行每日记忆维护提醒（daily-memory-log-creator） ## 重要事件⭐ - 完成当日记忆维护巡检；确认今日无新增长期记忆、无新增飞书索引 ## 待跟进 - 今日无 ## 已完成 - 检查 `memory/2026-05-05.md` - 复核 `MEMORY.md`：今日无新增长期记忆 - 复核飞书索引主表：今日无新增飞书索引 - 执行 git 提交命令 ## 对话要点 - 收到 cron 提醒后，按固定 SOP 执行每日记忆维护；截至当前，今日对话未产生新的长期规则或关键决策",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4457720726728439,
+      "maxScore": 0.4457720726728439,
+      "firstRecalledAt": "2026-05-11T15:54:15.758Z",
+      "lastRecalledAt": "2026-05-11T15:54:15.758Z",
+      "queryHashes": [
+        "2ad89ac12639"
+      ],
+      "recallDays": [
+        "2026-05-11"
+      ],
+      "conceptTags": [
+        "daily-report-sop-v1.md",
+        "daily-memory-log-creator",
+        "memory/2026-05-05.md",
+        "无新增长期有效规则/关键决策",
+        "memory.md",
+        "日报",
+        "采集",
+        "日志"
+      ]
+    },
+    "memory:memory/2026-05-04.md:1:20": {
+      "key": "memory:memory/2026-05-04.md:1:20",
+      "path": "memory/2026-05-04.md",
+      "startLine": 1,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "# 2026-05-04 ## 今日任务 - 执行每日记忆维护提醒（daily-memory-log-creator） ## 重要事件⭐ - 创建当日 memory 文件并完成例行记忆维护巡检 ## 待跟进 - 今日无 ## 已完成 - 检查并创建 `memory/2026-05-04.md` - 复核 `MEMORY.md`：今日无新增长期记忆 - 复核飞书索引：今日无新增飞书索引 - 执行 git 提交命令 ## 对话要点 - 收到 cron 提醒，按固定 SOP 执行每日记忆维护；截至当前未产生新的长期规则或关键决策",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4222325026988983,
+      "maxScore": 0.4222325026988983,
+      "firstRecalledAt": "2026-05-11T15:54:15.758Z",
+      "lastRecalledAt": "2026-05-11T15:54:15.758Z",
+      "queryHashes": [
+        "2ad89ac12639"
+      ],
+      "recallDays": [
+        "2026-05-11"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "memory/2026-05-04.md",
+        "memory.md",
+        "今日",
+        "任务",
+        "执行",
+        "每日",
+        "记忆"
+      ]
+    },
+    "memory:memory/2026-05-01.md:1:20": {
+      "key": "memory:memory/2026-05-01.md:1:20",
+      "path": "memory/2026-05-01.md",
+      "startLine": 1,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "# 2026-05-01 ## 今日任务 - 执行每日记忆维护提醒（daily-memory-log-creator） ## 重要事件⭐ - 创建当日 memory 文件并完成例行记忆巡检 ## 待跟进 - 今日无 ## 已完成 - 检查并创建 `memory/2026-05-01.md` - 复核 `MEMORY.md`：今日无新增长期记忆 - 复核飞书索引：今日无新增飞书索引 - 执行 git 提交命令 ## 对话要点 - 收到 cron 提醒，按固定 SOP 执行每日记忆维护；今日未产生新的长期规则或关键决策",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4218457490205765,
+      "maxScore": 0.4218457490205765,
+      "firstRecalledAt": "2026-05-11T15:54:15.758Z",
+      "lastRecalledAt": "2026-05-11T15:54:15.758Z",
+      "queryHashes": [
+        "2ad89ac12639"
+      ],
+      "recallDays": [
+        "2026-05-11"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "memory/2026-05-01.md",
+        "memory.md",
+        "今日",
+        "任务",
+        "执行",
+        "每日",
+        "记忆"
+      ]
+    },
+    "memory:memory/2026-05-03.md:1:20": {
+      "key": "memory:memory/2026-05-03.md:1:20",
+      "path": "memory/2026-05-03.md",
+      "startLine": 1,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "# 2026-05-03 ## 今日任务 - 执行每日记忆维护提醒（daily-memory-log-creator） ## 重要事件⭐ - 创建当日 memory 文件并完成例行记忆维护巡检 ## 待跟进 - 今日无 ## 已完成 - 检查并创建 `memory/2026-05-03.md` - 复核 `MEMORY.md`：今日无新增长期记忆 - 复核飞书索引：今日无新增飞书索引 - 执行 git 提交命令 ## 对话要点 - 收到 cron 提醒，按固定 SOP 执行每日记忆维护；截至当前未产生新的长期规则或关键决策",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4215305089950561,
+      "maxScore": 0.4215305089950561,
+      "firstRecalledAt": "2026-05-11T15:54:15.758Z",
+      "lastRecalledAt": "2026-05-11T15:54:15.758Z",
+      "queryHashes": [
+        "2ad89ac12639"
+      ],
+      "recallDays": [
+        "2026-05-11"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "memory/2026-05-03.md",
+        "memory.md",
+        "今日",
+        "任务",
+        "执行",
+        "每日",
+        "记忆"
+      ]
+    },
+    "memory:memory/2026-05-02.md:1:20": {
+      "key": "memory:memory/2026-05-02.md:1:20",
+      "path": "memory/2026-05-02.md",
+      "startLine": 1,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "# 2026-05-02 ## 今日任务 - 执行每日记忆维护提醒（daily-memory-log-creator） ## 重要事件⭐ - 创建当日 memory 文件并完成例行记忆维护巡检 ## 待跟进 - 今日无 ## 已完成 - 检查并创建 `memory/2026-05-02.md` - 复核 `MEMORY.md`：今日无新增长期记忆 - 复核飞书索引：今日无新增飞书索引 - 执行 git 提交命令 ## 对话要点 - 收到 cron 提醒，按固定 SOP 执行每日记忆维护；截至当前未产生新的长期规则或关键决策",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4209769040346145,
+      "maxScore": 0.4209769040346145,
+      "firstRecalledAt": "2026-05-11T15:54:15.758Z",
+      "lastRecalledAt": "2026-05-11T15:54:15.758Z",
+      "queryHashes": [
+        "2ad89ac12639"
+      ],
+      "recallDays": [
+        "2026-05-11"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "memory/2026-05-02.md",
+        "memory.md",
+        "今日",
+        "任务",
+        "执行",
+        "每日",
+        "记忆"
+      ]
+    },
+    "memory:memory/2026-04-30.md:1:20": {
+      "key": "memory:memory/2026-04-30.md:1:20",
+      "path": "memory/2026-04-30.md",
+      "startLine": 1,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "# 2026-04-30 ## 今日任务 - 执行每日记忆维护提醒（daily-memory-log-creator） ## 重要事件⭐ - 创建当日 memory 文件并完成例行记忆巡检 ## 待跟进 - 今日无 ## 已完成 - 检查并创建 `memory/2026-04-30.md` - 复核 `MEMORY.md`：今日无新增长期记忆 - 复核飞书索引：今日无新增飞书索引 - 执行 git 提交命令 ## 对话要点 - 收到 cron 提醒，按固定 SOP 执行每日记忆维护；今日未产生新的长期规则或关键决策",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4204993814229965,
+      "maxScore": 0.4204993814229965,
+      "firstRecalledAt": "2026-05-11T15:54:15.758Z",
+      "lastRecalledAt": "2026-05-11T15:54:15.758Z",
+      "queryHashes": [
+        "2ad89ac12639"
+      ],
+      "recallDays": [
+        "2026-05-11"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "memory/2026-04-30.md",
+        "memory.md",
+        "今日",
+        "任务",
+        "执行",
+        "每日",
+        "记忆"
+      ]
+    },
+    "memory:memory/2026-04-16.md:1:26": {
+      "key": "memory:memory/2026-04-16.md:1:26",
+      "path": "memory/2026-04-16.md",
+      "startLine": 1,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "# 2026-04-16 ## 今日任务 - 执行 daily-memory-log-creator 定时提醒：检查/创建今日 daily memory。 - 复核今日对话，判断是否有需要沉淀到 `MEMORY.md` 的长期有效规则/关键决策。 - 判断是否需要同步新增飞书索引主表记录。 - 执行记忆相关 git 提交。 ## 重要事件⭐ - 23:30（Asia/Shanghai）收到每日记忆维护提醒并立即执行。 - 检查结果：`memory/2026-04-16.md` 原先不存在，已按模板创建。 ## 待跟进 - 无。 ## 已完成 - 已创建 `memory/2026-04-16.md`。 - 已复核今日可见对话内容：仅有本次定时维护指令，未产生新的长期有效规则或关键决策。 - 今日无新增长期记忆。 - 今日无新增飞书索引。 ## 对话要点 - 本次对话为 cron 触发的每日记忆维护任务。 - 按真实结果执行：创建今日 daily memory、检查长期记忆与飞书索引新增需求、执行 git 提交。 - 因今日无新增规则/决策，`MEMORY.md` 未追加新条目，飞书索引主表未新增记录。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4204406976699829,
+      "maxScore": 0.4204406976699829,
+      "firstRecalledAt": "2026-05-11T15:54:15.758Z",
+      "lastRecalledAt": "2026-05-11T15:54:15.758Z",
+      "queryHashes": [
+        "2ad89ac12639"
+      ],
+      "recallDays": [
+        "2026-05-11"
+      ],
+      "conceptTags": [
+        "daily-memory-log-creator",
+        "检查/创建今日",
+        "memory.md",
+        "的长期有效规则/关键决策",
+        "asia/shanghai",
+        "memory/2026-04-16.md",
+        "因今日无新增规则/决策",
         "今日"
       ]
     }

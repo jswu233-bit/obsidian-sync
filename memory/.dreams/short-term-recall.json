@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-13T15:30:26.123Z",
+  "updatedAt": "2026-05-13T15:33:49.006Z",
   "entries": {
     "memory:memory/2026-04-18.md:1:13": {
       "key": "memory:memory/2026-04-18.md:1:13",
@@ -40,20 +40,22 @@
       "endLine": 4,
       "source": "memory",
       "snippet": "- Jamie 新要求：日报需加入飞书知识库页面 `https://waytoagi.feishu.cn/wiki/Taqyw9f7hiMMLSk36BycHfjdn5b` 的总结。 - Jamie 新要求：日报需加入飞书知识库页面 `https://waytoagi.feishu.cn/wiki/Taqyw9f7hiMMLSk36BycHfjdn5b` 的总结。 - Jamie 在比较 Hermes vs OpenClaw 这类架构话题时，更偏好非技术、人话版解释；优先用“总控台/平台 vs 会成长的贴身助手/王牌员工”这类比喻说明。",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.7406743496656417,
+      "totalScore": 1.1121925115585327,
       "maxScore": 0.3892472058534622,
       "firstRecalledAt": "2026-04-28T13:00:53.881Z",
-      "lastRecalledAt": "2026-05-10T13:00:30.801Z",
+      "lastRecalledAt": "2026-05-13T15:33:49.006Z",
       "queryHashes": [
         "c96f6fcc8f12",
-        "51d47b6365f7"
+        "51d47b6365f7",
+        "6d4913f6b8fd"
       ],
       "recallDays": [
         "2026-04-28",
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-13"
       ],
       "conceptTags": [
         "总控台/平台",
@@ -209,16 +211,17 @@
       "endLine": 47,
       "source": "memory",
       "snippet": "# 2026-04-07 Daily Memory ## 今日任务 - 无新增任务 ## 重要事件 ⭐ - 无重要事件 ## 待跟进 - 无待跟进事项 ## 已完成 - 无已完成事项 ## 对话要点 - 12:13 - Jamie 询问\"在吗\"（多次重复消息） - 12:16 - Jamie 再次询问\"在吗\" - 23:54 - Jamie 询问\"你在吗\" - 今日主要为简单问候，无实质性任务或决策 ## 备注 - 今日无新增长期记忆需要同步到 MEMORY.md - 今日无新增飞书索引需要写入 # 2026-04-07 Daily Memory ## 今日任务 - 无明确任务记录 ## 重要事件 ⭐ - 无重要事件 ## 待跟进 - 无待跟进事项 ## 已完成 - 无完成事项 ## 对话要点 - 12:13 - Jamie 询问\"在吗\"（重复多次） - 12:16 - Jamie 再次询问\"在吗\" - 23:54 - Jamie 询问\"你在吗\" ## 备注 - 今日无实质性对话内容 - 无新增长期记忆项 - 无需同步飞书索引",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.7764512032270431,
+      "totalScore": 1.0844254583120345,
       "maxScore": 0.46309243738651273,
       "firstRecalledAt": "2026-05-10T13:12:04.948Z",
-      "lastRecalledAt": "2026-05-13T15:30:26.123Z",
+      "lastRecalledAt": "2026-05-13T15:33:49.006Z",
       "queryHashes": [
         "5ff906e10129",
-        "c5d7b75b463e"
+        "c5d7b75b463e",
+        "6d4913f6b8fd"
       ],
       "recallDays": [
         "2026-05-10",
@@ -339,18 +342,20 @@
       "endLine": 9,
       "source": "memory",
       "snippet": "# 2026-03-31 - Jamie 在 Discord 的 #skill 频道高频进行技能安装/配置，偏好“直接执行 + 结果回报 + 安装路径”。 - 技能目录长期以 `/Users/jamiewu/.openclaw/workspace/skills/` 为主；用户经常追问“技能具体装到哪里”。 - Jamie 对搜索/抓取工作流有持续需求，关注 X/YouTube/B站 等来源，接受按 SOP 执行并让助手给出可复用流程。 - Jamie 明确推进“剧情 -> 六格恋爱漫画脚本 -> 生图”的流水线，角色设定固定（小F + 中性叙述者“我”），偏好日漫温馨恋爱风。 - 2026-03-31 已完成 `@larksuite/cli` 安装与 skills add；首次初始化为双阶段授权流程（先应用配置授权，再账号 device 授权），当前进行到账号授权确认阶段。 - 安全教训（需反复提醒）：用户多次在群聊明文发送密钥/Cookie/代理凭据；后续遇到凭据暴露必须第一时间提醒“立即轮换/作废并重置”。",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.2928929269313812,
-      "maxScore": 0.2928929269313812,
+      "totalScore": 0.5938420712947845,
+      "maxScore": 0.3009491443634033,
       "firstRecalledAt": "2026-05-10T13:12:04.948Z",
-      "lastRecalledAt": "2026-05-10T13:12:04.948Z",
+      "lastRecalledAt": "2026-05-13T15:33:49.006Z",
       "queryHashes": [
-        "5ff906e10129"
+        "5ff906e10129",
+        "6d4913f6b8fd"
       ],
       "recallDays": [
-        "2026-05-10"
+        "2026-05-10",
+        "2026-05-13"
       ],
       "conceptTags": [
         "频道高频进行技能安装/配置",
@@ -682,15 +687,16 @@
       "endLine": 18,
       "source": "memory",
       "snippet": "# 2026-03-29 ## 今日任务 - [x] 将判例式记忆模板、Hot/Warm/Cold 分层、主动遗忘机制、长期写入门槛、飞书第三层字段规则正式落地。 ## 重要事件 ⭐ - ⭐ Jamie 明确要求执行记忆机制升级：在第二层长期记忆中加入 CASE 模板、温度分层、每周降温、每周三删、长期层四类写入门槛。 ## 待跟进 - 在飞书第三层确认并启用 `temp` 字段（H/W/C）。 - 后续每周执行一次降温与三删。 ## 已完成 - 已将上述规则写入 `MEMORY.md` 长期记忆。 ## 对话要点 - 本次要求是“直接执行”，并明确了 5 项机制的固定内容与字段要求。",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.4850107669830322,
+      "totalScore": 0.7934240758419036,
       "maxScore": 0.4850107669830322,
       "firstRecalledAt": "2026-05-13T15:30:26.123Z",
-      "lastRecalledAt": "2026-05-13T15:30:26.123Z",
+      "lastRecalledAt": "2026-05-13T15:33:49.006Z",
       "queryHashes": [
-        "c5d7b75b463e"
+        "c5d7b75b463e",
+        "6d4913f6b8fd"
       ],
       "recallDays": [
         "2026-05-13"
@@ -828,6 +834,37 @@
         "无新增可沉淀的长期规则/关键决策",
         "今日无新增长期记忆/今日无新增飞书索引",
         "今日"
+      ]
+    },
+    "memory:memory/2026-04-12.md:48:53": {
+      "key": "memory:memory/2026-04-12.md:48:53",
+      "path": "memory/2026-04-12.md",
+      "startLine": 48,
+      "endLine": 53,
+      "source": "memory",
+      "snippet": "## Durable memories added at flush - Jamie 明确要求：Eva 需要**单独回复**，不要由 Zoe 代答；并希望相关关系记忆写入 Eva 自己的空间。 - Discord `#ll` 频道的稳定规则可归纳为：**@谁，谁说话**；未被 @ 的 bot 保持静默，不跨 bot 接管。 - 用户多次纠正“重复回复”问题：尤其是过程播报 + 最终答复被看成两条消息；后续在群聊里应默认只保留一条最终答复，避免重复作答。 - Jamie 明确要求把“小F 的基础画像”维护到 Eva 的长期记忆层，而不是只散落在旧的 daily memory 中。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.30541812181472777,
+      "maxScore": 0.30541812181472777,
+      "firstRecalledAt": "2026-05-13T15:33:49.006Z",
+      "lastRecalledAt": "2026-05-13T15:33:49.006Z",
+      "queryHashes": [
+        "6d4913f6b8fd"
+      ],
+      "recallDays": [
+        "2026-05-13"
+      ],
+      "conceptTags": [
+        "durable",
+        "memories",
+        "added",
+        "flush",
+        "jamie",
+        "明确",
+        "要求",
+        "eva"
       ]
     }
   }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-25T13:00:36.299Z",
+  "updatedAt": "2026-05-26T13:00:13.596Z",
   "entries": {
     "memory:memory/2026-04-18.md:1:13": {
       "key": "memory:memory/2026-04-18.md:1:13",
@@ -9,23 +9,25 @@
       "endLine": 13,
       "source": "memory",
       "snippet": "# 2026-04-18 ## Durable notes - 用户通过 `openclaw-tui` 在短时间内大量重复追问“什么模型”，需注意后续会话去重，避免把重复投递当成多个新任务。 - 本会话已明确答复：当前运行模型是 `digitflow/gpt-5.4`；补充信息：agent=`main`、推理强度=`xhigh`、运行方式=`direct`。 - 同期出现过与消息/网关稳定性相关的系统事件，后续若再异常可优先对照这些原始日志排查： - `System: [2026-04-17 23:30:33 GMT+8] Concurrency limit exceeded for user, please retry later` - `System: [2026-04-18 03:18:12 GMT+8] WhatsApp gateway disconnected (status 428)` - `System: [2026-04-18 03:18:18 GMT+8] WhatsApp gateway connected as +8618616818233.` - `System: [2026-04-18 18:28:28 GMT+8] WhatsApp gateway connected as +8618616818233.` - 用户在 Discord 私聊中大量重复追问“你现在是链接什么？openclaw吗？”。标准答复口径：当前是运行在 `OpenClaw` 框架内，由 `OpenClaw` 负责会话/路由；本会话背后的实际模型是 `digit",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.5632303923368454,
+      "totalScore": 1.9462216973304747,
       "maxScore": 0.4084065854549408,
       "firstRecalledAt": "2026-04-28T13:00:53.881Z",
-      "lastRecalledAt": "2026-05-24T16:19:48.811Z",
+      "lastRecalledAt": "2026-05-26T13:00:13.596Z",
       "queryHashes": [
         "c96f6fcc8f12",
         "f0e7aefd0aa5",
         "5255a937e884",
-        "9da7869283e2"
+        "9da7869283e2",
+        "3c1f345629db"
       ],
       "recallDays": [
         "2026-04-28",
         "2026-05-15",
-        "2026-05-25"
+        "2026-05-25",
+        "2026-05-26"
       ],
       "conceptTags": [
         "gateway",
@@ -45,24 +47,26 @@
       "endLine": 4,
       "source": "memory",
       "snippet": "- Jamie 新要求：日报需加入飞书知识库页面 `https://waytoagi.feishu.cn/wiki/Taqyw9f7hiMMLSk36BycHfjdn5b` 的总结。 - Jamie 新要求：日报需加入飞书知识库页面 `https://waytoagi.feishu.cn/wiki/Taqyw9f7hiMMLSk36BycHfjdn5b` 的总结。 - Jamie 在比较 Hermes vs OpenClaw 这类架构话题时，更偏好非技术、人话版解释；优先用“总控台/平台 vs 会成长的贴身助手/王牌员工”这类比喻说明。",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.4657611012458802,
+      "totalScore": 1.843858999013901,
       "maxScore": 0.3892472058534622,
       "firstRecalledAt": "2026-04-28T13:00:53.881Z",
-      "lastRecalledAt": "2026-05-15T13:00:19.132Z",
+      "lastRecalledAt": "2026-05-26T13:00:13.596Z",
       "queryHashes": [
         "c96f6fcc8f12",
         "51d47b6365f7",
         "6d4913f6b8fd",
-        "f0e7aefd0aa5"
+        "f0e7aefd0aa5",
+        "3c1f345629db"
       ],
       "recallDays": [
         "2026-04-28",
         "2026-05-10",
         "2026-05-13",
-        "2026-05-15"
+        "2026-05-15",
+        "2026-05-26"
       ],
       "conceptTags": [
         "总控台/平台",
@@ -1006,19 +1010,21 @@
       "endLine": 9,
       "source": "memory",
       "snippet": "# 2026-04-17 ## Durable memories - 用户再次明确要求：Discord 回复要**简洁直接**，先给结论，少解释；除非用户追问，否则不要展开成长回复。 - Discord 群聊需要**严格去重**：同一问题/同一轮重复投递，若已答过，应优先静默，不要再次重复作答。 - 关于跨 agent 共用 skills 的推荐结构已收敛为：把 skill 本体统一放在 `~/.openclaw/skills-src/`（或同类 canonical source 目录），再 symlink 到 `~/.claude/skills/`、`~/.codex/skills/`、`~/.openclaw/skills/`；不建议把源目录直接和某个 agent 的安装目录混用。 - 关于 skill 体系的概念分层，已形成稳定说法：**SOP = 编排层，Skill = 能力模块，Script = 执行层**。Skill 可以做轻编排，但强流程编排仍以 SOP 更合适。",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.7464785963296889,
+      "totalScore": 1.1051619559526442,
       "maxScore": 0.38973772525787354,
       "firstRecalledAt": "2026-05-15T13:00:19.132Z",
-      "lastRecalledAt": "2026-05-15T13:01:24.190Z",
+      "lastRecalledAt": "2026-05-26T13:00:13.596Z",
       "queryHashes": [
         "f0e7aefd0aa5",
-        "5255a937e884"
+        "5255a937e884",
+        "3c1f345629db"
       ],
       "recallDays": [
-        "2026-05-15"
+        "2026-05-15",
+        "2026-05-26"
       ],
       "conceptTags": [
         "同一问题/同一轮重复投递",
@@ -1038,23 +1044,25 @@
       "endLine": 37,
       "source": "memory",
       "snippet": "# 2026-05-12 ## 今日任务 - ✅ 执行每日日报任务 (21:00 定时任务) ## 重要事件⭐ - 日报已生成并推送 - OpenAI 成立 Deployment Company 和 Campus Network - OpenAI 与 Musk 诉讼案审判进行中（Nadella 和 Sutskever 出庭） - Anthropic 发布 Claude Design - 原油价格突破 $100/桶（美伊局势升级） - 美国 4 月通胀率升至 3.8% ## 待跟进 - 关注 OpenAI Deployment Company 具体服务内容 - 关注 OpenAI vs Musk 诉讼案判决结果 - 评估 Agent 技术在产品运营场景的落地可能性 - 监控油价走势对物流成本的影响 ## 已完成 - ✅ 2026-05-12 日报生成并发送 - ✅ Git push 成功 (commit: 62cec95) - ✅ 每日记忆维护检查完成（今日无新增长期记忆；今日无新增飞书索引） ## 对话要点 - Spy subagent 超时，Zoe 直接执行信息采集 - X 平台访问受限，采用公开网页补位策略 - 飞书知识库访问受限，通过 Bing 新闻获取中文 AI 热点 --- ## 日报执行记录 - 文件：`daily/2026-05-12-update.md` - Commit：`62cec95` - 发送频道：Discord #daily (1472964925696512000) - 重试次数：0",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.6017722874879836,
+      "totalScore": 1.9594816178083418,
       "maxScore": 0.44188480079174036,
       "firstRecalledAt": "2026-05-15T13:01:24.190Z",
-      "lastRecalledAt": "2026-05-25T13:00:36.299Z",
+      "lastRecalledAt": "2026-05-26T13:00:13.596Z",
       "queryHashes": [
         "5255a937e884",
         "3def418780ea",
         "9da7869283e2",
-        "d354e79adb3d"
+        "d354e79adb3d",
+        "3c1f345629db"
       ],
       "recallDays": [
         "2026-05-15",
         "2026-05-21",
-        "2026-05-25"
+        "2026-05-25",
+        "2026-05-26"
       ],
       "conceptTags": [
         "network",
@@ -1074,22 +1082,24 @@
       "endLine": 30,
       "source": "memory",
       "snippet": "# 2026-05-11 ## 今日任务 - ✅ 执行每日日报任务 (21:00 定时任务) ## 重要事件⭐ - 日报已生成并推送 - OpenAI 宣布成立 Deployment Company 和 Campus Network - OpenAI 测试 ChatGPT 广告功能 - 比特币跌破 $80,000 ## 待跟进 - 关注 OpenAI Deployment Company 具体服务内容 - 关注 X 平台博主动态采集方案改进 ## 已完成 - ✅ 2026-05-11 日报生成并发送 ## 对话要点 - Spy subagent 因模型认证失败，Zoe 直接执行信息采集 - 日报成功推送到 Discord #daily 频道 --- ## 日报执行记录 - 文件：`daily/2026-05-11-update.md` - Commit：`36a76d6` - 发送频道：Discord #daily (1472964925696512000) - 重试次数：0",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1.1953570067882535,
+      "totalScore": 1.5493088036775586,
       "maxScore": 0.4402359396219253,
       "firstRecalledAt": "2026-05-15T13:01:24.190Z",
-      "lastRecalledAt": "2026-05-25T13:00:36.299Z",
+      "lastRecalledAt": "2026-05-26T13:00:13.596Z",
       "queryHashes": [
         "5255a937e884",
         "3def418780ea",
-        "d354e79adb3d"
+        "d354e79adb3d",
+        "3c1f345629db"
       ],
       "recallDays": [
         "2026-05-15",
         "2026-05-21",
-        "2026-05-25"
+        "2026-05-25",
+        "2026-05-26"
       ],
       "conceptTags": [
         "gpt",
@@ -1204,18 +1214,20 @@
       "endLine": 23,
       "source": "memory",
       "snippet": "# 2026-05-24 ## 今日任务 - ✅ 执行日报 Cron：完成 AI 新闻、OpenClaw/Agent 新闻、X 指定账号动态、微信公众号、飞书知识库、金融市场、北京天气采集。 - ✅ 执行 daily-memory-log-creator 定时维护：确认今日日志已存在、复核长期记忆、评估飞书索引新增、准备提交 git。 ## 重要事件⭐ - 21:00 Cron 启动日报任务，已完成；原始采集文件保存于 `/Users/jamiewu/.openclaw/workspace/daily/2026-05-24-raw.md`。 - 23:30 收到每日记忆维护提醒并执行。 - 检查结果：`memory/2026-05-24.md` 在本次维护前已存在，无需新建。 - 复核今日可见对话后，未发现需追加到 `MEMORY.md` 的新增长期规则或关键决策。 - 今日无新增长期记忆。 - 今日无新增飞书索引。 ## 待跟进 - 微信公众号读取链路的本地依赖冲突，后续如继续高频使用，需单独修复或固化 browser/web_fetch 兜底方案。 - 市场行情批量抓取曾触发上游限流，后续需要串行与退避优化。 ## 已完成 - ✅ SOP 前置检查通过（`daily-report-sop-v1.md` 存在） - ✅ 搜索 SOP 检查通过（`search-sop.md` 存在） - ✅ 完成日报所需信息采集并保存原始文件 - ✅ 确认今日日志文件已存在",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.3604592055082321,
+      "totalScore": 0.7209018677473067,
       "maxScore": 0.3604592055082321,
       "firstRecalledAt": "2026-05-25T13:00:36.299Z",
-      "lastRecalledAt": "2026-05-25T13:00:36.299Z",
+      "lastRecalledAt": "2026-05-26T13:00:13.596Z",
       "queryHashes": [
-        "d354e79adb3d"
+        "d354e79adb3d",
+        "3c1f345629db"
       ],
       "recallDays": [
-        "2026-05-25"
+        "2026-05-25",
+        "2026-05-26"
       ],
       "conceptTags": [
         "openclaw/agent",

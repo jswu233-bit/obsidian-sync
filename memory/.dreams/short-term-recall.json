@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-31T13:00:20.878Z",
+  "updatedAt": "2026-06-01T13:14:08.712Z",
   "entries": {
     "memory:memory/2026-04-18.md:1:13": {
       "key": "memory:memory/2026-04-18.md:1:13",
@@ -1046,13 +1046,13 @@
       "endLine": 37,
       "source": "memory",
       "snippet": "# 2026-05-12 ## 今日任务 - ✅ 执行每日日报任务 (21:00 定时任务) ## 重要事件⭐ - 日报已生成并推送 - OpenAI 成立 Deployment Company 和 Campus Network - OpenAI 与 Musk 诉讼案审判进行中（Nadella 和 Sutskever 出庭） - Anthropic 发布 Claude Design - 原油价格突破 $100/桶（美伊局势升级） - 美国 4 月通胀率升至 3.8% ## 待跟进 - 关注 OpenAI Deployment Company 具体服务内容 - 关注 OpenAI vs Musk 诉讼案判决结果 - 评估 Agent 技术在产品运营场景的落地可能性 - 监控油价走势对物流成本的影响 ## 已完成 - ✅ 2026-05-12 日报生成并发送 - ✅ Git push 成功 (commit: 62cec95) - ✅ 每日记忆维护检查完成（今日无新增长期记忆；今日无新增飞书索引） ## 对话要点 - Spy subagent 超时，Zoe 直接执行信息采集 - X 平台访问受限，采用公开网页补位策略 - 飞书知识库访问受限，通过 Bing 新闻获取中文 AI 热点 --- ## 日报执行记录 - 文件：`daily/2026-05-12-update.md` - Commit：`62cec95` - 发送频道：Discord #daily (1472964925696512000) - 重试次数：0",
-      "recallCount": 7,
+      "recallCount": 8,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.710796272754669,
+      "totalScore": 3.0679682284593577,
       "maxScore": 0.44188480079174036,
       "firstRecalledAt": "2026-05-15T13:01:24.190Z",
-      "lastRecalledAt": "2026-05-31T13:00:20.878Z",
+      "lastRecalledAt": "2026-06-01T13:14:08.712Z",
       "queryHashes": [
         "5255a937e884",
         "3def418780ea",
@@ -1060,7 +1060,8 @@
         "d354e79adb3d",
         "3c1f345629db",
         "298799e4accd",
-        "8bdaaa592902"
+        "8bdaaa592902",
+        "da5b8c603f06"
       ],
       "recallDays": [
         "2026-05-15",
@@ -1068,7 +1069,8 @@
         "2026-05-25",
         "2026-05-26",
         "2026-05-30",
-        "2026-05-31"
+        "2026-05-31",
+        "2026-06-01"
       ],
       "conceptTags": [
         "network",
@@ -1259,20 +1261,22 @@
       "endLine": 41,
       "source": "memory",
       "snippet": "# 2026-05-26 ## 今日任务 - ✅ 执行每日日报任务 (21:00 定时任务) ## 重要事件⭐ - 21:00 Cron 启动日报任务 - 日报成功生成并推送到 Discord #daily 频道 - Git commit: 4294059 - OpenAI 被 Gartner 评为企业编码 Agent 领导者 - OpenAI 模型破解离散几何百年难题 - OpenClaw 安全漏洞曝光影响 24.5 万 Agent - VS Code 全面拥抱 Agent-first 开发范式 - 原油大跌超 4% 利好零售物流成本 ## 待跟进 - 试用 Claude Code 并记录体验 - 与供应链同事确认物流成本预算状态 - X 平台信息获取受限，需评估备用方案 - 飞书知识库访问受限，需评估浏览器自动化方案 ## 已完成 - ✅ 2026-05-26 日报生成并发送 - ✅ Git push 成功 (commit: 4294059) - ✅ 发送频道：Discord #daily (1472964925696512000) - ✅ 重试次数：0 ## 对话要点 - 日报按 A 版模板执行（每条：发生了什么 / 为什么重要 / Zoe 点评） - X 平台和飞书知识库访问受限，使用 Bing 搜索和浏览器自动化兜底 - Yahoo Finance 数据完整获取 --- ## 日报执行记录 - 文件：`daily/2026-05-26-update.md` - Commit：`4294059` - 发送频道：Discord #daily (1472964",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.7531220853328704,
+      "totalScore": 1.108476075530052,
       "maxScore": 0.3817874431610107,
       "firstRecalledAt": "2026-05-30T13:00:31.149Z",
-      "lastRecalledAt": "2026-05-31T13:00:20.878Z",
+      "lastRecalledAt": "2026-06-01T13:14:08.712Z",
       "queryHashes": [
         "298799e4accd",
-        "8bdaaa592902"
+        "8bdaaa592902",
+        "da5b8c603f06"
       ],
       "recallDays": [
         "2026-05-30",
-        "2026-05-31"
+        "2026-05-31",
+        "2026-06-01"
       ],
       "conceptTags": [
         "openai",
@@ -1316,6 +1320,68 @@
         "6.83",
         "memory/2026-05-27.md",
         "memory.md"
+      ]
+    },
+    "memory:memory/2026-05-31.md:1:21": {
+      "key": "memory:memory/2026-05-31.md:1:21",
+      "path": "memory/2026-05-31.md",
+      "startLine": 1,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "# 2026-05-31 ## 今日任务 - 🔄 执行每日日报任务 (21:00 定时任务) ## 重要事件⭐ - 21:00 Cron 启动日报任务 ## 待跟进 ## 已完成 ## 对话要点 --- ## 日报执行记录 - 文件：`daily/2026-05-31-update.md` - Commit：`d47ed43` - 发送频道：Discord #daily (1472964925696512000)",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3938100606203079,
+      "maxScore": 0.3938100606203079,
+      "firstRecalledAt": "2026-06-01T13:14:08.712Z",
+      "lastRecalledAt": "2026-06-01T13:14:08.712Z",
+      "queryHashes": [
+        "da5b8c603f06"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "daily/2026-05-31-update.md",
+        "今日",
+        "任务",
+        "执行",
+        "每日",
+        "日报",
+        "重要",
+        "事件"
+      ]
+    },
+    "memory:memory/2026-05-27.md:52:64": {
+      "key": "memory:memory/2026-05-27.md:52:64",
+      "path": "memory/2026-05-27.md",
+      "startLine": 52,
+      "endLine": 64,
+      "source": "memory",
+      "snippet": "- 今日与记忆维护直接相关的可见对话仅包含本次 cron 提醒。 - 现有 `MEMORY.md` 中的“每日记忆维护提醒执行规则”已覆盖本次执行要求，未产生新的长期决策。 ======= >>>>>>> f350a910b15c629736e2a6b65cd697274276bc32 --- ## 日报执行记录 - 文件：`daily/2026-05-27-update.md` - Commit：`1357599` - 发送频道：Discord #daily (1472964925696512000) - 重试次数：0",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3524127513170242,
+      "maxScore": 0.3524127513170242,
+      "firstRecalledAt": "2026-06-01T13:14:08.712Z",
+      "lastRecalledAt": "2026-06-01T13:14:08.712Z",
+      "queryHashes": [
+        "da5b8c603f06"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "daily/2026-05-27-update.md",
+        "今日",
+        "记忆",
+        "维护",
+        "直接",
+        "相关",
+        "可见"
       ]
     }
   }
